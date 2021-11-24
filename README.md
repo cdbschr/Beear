@@ -1,2 +1,2 @@
 # Beear
-Projet Beear / Brasserie fictive / Projet Kercode
+Projet Beear / Brasserie fictive / Projet pour Kercode - Vannes
