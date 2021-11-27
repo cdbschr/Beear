@@ -323,8 +323,6 @@ li {
 }
 
 .buttonbiere {
-  color: #fff;
-  border: 2px solid #fff;
   width: 60%;
   margin: 3% auto;
 }
@@ -413,6 +411,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border-top: 3px solid var(--green);
 }
 
 #linklogofooter {
@@ -421,8 +420,8 @@ li {
 }
 
 #logofooter {
-  width: 80%;
-  margin-bottom: 15px;
+  width: 50vw;
+  margin: 30px 0 25px;
 }
 
 #generalfooter h4 {
@@ -468,19 +467,12 @@ li {
 }
 
 .iconsocialsnetwork {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 .st0:hover {
   fill: var(--brown);
-}
-
-#generalfooter span {
-  width: 70%;
-  border: 2px solid var(--green);
-  border-radius: 15px;
-  margin: 40px 0;
 }
 
 #alcoolmoderation {
@@ -504,6 +496,69 @@ li {
 
 
 /* ------------------ Page Contact --------------------- */
+#contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#contact h1 {
+  width: 100%;
+  font-size: 3rem;
+  margin: 15px auto;
+  text-align: center;
+}
+
+#contact h4 {
+  margin-bottom: 45px;
+  width: 100%;
+}
+
+#contact p:not(.contactflex) {
+  width: 100%;
+  margin: 8px auto;
+  text-align: center;
+}
+
+.contactflex span {
+  margin: 0 10px 0 0;
+}
+
+.radiocivil {
+  display: flex;
+}
+
+.sepcivilite {
+  margin: 0 7px;
+}
+
+#contact input:not(#contact input[type="radio"], #envoyer), #biere-selection {
+  background-color: rgb(231, 221, 221);
+  border: none;
+  border: 2px solid var(--green);
+  border-radius: 3px;
+  margin: 6px 3px;
+  padding: 15px 15px;
+  text-transform: uppercase;
+  width: 80vw;
+}
+
+#contact textarea {
+  width: 100%;
+  padding: 6px;
+}
+
+#contact input {
+  padding: 6px;
+}
+
+#envoyer {
+  width: 30%;
+  margin: 15px 0 100px;
+  padding: 5px;
+  font-size: 1.2rem;
+  text-transform: none;
+}
 
 /* ------------------ Pages Bières ---------------------- */
 
@@ -568,6 +623,11 @@ li {
 	#socials a:last-child {
 		margin: 8px 0;
 	}
+
+  /*------------Page Contact-----------*/
+  #contact input:not(#contact input[type="radio"], #envoyer), #biere-selection {
+    width: 60vw;
+  }
 }
 
 /* Desktop */
@@ -699,5 +759,14 @@ li {
 
   #socials {
     margin-bottom: 80px;
+  }
+
+  /*------------Page Contact-----------*/
+  #contact input:not(#contact input[type="radio"], #envoyer), #biere-selection {
+    width: 50vw;
+  }
+
+  #contact h4 {
+    text-align: center;
   }
 }
