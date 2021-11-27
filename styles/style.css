@@ -287,34 +287,19 @@ li {
 /* présentation bière */
 #bblonde {
   background: #1c1c1c;
-  background: linear-gradient(
-    143deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(52, 153, 55, 1) 66%,
-    rgba(28, 28, 28, 1) 100%
-  );
+  background: radial-gradient(circle at center center, #645b08 0%, #1c1c1c 63%);
   height: 100vh;
 }
 
 #bbrune {
   background: #1c1c1c;
-  background: linear-gradient(
-    143deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(117, 76, 36, 1) 71%,
-    rgba(28, 28, 28, 1) 100%
-  );
+  background: radial-gradient(circle at center center, #533d1b 0%, #1c1c1c 63%);
   height: 100vh;
 }
 
 #bblanche {
   background: #1c1c1c;
-  background: linear-gradient(
-    143deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgb(31, 71, 204) 80%,
-    rgba(28, 28, 28, 1) 100%
-  );
+  background: radial-gradient(circle at center center, #666950 0%, #1c1c1c 63%);
   height: 100vh;
 }
 
@@ -341,8 +326,11 @@ li {
   color: #fff;
   border: 2px solid #fff;
   width: 60%;
-  margin: 5% 25%;
-  text-transform: uppercase;
+  margin: 3% auto;
+}
+
+.linkbeer {
+  margin: 5px auto;
 }
 
 /* Réseaux Sociaux */
@@ -500,6 +488,20 @@ li {
 }
 
 /* ---------------- Page Actualités ------------------- */
+#otherpageheader {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#articles {
+  width: 70%;
+  margin: 15px auto;
+}
+
+#articles p:last-child{
+  margin-bottom: 15%;
+}
+
 
 /* ------------------ Page Contact --------------------- */
 
@@ -578,7 +580,7 @@ li {
 		width: 31%;
 	}
 
-	#socials h2 {
+	#socials h2, #articles h2 {
 		font-size: 2rem;
 	}
 
@@ -586,13 +588,13 @@ li {
 		width: 1200px;
 	}
 
-	.button {
+	.button, #articles p.button {
 		width: 25%;
 	}
 
-	#articles p.button {
-		width: 33%;
-	}
+  #alcoolmoderation {
+    font-size: 0.6rem;
+  }
 }
 
 /* +1200px */
@@ -600,6 +602,10 @@ li {
 	.container {
 		margin: 0 auto;
 	}
+
+  .button, #articles p.button {
+    width: 15rem;
+  }
 	
 	#generalheader {
 		background-image: url('../img/bg-desktop.jpg');
@@ -616,7 +622,6 @@ li {
 		align-self: center;
 		height: 150px;
 		justify-content: flex-end;
-		margin-left: -5%;
 	}
 
 	#entete {
@@ -628,12 +633,13 @@ li {
 	}
 
 	#logo img {
-		width: 100%;
+		width: 80%;
+    padding: 10%;
 	}
 
 	#menunav {
 		display: flex;
-		width: 70%;
+		width: 85%;
 		align-self: center;
 	}
 	
@@ -641,8 +647,9 @@ li {
 		margin: 0 15px;
 		text-transform: uppercase;
 		color: var(--green);
-		font-size: 2rem;
+		font-size: 1.65rem;
 		font-weight: 800;
+    font-family: 'Konstructor';
 	}
 
 	#menunav li:hover {
@@ -668,6 +675,10 @@ li {
 	#endheader p {
 		width: 50%;
 	}
+
+  #articles img{
+    width: 50vw;
+  }
 	
 	#articles {
 		width: 70%;
@@ -677,4 +688,16 @@ li {
 		align-items: center;
 		margin: 0 auto;
 	}
+
+  #articles h2, #articles h4, #articles p{
+    width: 70%;
+  }
+
+  #socials h2 {
+    font-size: 1.6rem;
+  }
+
+  #socials {
+    margin-bottom: 80px;
+  }
 }
