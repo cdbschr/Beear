@@ -10,8 +10,8 @@
 	<link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-	<header>
-		<div id="generalheader">
+	<header id="otherpagesheader">
+		<div class="container">
 			<nav id="menuburger" role="navigation">
 				<div id="menuToggle">
 					<input type="checkbox"/>
@@ -45,29 +45,48 @@
 					</ul>
 				</nav>
 			</div>
-			<div id="flexcenterendheader">
-				<div id="endheader" class="container">
-					<h1>Et si vous découvriez nos bières ?</h1>
-					<a href="index.html#articles" class="flex-button"><p class="button">Je découvre</p></a>
-				</div>
+			<div class="titreotherpages">
+				<h1>Valeurs</h1>
 			</div>
 		</div>
 	</header>
-
-	
+	<main id="valeurs" class="container">
+		<section id="bio" class="valeurssection">
+			<img src="./img/valeurs/houblon.jpg" alt="houblon">
+			<div class="txtvaleurs">
+				<h2>Qualité - Bio</h2>
+				<p>Dans un souci de développement durable et de qualité gustative, nous avons décidé d’utiliser des matières premières provenant de l’agriculture biologique. Depuis octobre 2021, la brasserie ainsi que nos bières sont certifiées biologiques.</p>
+			</div>
+		</section>
+		<section id="responsable" class="valeurssection">
+			<img src="./img/valeurs/responsable.png" alt="responsable">
+			<div class="txtvaleurs">
+				<h2>Eco-Responsable</h2>
+				<p>Parce qu’un monde durable est de la responsabilité de chacun, la Brasserie Lion s’engage à y contribuer :
+					<ul>
+						<li>Panneaux photovoltaïques placés sur le toit de la brasserie.</li>
+						<li>Utilisation d'eau de pluie pour refroidir les cuves et nettoyer les sols.</li>
+						<li>Clip de 4 bières en polyéthylène haute densité (PEHD), ce plastique recyclable à 100% provient de bouteilles de lait, elles aussi recyclées.</li>
+					</ul>
+				</p>
+			</div>
+		</section>
+	</main>
 	<footer id="generalfooter" class="container">
 		<a href="index.html" id="linklogofooter"><img src="./img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
-		<h4>SIÈGE</h4>
-		<adress>
-			<p>Lanvaux</p>
-			<p>56220 Saint-Gravé</p>
-		</adress>
+		<div id="lieu">
+			<h4>SIÈGE</h4>
+			<adress>
+				<p>Lanvaux</p>
+				<p>56220 Saint-Gravé</p>
+			</adress>
+		</div>
 		<div id="socialsnetwork">
 			<a href="https://facebook.com">
 				<!-- Pas d'inquiétude c'est rouge, mais c'est normal -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="facebook-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-					x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+					 x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
 				<style type="text/css">
 					.st0{fill:#349937;}
 				</style>
@@ -79,7 +98,7 @@
 				<!-- Pas d'inquiétude c'est rouge, mais c'est normal -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="instagram-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-					x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+					 x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
 				<style type="text/css">
 					.st0{fill:#349937;}
 				</style>
@@ -99,7 +118,7 @@
 				<!-- Pas d'inquiétude c'est rouge, mais c'est normal -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="twitter-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-					x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+					 x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
 				<style type="text/css">
 					.st0{fill:#349937;}
 				</style>
@@ -112,7 +131,6 @@
 				</svg>
 			</a>
 		</div>
-		<span></span>
 		<div id="linksfooter">
 			<a href="#" class="linkfooter"><p>Mentions légales</p></a>
 			<a href="#" class="linkfooter"><p>Plan du site</p></a>

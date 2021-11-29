@@ -10,8 +10,8 @@
 	<link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-	<header>
-		<div id="generalheader">
+	<header id="pagesbiereheader">
+		<div class="container">
 			<nav id="menuburger" role="navigation">
 				<div id="menuToggle">
 					<input type="checkbox"/>
@@ -45,29 +45,65 @@
 					</ul>
 				</nav>
 			</div>
-			<div id="flexcenterendheader">
-				<div id="endheader" class="container">
-					<h1>Et si vous découvriez nos bières ?</h1>
-					<a href="index.html#articles" class="flex-button"><p class="button">Je découvre</p></a>
-				</div>
-			</div>
 		</div>
 	</header>
-
-	
+	<main id="biereblonde" class="bieres container">
+		<section class="presbiere">
+			<img src="./img/verres/Verre-de-bière-blonde-Beear.png" alt="biere blonde beear">
+			<div class="detailbiere">
+				<h1>BEEAR BLONDE</h1>
+				<h4>L'ours sympa</h4>
+				<p>Les bières de la lignée des Beear sont nées de la pureté de l’eau et de la puissance du feu. Derrière sa robe couleur jaune flamme, BEEAR Blonde cache un bouquet d’épices et de céréales. En fin de bouche, c’est toute l’agréable amertume du houblon qui surgit au galop, rappelant à qui sait les boire que les Beear sont des bières uniques au caractère tonique.</p>
+			</div>
+			<div class="explicationbiere">
+				<div id="type">
+					<h6>Blonde</h6>
+					<p>Type</p>
+				</div>
+				<div id="niveau-alcool">
+					<h6>8%</h6>
+					<p>alc./vol</p>
+				</div>
+				<div id="ibu">
+					<h6>18</h6>
+					<p>IBU</p>
+				</div>
+				<div id="degre">
+					<h6>7-13°C</h6>
+					<p>dégustation</p>
+				</div>
+			</div>
+		</section>
+		<section id="vsg">
+			<div class="vsg">
+				<div class="pictotitre"><img src="./img/pictos/voyez.png" alt="picto voyez beear"><h3>Voyez</h3></div>
+				<p>Une mousse généreuse, persistante et compacte, blanche à fines bulles. Couleur blond soutenu, limpide et brillante.</p>
+			</div>
+			<div class="vsg">
+				<div class="pictotitre"><img src="./img/pictos/sentez.png" alt="picto sentez beear"><h3>Sentez</h3></div>
+				<p>Au nez, une complexe palette aromatique mêlant épices et céréales.</p>
+			</div>
+			<div class="vsg">
+				<div class="pictotitre"><img src="./img/pictos/goutez.png" alt="picto goutez beear"><h3>Goutez</h3></div>
+				<p>Un bel équilibre entre corps, chaleur (alcool) et amertume. Persistance des notes épicées et du caractère alcoolisé.On retrouve à la dégustation des notes de céréales presque biscuitées. Une belle présence en bouche.</p>
+			</div>
+		</section>
+	</main>
 	<footer id="generalfooter" class="container">
 		<a href="index.html" id="linklogofooter"><img src="./img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
-		<h4>SIÈGE</h4>
-		<adress>
-			<p>Lanvaux</p>
-			<p>56220 Saint-Gravé</p>
-		</adress>
+		<div id="lieu">
+			<h4>SIÈGE</h4>
+			<adress>
+				<p>Lanvaux</p>
+				<p>56220 Saint-Gravé</p>
+			</adress>
+		</div>
 		<div id="socialsnetwork">
 			<a href="https://facebook.com">
 				<!-- Pas d'inquiétude c'est rouge, mais c'est normal -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="facebook-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-					x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+					 x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
 				<style type="text/css">
 					.st0{fill:#349937;}
 				</style>
@@ -79,7 +115,7 @@
 				<!-- Pas d'inquiétude c'est rouge, mais c'est normal -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="instagram-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-					x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+					 x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
 				<style type="text/css">
 					.st0{fill:#349937;}
 				</style>
@@ -99,7 +135,7 @@
 				<!-- Pas d'inquiétude c'est rouge, mais c'est normal -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="twitter-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-					x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+					 x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
 				<style type="text/css">
 					.st0{fill:#349937;}
 				</style>
@@ -112,7 +148,6 @@
 				</svg>
 			</a>
 		</div>
-		<span></span>
 		<div id="linksfooter">
 			<a href="#" class="linkfooter"><p>Mentions légales</p></a>
 			<a href="#" class="linkfooter"><p>Plan du site</p></a>

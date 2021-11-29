@@ -65,7 +65,7 @@ li {
   color: var(--green);
   background-color: #1c1c1c9a;
   font-weight: 600;
-  padding: 3% 30px;
+  padding: 14px 30px;
   border: 2px solid var(--green);
   border-radius: 10px;
   width: 75%;
@@ -224,7 +224,8 @@ li {
 }
 
 #logo img {
-  width: 40%;
+  width: 140px;
+  height: 62px;
 }
 
 /* h1+button */
@@ -252,6 +253,23 @@ li {
   background-color: #1c1c1c9a;
   border-radius: 15px;
   padding: 10px 20px;
+}
+
+#otherpagesheader {
+  height: 30%;
+  position: relative;
+  background-image: url(../img/bg-pages.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+}
+
+.titreotherpages h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  padding: 70px 0;
 }
 
 /* main */
@@ -362,6 +380,10 @@ li {
   align-items: center;
   border: 2px solid #2c2a2a;
   border-radius: 15px;
+  box-shadow: rgba(69, 69, 73, 0.2) 0px 1px 7px 0px;
+}
+
+.articlers:hover {
   box-shadow: rgba(69, 69, 73, 0.2) 0px 7px 29px 0px;
 }
 
@@ -424,15 +446,17 @@ li {
   margin: 30px 0 25px;
 }
 
-#generalfooter h4 {
+#lieu {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#lieu h4 {
   width: 100%;
   text-align: center;
   font-weight: 600;
   font-size: 1.4rem;
-}
-
-#generalfooter adress {
-  width: 100%;
+  margin-bottom: 5px;
 }
 
 #generalfooter p {
@@ -477,6 +501,7 @@ li {
 
 #alcoolmoderation {
   font-size: 0.5rem;
+  width: 100%;
 }
 
 /* ---------------- Page Actualités ------------------- */
@@ -485,7 +510,26 @@ li {
   margin: 0 auto;
 }
 
-#articles {
+#articles h1, #articles h2, #articles h4, #articles h5 {
+  width: 100%;
+}
+
+#articles h2 {
+  font-size: 1.3rem;
+}
+
+#articles h4 {
+  font-size: 1.5rem;
+  margin-bottom: 2vh;
+}
+
+#articles h5 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5vh;
+  color: var(--green)
+}
+
+#articles, #selectionfichier {
   width: 70%;
   margin: 15px auto;
 }
@@ -494,6 +538,71 @@ li {
   margin-bottom: 15%;
 }
 
+.linkactus {
+  color: var(--brown);
+  cursor: pointer;
+}
+
+.linkactus:hover {
+  color: var(--green)
+}
+
+#formjeuconcours {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#formjeuconcours h1 {
+  width: 100%;
+  font-size: 3rem;
+  margin: 15px auto;
+  text-align: center;
+}
+
+#formjeuconcours p:not(.contactflex) {
+  width: 100%;
+  margin: 8px auto;
+  text-align: center;
+}
+
+.contactflex {
+  margin: 0 10px 0 0;
+}
+
+.champoblig {
+  font-size: 0.7rem;
+  color: rgb(88, 87, 87);
+}
+
+#selectionfich {
+  border-bottom: 2px solid var(--brown);
+  padding-bottom: 4px;
+}
+
+#formjeuconcours input:not(#formjeuconcours input[type="radio"], #envoyer), #biere-selection {
+  background-color: rgb(231, 221, 221);
+  border: none;
+  border: 2px solid var(--green);
+  border-radius: 3px;
+  margin: 6px 3px;
+  padding: 15px 15px;
+  text-transform: uppercase;
+  width: 80vw;
+}
+
+#formjeuconcours textarea {
+  width: 100%;
+  padding: 6px;
+}
+
+#formjeuconcours input {
+  padding: 6px;
+}
+
+#socialsh2 {
+  font-size: 1.3rem;
+}
 
 /* ------------------ Page Contact --------------------- */
 #contact {
@@ -520,10 +629,6 @@ li {
   text-align: center;
 }
 
-.contactflex span {
-  margin: 0 10px 0 0;
-}
-
 .radiocivil {
   display: flex;
 }
@@ -545,7 +650,7 @@ li {
 
 #contact textarea {
   width: 100%;
-  padding: 6px;
+  padding: 7px;
 }
 
 #contact input {
@@ -553,7 +658,7 @@ li {
 }
 
 #envoyer {
-  width: 30%;
+  width: 35%;
   margin: 15px 0 100px;
   padding: 5px;
   font-size: 1.2rem;
@@ -561,8 +666,74 @@ li {
 }
 
 /* ------------------ Pages Bières ---------------------- */
+.presbiere {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.presbiere img {
+  width: 45%;
+  margin-left: 5px;
+}
+
+.presbiere h1, .presbiere h4 {
+  width: 45%;
+}
+
+.detailbiere {
+  width: 45%;
+  margin-right: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 /* ------------------ Page Nos Valeurs ---------------------- */
+#valeurs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.valeurssection {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 35px;
+  justify-content: center;
+}
+
+.txtvaleurs {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  text-align: justify;
+  margin-bottom: 50px;
+}
+
+#bio img, #responsable img {
+	width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.txtvaleurs h2, .txtvaleurs p {
+  margin-bottom: 8px;
+}
+
+.txtvaleurs ul {
+  margin-left: 15px;
+}
+
+.txtvaleurs li {
+  list-style-type: disc;
+  margin: 3px 0;
+}
+
 
 /* Tablette min */
 @media screen and (min-width: 576px) {
@@ -572,6 +743,7 @@ li {
 
 	#logo img {
 		width: 30%;
+    height: 100%;
 	}
 
 	.button {
@@ -589,6 +761,11 @@ li {
 	.articlers p {
 		margin: 5px 18px 0;
 	}
+
+  /*------------Page Valeurs-----------*/
+  .valeurssection {
+    width: 70%;
+  }
 }
 
 /* Tablette moyenne */
@@ -628,6 +805,16 @@ li {
   #contact input:not(#contact input[type="radio"], #envoyer), #biere-selection {
     width: 60vw;
   }
+
+  /*------------Page Actualités-----------*/
+  #formjeuconcours input:not(#formjeuconcours input[type="radio"], #envoyer), #biere-selection {
+    width: 60vw;
+  }
+
+  /*------------Page Valeurs-----------*/
+  .valeurssection {
+    width: 60%;
+  }
 }
 
 /* Desktop */
@@ -655,6 +842,31 @@ li {
   #alcoolmoderation {
     font-size: 0.6rem;
   }
+
+  /*----- Formulaire ------*/
+  #envoyer {
+    width: 25%;
+  }
+
+  /*------------Page Valeurs-----------*/
+  .valeurssection {
+    width: 80%;
+    margin-bottom: 80px;
+  }
+
+  .txtvaleurs, #bio img, #responsable img {
+    width: 40%;
+    margin: 0 20px;
+  }
+
+  #bio {
+    margin-bottom: 80px;
+  }
+
+  #responsable {
+    flex-direction: row-reverse;
+  }
+
 }
 
 /* +1200px */
@@ -753,6 +965,11 @@ li {
     width: 70%;
   }
 
+  #socials, #maps {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
   #socials h2 {
     font-size: 1.6rem;
   }
@@ -761,12 +978,44 @@ li {
     margin-bottom: 80px;
   }
 
+  /* Footer */
+  #linklogofooter, #lieu, #socialsnetwork {
+    width: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+  }
+
+  #linksfooter {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+  }
+
+  .linkfooter {
+    width: 45%;
+  }
+
   /*------------Page Contact-----------*/
   #contact input:not(#contact input[type="radio"], #envoyer), #biere-selection {
     width: 50vw;
   }
-
+  
   #contact h4 {
+    text-align: center;
+  }
+  
+  /*------------Page Actualités -----------*/
+  #articles h1, #articles h5 {
+    width: 70%;
+  }
+
+  #formjeuconcours input:not(#formjeuconcours input[type="radio"], #envoyer), #biere-selection {
+    width: 50vw;
+  }
+
+  #formjeuconcours h4 {
     text-align: center;
   }
 }
