@@ -5,13 +5,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Beear, votre ours brasseur dans le Morbihan</title>
+	<meta name="description" content="Les meilleures actualités de Beear dans le Morbihan, la Bretagne et la France sont ici. Bières blanches, bières brunes, bières blondes.">
 	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="./img/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
 	<header id="otherpagesheader">
-		<div class="container">
+		<div class=>
 			<nav id="menuburger" role="navigation">
 				<div id="menuToggle">
 					<input type="checkbox"/>
@@ -22,7 +23,6 @@
 						<a href="index.html"><li>Accueil</li></a>
 						<a href="index.html#bblonde"><li>Produits</li></a>
 						<a href="valeurs.html"><li>Valeurs</li></a>
-						<a href="actualites.html"><li>Actualités</li></a>
 						<a href="contact.html"><li>Contact</li></a>
 						<div id="corporation">
 							<a href="index.html"><img src="./img/Logotxt-Beear.png" alt="logo texte beear"></a>
@@ -56,9 +56,11 @@
 				<h4>Comment participer ?</h4>
 				<h5>Etape 1</h5>
 				<p>Acheter 1 produit de la gamme BEEAR parmi les références suivantes : <a href="index.html#bblonde" class="linkactus">BEEAR BLONDE</a>,<a href="index.html#bbrune" class="linkactus"> BEEAR BRUNE</a>,<a href="index.html#bblanche" class="linkactus"> BEEAR BLANCHE</a> en 3×33 cl ou 75 cl dans un magasin participant à l’opération.</p>
+				<p>Vous pouvez également retrouver <a href="valeurs.html" class="linkactus">LES VALEURS DE L'ENTREPRISE</a> , ainsi que <a href="index.html#bblonde" class="linkactus">NOS PRODUITS.</a> </p>
 				<img src="./img/actualites/jeuconcours.jpg" alt="jeu concours">
 				<h5>Etape 2</h5>
 				<p>S’inscrire au jeu en remplissant le formulaire ci-dessous et en chargeant sa preuve d’achat (original du ticket de caisse avec le libellé des produits et la date entre le 01/09/2021 et le 30/11/2021 entourés).</p>
+				<p>En cas de réclamation, vous pouvez directement nous contacter via notre formulaire sur la page <a href="contact.html" class="linkactus">CONTACT</a>.</p>
 		</article>
 		<div id="formjeuconcours">
 			<form action="envoyerformphp" method="post">
@@ -89,9 +91,10 @@
 				</select></p>
 				<p class="contactflex"><label for="message">Votre Message * </label></p>
 				<p><textarea name="message" id="message" rows="10" required></textarea></p>
+				<p class="contactflex"><input type="checkbox" name="rgpd" id="rgpd" required>autorisation de conservation et utilisation des données *</p>
 				<p class="contactflex champoblig">* Champ obligatoire</p>
 				<div id="selectionfichier">
-					<a href="#"><p id="selectionfich">Sélectionnez des fichiers</p></a>
+					<input type="file" name="jeu" id="filejeu"> 
 					<p class="champoblig">Taille max. des fichiers : 128 MB.</p>
 				</div>
 				<p><input type="submit" id="envoyer" class="button" value="Envoyer"></p>
