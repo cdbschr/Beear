@@ -11,8 +11,8 @@
 	<link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-	<header id="otherpagesheader">
-		<div class=>
+	<header class="bg-otherpages">
+		<div id="otherpagesheader">
 			<nav id="menuburger" role="navigation">
 				<div id="menuToggle">
 					<input type="checkbox"/>
@@ -65,17 +65,16 @@
 		<div id="formjeuconcours">
 			<form action="envoyerformphp" method="post">
 				<div class="radiocivil">
-						<p class="contactflex"><span>Civilité</span>
-						<div class="sepcivilite">
-							<input type="radio" name="civilite" id="civilite" value="Mme">
-							<label for="civilite">Madame</label>
-						</div>
-						<div class="sepcivilite">
-							<input type="radio" name="civilite" id="civilite" value="M">
-							<label for="civilite" class="petit">Monsieur</label>
-						</div>
+					<p class="contactflex"><span>Civilité</span></p>
+					<div class="sepcivilite">
+						<input type="radio" name="civilite" id="civilite" value="Mme">
+						<label for="civilite">Madame</label>
 					</div>
-				</p>
+					<div class="sepcivilite">
+						<input type="radio" name="civilite" id="civilite" value="M">
+						<label for="civilite" class="petit">Monsieur</label>
+					</div>
+				</div>
 				<p><input type="text" placeholder="Nom *" name="nom" id="nom" required></p>
 				<p><input type="text" placeholder="Prénom *" name="prenom" id="prenom" required></p>
 				<p><input type="email" placeholder="Adresse email *" name="email" id="email" required></p>

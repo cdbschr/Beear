@@ -260,6 +260,11 @@ li {
 }
 
 #otherpagesheader {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bg-otherpages {
   height: 30%;
   position: relative;
   background-image: url(../img/bg-pages.jpg);
@@ -272,7 +277,7 @@ li {
 .titreotherpages h1 {
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding: 70px 0;
 }
 
@@ -509,11 +514,6 @@ li {
 }
 
 /* ---------------- Page Actualités ------------------- */
-#otherpageheader {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 #articles h1, #articles h2, #articles h4, #articles h5 {
   width: 100%;
 }
@@ -677,6 +677,11 @@ li {
 }
 
 /* ------------------ Pages Bières ---------------------- */
+#pagesbiereheader {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .presbiere {
   width: 100%;
   display: flex;
@@ -1152,7 +1157,7 @@ li {
   }
 
   /*------------Page Contact-----------*/
-  #contact input:not(#contact input[type="radio"], #envoyer), #biere-selection {
+  #contact input:not(#contact input[type="radio"], #envoyer, #rgpd), #biere-selection {
     width: 50vw;
   }
   
