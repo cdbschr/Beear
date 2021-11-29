@@ -61,6 +61,10 @@ li {
   margin: 0 50px;
 }
 
+.containermobile {
+  max-width: 1200px;
+}
+
 .button {
   color: var(--green);
   background-color: #1c1c1c9a;
@@ -672,24 +676,100 @@ li {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+  margin: 50px auto;
 }
 
 .presbiere img {
-  width: 45%;
+  width: 70%;
   margin-left: 5px;
 }
 
-.presbiere h1, .presbiere h4 {
-  width: 45%;
+.titrebiere {
+  width: 100%;
+  margin-top: 5px;
 }
 
-.detailbiere {
-  width: 45%;
-  margin-right: 5px;
+.grouppresbiere {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.detailbiere {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
+}
+
+.detailbiere p {
+  text-align: justify;
+}
+
+.explicationbiere {
+  width: 80%;
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-self: center;
+  margin: 40px auto;
+}
+
+.explicationbiere h6 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--green);
+}
+
+.explicationbiere p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 3px;
+}
+
+#type, #niveau-alcool, #ibu, #degre {
+  width: 45%;
+  margin: 15px 0;
+}
+
+#vsg {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.vsg {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.vsg p {
+  text-align: justify;
+  margin-top: 5px;
+  width: 80%;
+}
+
+.pictotitre {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: center;
+}
+
+.pictotitre h3 {
+  width: 100%;
+  text-align: center;
 }
 
 /* ------------------ Page Nos Valeurs ---------------------- */
@@ -762,9 +842,35 @@ li {
 		margin: 5px 18px 0;
 	}
 
-  /*------------Page Valeurs-----------*/
+  /*------------ Page Valeurs -----------*/
   .valeurssection {
     width: 70%;
+  }
+
+  /*------------Page Bières -----------*/
+  .presbiere {
+    justify-content: space-around;
+  }
+  
+  .presbiere img {
+    width: 35%;
+    margin-left: 5px;
+  }
+
+  .grouppresbiere {
+    width: 55%;
+  }
+  
+  .detailbiere {
+    margin: 5px 25px;
+  }
+
+  #vsg {
+    align-items: flex-start;
+  }
+
+  .vsg {
+    width: 33%;
   }
 }
 
@@ -867,6 +973,10 @@ li {
     flex-direction: row-reverse;
   }
 
+  /*------------Page Bières-----------*/
+  .presbiere img {
+    width: 25%;
+  }
 }
 
 /* +1200px */
@@ -1017,5 +1127,10 @@ li {
 
   #formjeuconcours h4 {
     text-align: center;
+  }
+
+  /*------------Page Bières-----------*/
+  .presbiere img {
+    width: 20%;
   }
 }
