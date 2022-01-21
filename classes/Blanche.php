@@ -1,8 +1,8 @@
 <?php
 
-require_once './Beers.php';
+require_once './Beer.php';
 
-class Blanche extends Beers
+class Blanche extends Beer
 {
 	function __construct()
 	{

@@ -17,9 +17,11 @@
 			<p><input type="text" placeholder="Nom *" name="nom" id="nom" required></p>
 			<p><input type="text" placeholder="Prénom *" name="prenom" id="prenom" required></p>
 			<p><input type="email" placeholder="Adresse email *" name="email" id="email" required></p>
+			<!-- API -->
 			<p><input type="text" placeholder="Adresse" name="adresse" id="adresse"></p>
 			<p><input type="text" placeholder="Code Postal" name="cp" id="cp"></p>
 			<p><input type="text" placeholder="Ville" name="ville" id="ville"></p>
+			<!-- API -->
 			<p><input type="tel" placeholder="Téléphone" name="tel" id="tel"></p>
 			<p class="contactflex"><label for="message">Votre Message * </label></p>
 			<p><textarea name="message" id="message" rows="10" required></textarea></p>

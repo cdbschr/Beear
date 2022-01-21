@@ -31,6 +31,7 @@
 			<p><input type="text" placeholder="Adresse" name="adresse" id="adresse"></p>
 			<p><input type="text" placeholder="Code Postal" name="cp" id="cp"></p>
 			<p><input type="text" placeholder="Ville" name="ville" id="ville"></p>
+			<!-- Récupérer api adresse du gouv : https://adresse.data.gouv.fr/api-doc/adresse et faire comme l'exercice pokemon -->
 			<p><input type="tel" placeholder="Téléphone" name="tel" id="tel"></p>
 			<p><select name="biere" id="biere-selection">
 					<option value="">-- Selectionner une bière --</option>
