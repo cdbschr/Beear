@@ -20,7 +20,6 @@
 					c26.5,0,48-21.5,48-48V80C448,53.5,426.5,32,400,32z"/>
 				</svg></a>
 			<a href="https://instagram.com">
-				<!-- Pas d'inquiétude c'est rouge, mais c'est normal -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="instagram-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 					 x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
@@ -40,7 +39,6 @@
 				</svg>
 				</a>
 			<a href="https://twitter.com">
-				<!-- Pas d'inquiétude c'est rouge, mais c'est normal -->
 				<?xml version="1.0" encoding="utf-8"?>
 				<svg version="1.1" id="twitter-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 					 x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
