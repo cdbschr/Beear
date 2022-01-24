@@ -1,6 +1,6 @@
 <?php
 
-require_once './Beer.php';
+require_once 'Beer.php';
 
 class Blonde extends Beer
 {

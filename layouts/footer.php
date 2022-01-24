@@ -1,5 +1,5 @@
 <footer id="generalfooter" class="container">
-		<a href="index.html" id="linklogofooter"><img src="./img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
+		<a href="index.php" id="linklogofooter"><img src="./img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
 		<div id="lieu">
 			<h4>SIÈGE</h4>
 			<adress>
@@ -60,5 +60,6 @@
 	</div>
 		<p id="alcoolmoderation">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
 	</footer>
+	<script src="./scripts/navigation.js"></script>
 </body>
 </html>

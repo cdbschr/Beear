@@ -18,4 +18,32 @@ abstract class Beer {
 		$this->ibu = $ibu;
 		$this->temp = $temp;
 	}
+
+  public function getId():string {
+    return $this->id;
+  }
+
+  public function getName():string {
+    return $this->name;
+  }
+
+  public function getSecName():string {
+    return $this->secName;
+  }
+
+  public function getAlcDegree():int {
+    return $this->alcDegree;
+  }
+
+  public function getDesc():string {
+    return $this->desc;
+  }
+
+  public function getIbu():int {
+    return $this->ibu;
+  }
+
+  public function getTemp():string {
+    return $this->temp;
+  }
 }
