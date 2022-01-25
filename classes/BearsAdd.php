@@ -1,18 +1,11 @@
 <?php 
 
-require_once 'Beer.php';
-require_once 'Blonde.php';
-require_once 'Brune.php';
-require_once 'Blanche.php';
+include_once 'Beer.php';
 
 class Beears {
 	private array $beears = [];
 
-	function __construct(array $beears) {
-		$this->beears = $beears;
-	}
-
-	public function addBeear(Beears $beer) {
+	public function addBeear(beears $beer) {
 		array_push($this->beears, $beer);
 	}
 
@@ -31,9 +24,3 @@ class Beears {
 		}
 	}
 }
-
-var_dump($beears->foreachBeears());
-
-$blonde = new Blonde;
-$brune = new Brune;
-$blanche = new Blanche;

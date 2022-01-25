@@ -1,21 +1,21 @@
 let adress = document.querySelector('#adresse');
 let adressListApi = document.querySelector('#adresseApiList');
 
-let select = document.querySelector('#selection');
+let select = document.querySelector('#selectadress');
 
 adress.addEventListener('input', displayAdd);
 
 function displayAdd() {
   select.innerHTML = "";
 
-  fetch("https://api-adresse.data.gouv.fr/search/?q=" + adress.value + "&limit=6")
+  fetch("https://api-adresse.data.gouv.fr/search/?q=" + adress.value + "&limit=5")
     .then((response) => response.json())
     .then((data) => {
       select.innerHTML = "";
-      let listeadresse = data.features;
+      let listeAdresse = data.features;
 
       if (adress) {
-        listeadresse.forEach((element) => {
+        listeAdresse.forEach((element) => {
           let li = document.createElement('li');
           select.appendChild(li);
           li.innerText = element.properties.label;

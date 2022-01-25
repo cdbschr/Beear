@@ -27,11 +27,14 @@
 			<p><input type="text" placeholder="Nom *" name="nom" id="nom" required></p>
 			<p><input type="text" placeholder="Prénom *" name="prenom" id="prenom" required></p>
 			<p><input type="email" placeholder="Adresse email *" name="email" id="email" required></p>
-			<!-- Récupérer api adresse du gouv : https://adresse.data.gouv.fr/api-doc/adresse et faire comme l'exercice pokemon -->
+			<!-- API -->
 			<p><input type="text" placeholder="Adresse" name="adresse" id="adresse"></p>
+			<div id="adresseApiList" class="">
+				<ul id="selectadress"></ul>
+			</div>
 			<p><input type="text" placeholder="Code Postal" name="cp" id="cp"></p>
 			<p><input type="text" placeholder="Ville" name="ville" id="ville"></p>
-			<!-- Récupérer api adresse du gouv : https://adresse.data.gouv.fr/api-doc/adresse et faire comme l'exercice pokemon -->
+			<!-- API -->
 			<p><input type="tel" placeholder="Téléphone" name="tel" id="tel"></p>
 			<p><select name="biere" id="biere-selection">
 					<option value="">-- Selectionner une bière --</option>
@@ -62,5 +65,6 @@
 			<p class="button">Twitter</p>
 		</a>
 	</div>
+	<script src="scripts/contact.js"></script>
 </main>
 <?php require_once './layouts/footer.php'; ?>

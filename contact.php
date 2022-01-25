@@ -20,6 +20,8 @@
 			<!-- API -->
 			<p><input type="text" placeholder="Adresse" name="adresse" id="adresse"></p>
 			<div id="adresseApiList" class="">
+				<ul id="selectadress"></ul>
+			</div>
 			<p><input type="text" placeholder="Code Postal" name="cp" id="cp"></p>
 			<p><input type="text" placeholder="Ville" name="ville" id="ville"></p>
 			<!-- API -->

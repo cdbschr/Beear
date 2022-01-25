@@ -1,6 +1,6 @@
 <?php
 include_once 'layouts/head.php';
-//require_once 'classes/BearsAdd.php';
+require_once 'classes/newBeers.php';
 ?>
 
 <main>
@@ -14,7 +14,7 @@ include_once 'layouts/head.php';
 		</a>
 	</article>
 	<section id="biere">
-		<?php //$beears->foreachBeears(); ?>
+		<?php $beears->foreachBeears(); ?>
 	</section>
 	<?php include 'layouts/socials.php'; ?>
 	<section id="map" class="container">
