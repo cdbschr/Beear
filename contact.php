@@ -2,7 +2,7 @@
 <main>
 	<div id="contact" class="container">	
 		<h4>Vous pouvez nous contacter directement via ce formulaire.</h4>
-		<form action="envoyerform.php" method="post">
+		<form action="envoyerform.php" method="post" id="contactform">
 			<div class="radiocivil">
 				<p class="contactflex"><span>Civilité</span></p>
 				<div class="sepcivilite">
@@ -31,6 +31,7 @@
 			<p class="contactflex"><input type="checkbox" name="rgpd" id="rgpd" required>autorisation de conservation et utilisation des données *</p>
 			<p class="contactflex champoblig">* Champ obligatoire</p>
 			<p><input type="submit" id="envoyer" class="button" value="Envoyer" ></p>
+			<div id="validate-send"></div>
 		</form>
 	</div>
 	<section id="map" class="container">
@@ -41,4 +42,6 @@
 	</section>
 </main>
 <script src="scripts/contact.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="scripts/supabase.js"></script>
 <?php require_once './layouts/footer.php'; ?>

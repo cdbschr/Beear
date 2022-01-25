@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once 'BearsAdd.php';
 require_once 'Blonde.php';
@@ -7,6 +7,6 @@ require_once 'Blanche.php';
 
 $beears = new Beears;
 
-$blonde = new Blonde;
-$brune = new Brune;
-$blanche = new Blanche;
+$beears->addBeear(new Blonde);
+$beears->addBeear(new Brune);
+$beears->addBeear(new Blanche);

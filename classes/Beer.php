@@ -1,6 +1,6 @@
 <?php 
 
-abstract class Beer {
+class Beer {
 	private string $id;
 	private string $name;
 	private string $secName;
@@ -9,7 +9,7 @@ abstract class Beer {
 	private int $ibu;
 	private string $temp;
 
-	function __construct(string $id, string $name, string $secName, int $alcDegree, string $desc, int $ibu, string $temp) {
+	public function __construct(string $id, string $name, string $secName, int $alcDegree, string $desc, int $ibu, string $temp) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->secName = $secName;

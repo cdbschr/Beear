@@ -14,7 +14,7 @@ require_once 'classes/newBeers.php';
 		</a>
 	</article>
 	<section id="biere">
-		<?php $beears->foreachBeears(); ?>
+	<?php $beears->foreachBeears(); ?>
 	</section>
 	<?php include 'layouts/socials.php'; ?>
 	<section id="map" class="container">

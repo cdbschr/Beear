@@ -26,7 +26,7 @@ function displayAdd() {
           function selectIt() {
             adress.value = element.properties.label;
             adressListApi.classList.add("hidden");
-            select.innerHTML = "";
+            select.innerHTML = '';
           }
         });
       } else {

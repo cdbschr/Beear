@@ -601,6 +601,8 @@ li {
 #formjeuconcours textarea {
   width: 100%;
   padding: 6px;
+  background-color: rgb(231, 221, 221);
+
 }
 
 #formjeuconcours input {
@@ -644,7 +646,7 @@ li {
   margin: 0 7px;
 }
 
-#contact input:not(#contact input[type="radio"], #envoyer, #rgpd), #biere-selection {
+#contact input:not(#contact input[type="radio"], #envoyer, #rgpd), #biere-selection, #contact textarea {
   background-color: rgb(231, 221, 221);
   border: none;
   border: 2px solid var(--green);

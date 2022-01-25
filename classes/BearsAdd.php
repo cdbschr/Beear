@@ -3,12 +3,12 @@
 include_once 'Beer.php';
 
 class Beears {
-	private array $beears = [];
-
-	public function addBeear(beears $beer) {
+	public array $beears = [];
+	
+	public function addBeear(Beer $beer):void {
 		array_push($this->beears, $beer);
 	}
-
+	
 	public function foreachBeears() {
 		foreach ($this->beears as $beer) {
 			echo '<div id="' . $beer->getId() . '" class="presentationbiere">';
