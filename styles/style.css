@@ -869,6 +869,53 @@ li {
   margin: 3px 0;
 }
 
+/* ------------------ Page 404 ---------------------- */
+#body-404 {
+  background: url("../img/beear-404page.jpg") bottom fixed no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#div-404 {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  padding: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#h-bg-404 {
+  background-color: #1c1c1ce0;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+#div-404 h1 {
+  color: var(--green);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#h2-404 {
+  text-align: center;
+  
+}
+
+#div-404 button {
+  margin-top : 30px;
+  padding: 15px;
+  background-color: #1c1c1ce0;
+}
+
+#div-404 button:hover {
+  background-color: var(--green);
+}
+
 
 /* Tablette min */
 @media screen and (min-width: 576px) {

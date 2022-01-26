@@ -8,8 +8,11 @@ class Beer {
 	private string $desc;
 	private int $ibu;
 	private string $temp;
+  private string $voyez;
+  private string $sentez;
+  private string $goutez;
 
-	public function __construct(string $id, string $name, string $secName, int $alcDegree, string $desc, int $ibu, string $temp) {
+	public function __construct(string $id, string $name, string $secName, int $alcDegree, string $desc, int $ibu, string $temp, string $voyez, string $sentez, string $goutez) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->secName = $secName;
@@ -17,6 +20,9 @@ class Beer {
 		$this->desc = $desc;
 		$this->ibu = $ibu;
 		$this->temp = $temp;
+    $this->voyez = $voyez;
+    $this->sentez = $sentez;
+    $this->goutez = $goutez;
 	}
 
   public function getId():string {
@@ -45,5 +51,17 @@ class Beer {
 
   public function getTemp():string {
     return $this->temp;
+  }
+
+  public function getVoyez():string {
+    return $this->voyez;
+  }
+  
+  public function getSentez():string {
+    return $this->sentez;
+  }
+  
+  public function getGoutez():string {
+    return $this->goutez;
   }
 }

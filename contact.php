@@ -3,7 +3,7 @@
 	<div id="contact" class="container">	
 		<h4>Vous pouvez nous contacter directement via ce formulaire.</h4>
 		<form action="envoyerform.php" method="post" id="contactform">
-			<div class="radiocivil">
+			<!-- <div class="radiocivil">
 				<p class="contactflex"><span>Civilité</span></p>
 				<div class="sepcivilite">
 					<input type="radio" name="civilite" id="civilite" value="Mme">
@@ -13,7 +13,7 @@
 					<input type="radio" name="civilite" id="civilite" value="M">
 					<label for="civilite" class="petit">Monsieur</label>
 				</div>
-			</div>
+			</div> -->
 			<p><input type="text" placeholder="Nom *" name="nom" id="nom" required></p>
 			<p><input type="text" placeholder="Prénom *" name="prenom" id="prenom" required></p>
 			<p><input type="email" placeholder="Adresse email *" name="email" id="email" required></p>
@@ -22,15 +22,15 @@
 			<div id="adresseApiList" class="">
 				<ul id="selectadress"></ul>
 			</div>
-			<p><input type="text" placeholder="Code Postal" name="cp" id="cp"></p>
-			<p><input type="text" placeholder="Ville" name="ville" id="ville"></p>
+			<!-- <p><input type="text" placeholder="Code Postal" name="cp" id="cp"></p>
+			<p><input type="text" placeholder="Ville" name="ville" id="ville"></p> -->
 			<!-- API -->
 			<p><input type="tel" placeholder="Téléphone" name="tel" id="tel"></p>
 			<p class="contactflex"><label for="message">Votre Message * </label></p>
 			<p><textarea name="message" id="message" rows="10" required></textarea></p>
 			<p class="contactflex"><input type="checkbox" name="rgpd" id="rgpd" required>autorisation de conservation et utilisation des données *</p>
 			<p class="contactflex champoblig">* Champ obligatoire</p>
-			<p><input type="submit" id="envoyer" class="button" value="Envoyer" ></p>
+			<p><button type="submit" id="envoyer" class="button">Envoyer</button></p>
 			<div id="validate-send"></div>
 		</form>
 	</div>
@@ -42,6 +42,6 @@
 	</section>
 </main>
 <script src="scripts/contact.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://unpkg.com/@supabase/supabase-js"></script>
 <script src="scripts/supabase.js"></script>
 <?php require_once './layouts/footer.php'; ?>
