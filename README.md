@@ -1,14 +1,14 @@
 # **BEEAR**
-Projet Beear / Brasserie fictive / Projet à Kercode - Vannes
+*Projet Beear / Brasserie fictive / Projet à Kercode - Vannes*
 
 ### HISTORIQUE DU FIL ROUGE
-v3 - Site Dynamique, structure MVC et BDD
-Desc : Mise en place d'une structure MVC personnalisée, ajout d'une base de donnée et utilisation du CRUD dans un blog (Actualités)
+#### v3 - Site Dynamique, structure MVC et BDD
+*Desc : Mise en place d'une structure MVC personnalisée, ajout d'une base de donnée et utilisation du CRUD dans un blog (Actualités)*
 
   -> Mise en place du MVC
 
-v2 - Site Dynamique 
-Desc : Utilisation du PHP, JS possible
+#### v2 - Site Dynamique 
+*Desc : Utilisation du PHP, JS possible*
 
   -> Transformation des fichiers en php avec l'ajout de layouts,<br>
   -> Récupération des mails via Supabase,<br>
@@ -16,8 +16,8 @@ Desc : Utilisation du PHP, JS possible
   -> Création diagramme UML pour présenter la structure de POO, <br>
   -> Ajout API-GEO, qui permet la récupération des adresses physiques pour le formulaire
 
-v1 - Site Statique
-Desc : Interdiction d'utiliser du javascript dans un premier temps, le maximum devait être fait en statique.
+#### v1 - Site Statique
+*Desc : Interdiction d'utiliser du javascript dans un premier temps, le maximum devait être fait en statique.*
 
   -> Création de la maquette sur Figma et création du logo sous Illustrator au format vectoriel,<br>
   -> Création du site et de ses pages (HTML),<br>
