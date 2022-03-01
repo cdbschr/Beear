@@ -12,4 +12,4 @@
 </head>
 
 <body>
-  <?php include 'navigation.php'; ?>
+  <?php include 'nav.php'; ?>
