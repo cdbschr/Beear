@@ -1,0 +1,18 @@
+{
+    "name": "kercode/beear",
+    "description": "Beear - Brasserie fictive - Kercode",
+    "autoload": {
+        "psr-4": {
+            "Project\\": "./app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Camille Dbschr",
+            "email": "82452501+cdbschr@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
