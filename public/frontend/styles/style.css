@@ -1,8 +1,8 @@
 /* Charte graphique */
 :root {
   --bg: #1c1c1c;
-  --green: #349937;
-  --brown: #754c24;
+  --primary: #349937;
+  --secondary: #754c24;
 }
 
 /* Titre */
@@ -53,7 +53,7 @@ a {
 }
 
 li {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 .container {
@@ -66,11 +66,11 @@ li {
 }
 
 .button {
-  color: var(--green);
+  color: var(--primary);
   background-color: #1c1c1c9a;
   font-weight: 600;
   padding: 14px 30px;
-  border: 2px solid var(--green);
+  border: 2px solid var(--primary);
   border-radius: 10px;
   width: 75%;
   text-align: center;
@@ -79,7 +79,7 @@ li {
 
 .button:hover {
   color: #fff;
-  background-color: var(--green);
+  background-color: var(--primary);
   cursor: pointer;
 }
 
@@ -199,7 +199,7 @@ li {
 }
 
 #menu a:hover {
-  color: var(--green);
+  color: var(--primary);
 }
 
 #menuToggle input:checked ~ ul {
@@ -221,7 +221,7 @@ li {
 }
 
 #menudesktop {
-	display: none;
+  display: none;
 }
 
 /* logo */
@@ -238,8 +238,8 @@ li {
 
 /* h1+button */
 #flexcenterendheader {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #endheader {
@@ -292,12 +292,12 @@ li {
 }
 
 #articles p.button {
-	margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 #articles h2 {
   margin: 60px 0 40px;
-  width: 100%
+  width: 100%;
 }
 
 #articles h4 {
@@ -420,7 +420,7 @@ li {
 }
 
 #cadretxtmap {
-  background-color: var(--brown);
+  background-color: var(--secondary);
   padding: 30px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -446,7 +446,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border-top: 3px solid var(--green);
+  border-top: 3px solid var(--primary);
 }
 
 #linklogofooter {
@@ -487,7 +487,7 @@ li {
 }
 
 .linkfooter:hover {
-  color: var(--green);
+  color: var(--primary);
 }
 
 #socialsnetwork {
@@ -509,7 +509,7 @@ li {
 }
 
 .st0:hover {
-  fill: var(--brown);
+  fill: var(--secondary);
 }
 
 #alcoolmoderation {
@@ -518,7 +518,10 @@ li {
 }
 
 /* ---------------- Page Actualités ------------------- */
-#articles h1, #articles h2, #articles h4, #articles h5 {
+#articles h1,
+#articles h2,
+#articles h4,
+#articles h5 {
   width: 100%;
 }
 
@@ -534,7 +537,7 @@ li {
 #articles h5 {
   font-size: 1.3rem;
   margin-bottom: 1.5vh;
-  color: var(--green);
+  color: var(--primary);
 }
 
 #articles {
@@ -546,17 +549,17 @@ li {
   margin-top: 5px;
 }
 
-#articles p:last-child{
+#articles p:last-child {
   margin-bottom: 10%;
 }
 
 .linkactus {
-  color: var(--brown);
+  color: var(--secondary);
   cursor: pointer;
 }
 
 .linkactus:hover {
-  color: var(--green);
+  color: var(--primary);
 }
 
 #formjeuconcours {
@@ -587,10 +590,12 @@ li {
   color: rgb(88, 87, 87);
 }
 
-#formjeuconcours input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd), #biere-selection {
+#formjeuconcours
+  input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd),
+#biere-selection {
   background-color: rgb(231, 221, 221);
   border: none;
-  border: 2px solid var(--green);
+  border: 2px solid var(--primary);
   border-radius: 3px;
   margin: 6px 3px;
   padding: 15px 15px;
@@ -602,7 +607,6 @@ li {
   width: 100%;
   padding: 6px;
   background-color: rgb(231, 221, 221);
-
 }
 
 #formjeuconcours input {
@@ -646,10 +650,12 @@ li {
   margin: 0 7px;
 }
 
-#contact input:not(#contact input[type="radio"], #envoyer, #rgpd), #biere-selection, #contact textarea {
+#contact input:not(#contact input[type="radio"], #envoyer, #rgpd),
+#biere-selection,
+#contact textarea {
   background-color: rgb(231, 221, 221);
   border: none;
-  border: 2px solid var(--green);
+  border: 2px solid var(--primary);
   border-radius: 3px;
   margin: 6px 3px;
   padding: 15px 15px;
@@ -728,7 +734,7 @@ li {
 
 .explicationbiere {
   width: 80%;
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-self: center;
@@ -739,7 +745,7 @@ li {
   font-weight: 800;
   font-size: 1.5rem;
   text-align: center;
-  color: var(--green);
+  color: var(--primary);
 }
 
 .explicationbiere p {
@@ -748,7 +754,10 @@ li {
   margin-top: 3px;
 }
 
-#type, #niveau-alcool, #ibu, #degre {
+#type,
+#niveau-alcool,
+#ibu,
+#degre {
   width: 45%;
   margin: 15px 0;
 }
@@ -800,7 +809,6 @@ li {
 #biereplus a {
   width: 100%;
   margin: 15px;
-  
 }
 
 .biereplus {
@@ -850,13 +858,15 @@ li {
   margin-bottom: 50px;
 }
 
-#bio img, #responsable img {
-	width: 100%;
+#bio img,
+#responsable img {
+  width: 100%;
   border-radius: 15px;
   margin-bottom: 10px;
 }
 
-.txtvaleurs h2, .txtvaleurs p {
+.txtvaleurs h2,
+.txtvaleurs p {
   margin-bottom: 8px;
 }
 
@@ -895,7 +905,7 @@ li {
 }
 
 #div-404 h1 {
-  color: var(--green);
+  color: var(--primary);
   font-size: 3rem;
   text-align: center;
   margin-bottom: 10px;
@@ -903,46 +913,44 @@ li {
 
 #h2-404 {
   text-align: center;
-  
 }
 
 #div-404 button {
-  margin-top : 30px;
+  margin-top: 30px;
   padding: 15px;
   background-color: #1c1c1ce0;
 }
 
 #div-404 button:hover {
-  background-color: var(--green);
+  background-color: var(--primary);
 }
-
 
 /* Tablette min */
 @media screen and (min-width: 576px) {
-	#generalheader {
-		background-image: url('../img/bg-tablet.jpg');
-	}
+  #generalheader {
+    background-image: url("../img/bg-tablet.jpg");
+  }
 
-	#logo img {
-		width: 30%;
+  #logo img {
+    width: 30%;
     height: 100%;
-	}
+  }
 
-	.button {
-		width: 40%;
-	}
+  .button {
+    width: 40%;
+  }
 
-	.hiddenmobile {
-		display: flex !important;
-	}
+  .hiddenmobile {
+    display: flex !important;
+  }
 
-	.articlers {
-		width: 45%;
-	}
+  .articlers {
+    width: 45%;
+  }
 
-	.articlers p {
-		margin: 5px 18px 0;
-	}
+  .articlers p {
+    margin: 5px 18px 0;
+  }
 
   /*------------ Page Valeurs -----------*/
   .valeurssection {
@@ -953,7 +961,7 @@ li {
   .presbiere {
     justify-content: space-around;
   }
-  
+
   .presbiere img {
     width: 35%;
     margin-left: 5px;
@@ -962,7 +970,7 @@ li {
   .grouppresbiere {
     width: 55%;
   }
-  
+
   .detailbiere {
     margin: 5px 25px;
   }
@@ -978,44 +986,47 @@ li {
 
 /* Tablette moyenne */
 @media screen and (min-width: 768px) {
-	#logofooter {
-		width: 50%;
-	}
+  #logofooter {
+    width: 50%;
+  }
 
-	#map iframe {
-		width: 992px;
-	}
+  #map iframe {
+    width: 992px;
+  }
 
-	.button {
-		width: 32%;
-		padding: 2% 15px;
-	}
+  .button {
+    width: 32%;
+    padding: 2% 15px;
+  }
 
-	.flex-button {
-		width: 100%;
-		display: flex;
-		align-items: center;
-	}
+  .flex-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
 
-	#socials a.flex-button {
-		width: 33%;
-	}
+  #socials a.flex-button {
+    width: 33%;
+  }
 
-	#socials .button {
-		width: 80%;
-	}
+  #socials .button {
+    width: 80%;
+  }
 
-	#socials a:last-child {
-		margin: 8px 0;
-	}
+  #socials a:last-child {
+    margin: 8px 0;
+  }
 
   /*------------Page Contact-----------*/
-  #contact input:not(#contact input[type="radio"], #envoyer, #rgpd), #biere-selection {
+  #contact input:not(#contact input[type="radio"], #envoyer, #rgpd),
+  #biere-selection {
     width: 60vw;
   }
 
   /*------------Page Actualités-----------*/
-  #formjeuconcours input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd), #biere-selection {
+  #formjeuconcours
+    input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd),
+  #biere-selection {
     width: 60vw;
   }
 
@@ -1032,25 +1043,27 @@ li {
 
 /* Desktop */
 @media screen and (min-width: 992px) {
-	#logo img {
-		width: 20%;
-	}
+  #logo img {
+    width: 20%;
+  }
 
-	.articlers {
-		width: 31%;
-	}
+  .articlers {
+    width: 31%;
+  }
 
-	#socials h2, #articles h2 {
-		font-size: 2rem;
-	}
+  #socials h2,
+  #articles h2 {
+    font-size: 2rem;
+  }
 
-	#map iframe {
-		width: 1200px;
-	}
+  #map iframe {
+    width: 1200px;
+  }
 
-	.button, #articles p.button {
-		width: 25%;
-	}
+  .button,
+  #articles p.button {
+    width: 25%;
+  }
 
   #alcoolmoderation {
     font-size: 0.6rem;
@@ -1067,7 +1080,9 @@ li {
     margin-bottom: 80px;
   }
 
-  .txtvaleurs, #bio img, #responsable img {
+  .txtvaleurs,
+  #bio img,
+  #responsable img {
     width: 40%;
     margin: 0 20px;
   }
@@ -1088,97 +1103,100 @@ li {
 
 /* +1200px */
 @media screen and (min-width: 1200px) {
-	.container {
-		margin: 0 auto;
-	}
+  .container {
+    margin: 0 auto;
+  }
 
-  .button, #articles p.button {
+  .button,
+  #articles p.button {
     width: 15rem;
   }
-	
-	#generalheader {
-		background-image: url('../img/bg-desktop.jpg');
-		background-position: left;
-		margin: 0 auto;
-	}
 
-	#menuburger {
-		display: none;
-	}
+  #generalheader {
+    background-image: url("../img/bg-desktop.jpg");
+    background-position: left;
+    margin: 0 auto;
+  }
 
-	#menudesktop {
-		display: flex;
-		align-self: center;
-		height: 150px;
-		justify-content: flex-end;
-	}
+  #menuburger {
+    display: none;
+  }
 
-	#entete {
-		display: flex;
-	}
-	
-	#logo {
-		width: 30%;
-	}
+  #menudesktop {
+    display: flex;
+    align-self: center;
+    height: 150px;
+    justify-content: flex-end;
+  }
 
-	#logo img {
-		width: 80%;
+  #entete {
+    display: flex;
+  }
+
+  #logo {
+    width: 30%;
+  }
+
+  #logo img {
+    width: 80%;
     padding: 10%;
-	}
+  }
 
-	#menunav {
-		display: flex;
-		width: 85%;
-		align-self: center;
-	}
-	
-	#menunav li {
-		margin: 0 15px;
-		text-transform: uppercase;
-		color: var(--green);
-		font-size: 1.65rem;
-		font-weight: 800;
-    font-family: 'Konstructor';
-	}
+  #menunav {
+    display: flex;
+    width: 85%;
+    align-self: center;
+  }
 
-	#menunav li:hover {
-		color: var(--brown);
-	}
+  #menunav li {
+    margin: 0 15px;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-size: 1.65rem;
+    font-weight: 800;
+    font-family: "Konstructor";
+  }
 
-	#endheader {
-		position: absolute;
-		left: 60%;
-		bottom: 35%;
-		width: 40%;
-	}
+  #menunav li:hover {
+    color: var(--secondary);
+  }
 
-	#endheader h1 {
-		font-size: 1.7rem;
-		background-color: none;
-	}
+  #endheader {
+    position: absolute;
+    left: 60%;
+    bottom: 35%;
+    width: 40%;
+  }
 
-	#endheader.flex-button {
-		width: 100%;
-	}
+  #endheader h1 {
+    font-size: 1.7rem;
+    background-color: none;
+  }
 
-	#endheader p {
-		width: 50%;
-	}
+  #endheader.flex-button {
+    width: 100%;
+  }
 
-  #articles img{
+  #endheader p {
+    width: 50%;
+  }
+
+  #articles img {
     width: 50vw;
   }
-	
-	#articles {
-		width: 70%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		margin: 0 auto;
-	}
 
-  #articles h2, #articles h4, #articles p{
+  #articles {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  #articles h2,
+  #articles h4,
+  #articles p {
     width: 70%;
   }
 
@@ -1191,7 +1209,9 @@ li {
   }
 
   /* Footer */
-  #linklogofooter, #lieu, #socialsnetwork {
+  #linklogofooter,
+  #lieu,
+  #socialsnetwork {
     width: 33%;
     display: flex;
     flex-wrap: wrap;
@@ -1210,20 +1230,24 @@ li {
   }
 
   /*------------Page Contact-----------*/
-  #contact input:not(#contact input[type="radio"], #envoyer, #rgpd), #biere-selection {
+  #contact input:not(#contact input[type="radio"], #envoyer, #rgpd),
+  #biere-selection {
     width: 50vw;
   }
-  
+
   #contact h4 {
     text-align: center;
   }
-  
+
   /*------------Page Actualités -----------*/
-  #articles h1, #articles h5 {
+  #articles h1,
+  #articles h5 {
     width: 70%;
   }
 
-  #formjeuconcours input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd), #biere-selection {
+  #formjeuconcours
+    input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd),
+  #biere-selection {
     width: 50vw;
   }
 

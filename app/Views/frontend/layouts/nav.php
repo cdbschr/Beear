@@ -7,20 +7,20 @@
         <span></span>
         <span></span>
         <ul id="menu">
-          <a href="index.php#bblonde">
+          <a href="/#bblonde">
             <li>Produits</li>
           </a>
-          <a href="valeurs.php">
+          <a href="/?action=valeurs">
             <li>Valeurs</li>
           </a>
-          <a href="actualites.php">
+          <a href="/?action=actus">
             <li>Actualités</li>
           </a>
-          <a href="contact.php">
+          <a href="/?action=contact">
             <li>Contact</li>
           </a>
           <div id="corporation">
-            <a href="index.php"><img src="./img/Logotxt-Beear.png" alt="logo texte beear"></a>
+            <a href="/"><img src="/public/frontend/img/Logotxt-Beear.png" alt="logo texte beear"></a>
             <adress>Lanvaux<br><strong>56220 SAINT-GRAVÉ</strong></adress>
           </div>
         </ul>
@@ -28,23 +28,23 @@
     </nav>
     <div id="entete">
       <figure id="logo">
-        <a href="index.php"><img src="./img/Logo-Beear.png" alt="logo beear"></a>
+        <a href="/"><img src="/public/frontend/img/Logo-Beear.png" alt="logo beear"></a>
       </figure>
       <nav id="menudesktop">
         <ul id="menunav">
-          <a href="index.php">
+          <a href="/">
             <li>Accueil</li>
           </a>
-          <a href="index.php#bblonde">
+          <a href="/#bblonde">
             <li>Produits</li>
           </a>
-          <a href="valeurs.php">
+          <a href="/?action=valeurs">
             <li>Valeurs</li>
           </a>
-          <a href="actualites.php">
+          <a href="/?action=actus">
             <li>Actualités</li>
           </a>
-          <a href="contact.php">
+          <a href="/?action=contact">
             <li>Contact</li>
           </a>
         </ul>
@@ -53,7 +53,7 @@
     <div id="flexcenterendheader">
       <div id="endheader" class="container">
         <h1>Et si vous découvriez nos bières ?</h1>
-        <a href="index.php#articles" class="flex-button">
+        <a href="/#articles" class="flex-button">
           <p class="button">Je découvre</p>
         </a>
       </div>

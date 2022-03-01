@@ -5,10 +5,15 @@ namespace Project\Models;
 use Exception;
 
 class Manager {
-  protected function dbConnect() {
+  protected function dbAccess() {
+    $dbConnection = "mysql:dbname=". $_ENV['DB_NAME'] ."; host=". $_ENV['DB_HOST'] .":". $_ENV['DB_PORT'] ."; charset=utf8";
+    $user = $_ENV['DB_USERNAME'];
+    $pwd = $_ENV['DB_PASSWORD'];
+
     try {
-      $bdd = new \PDO('mysql:host=localhost;dbname=architecturemvc;charset=utf8','root','');
-      return $bdd;
+      $db = new \PDO($dbConnection, $user, $pwd);
+      return $db;
+
     } catch (Exception $e) {
         die('Erreur: ' . $e->getmessage());
     }

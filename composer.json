@@ -3,12 +3,12 @@
     "description": "Beear - Brasserie fictive - Kercode",
     "autoload": {
         "psr-4": {
-            "Project\\": "./app/"
+            "Project\\": "./app"
         }
     },
     "authors": [
         {
-            "name": "Camille Dbschr",
+            "name": "Camille Debusscher",
             "email": "82452501+cdbschr@users.noreply.github.com"
         }
     ],

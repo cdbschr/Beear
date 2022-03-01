@@ -1,4 +1,4 @@
-<?php require_once './layouts/head.php'; ?>
+<?php require_once './app/Views/frontend/layouts/head.php'; ?>
 <main>
 	<div id="contact" class="container">	
 		<h4>Vous pouvez nous contacter directement via ce formulaire.</h4>
@@ -44,4 +44,4 @@
 <script src="scripts/contact.js"></script>
 <script src="https://unpkg.com/@supabase/supabase-js"></script>
 <script src="scripts/supabase.js"></script>
-<?php require_once './layouts/footer.php'; ?>
+<?php require_once './app/Views/frontend/layouts/footer.php'; ?>

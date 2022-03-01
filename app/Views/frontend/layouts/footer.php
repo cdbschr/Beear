@@ -1,5 +1,5 @@
 <footer id="generalfooter" class="container">
-		<a href="index.php" id="linklogofooter"><img src="./img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
+		<a href="index.php" id="linklogofooter"><img src="/public/frontend/img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
 		<div id="lieu">
 			<h4>SIÈGE</h4>
 			<adress>

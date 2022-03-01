@@ -16,7 +16,7 @@ class Beears {
 			echo '<h3>' . $beer->getName() . '</h3>';
 			echo '<p>' . $beer->getSecName() . ' | Alc.' . $beer->getAlcDegree() . '</p>';
 			echo '</header>';
-			echo '<img src="./img/verres/Verre-de-bière-'.$beer->getId().'.png" alt="bière blonde beear" class="verrebiere">';
+			echo '<img src="/public/frontend/img/verres/Verre-de-bière-'.$beer->getId().'.png" alt="bière blonde beear" class="verrebiere">';
 			echo '<a href="' . $beer->getId() . '.php" class="button buttonbiere">';
 			echo '<p>En savoir plus</p>';
 			echo '</a>';
