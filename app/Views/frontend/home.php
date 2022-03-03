@@ -9,14 +9,14 @@ require_once './app/Views/frontend/classes/newBeers.php';
 		<h4>Pour Noel, jeu concours incroyable</h4>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem necessitatibus pariatur quam dignissimos, accusantium voluptate aspernatur vero laudantium ad aperiam eum sint? Facilis sed delectus enim? Aperiam placeat maiores aspernatur pariatur culpa molestias accusantium ullam voluptatibus rem, quis qui sint incidunt, debitis, natus fugit?</p>
 		<img src="/public/frontend/img/actualites/jeuconcours.jpg" alt="jeu concours">
-		<a href="actualites.php" class="flex-button">
+		<a href="/?action=actus" class="flex-button">
 			<p class="button">En savoir plus</p>
 		</a>
 	</article>
 	<section id="biere">
 	<?php $beears->foreachBeears(); ?>
 	</section>
-	<?php include 'layouts/socials.php'; ?>
+	<?php include_once 'layouts/socials.php'; ?>
 	<section id="map" class="container">
 		<header id="cadretxtmap">
 			<h3>Où nous retrouver ?</h3>

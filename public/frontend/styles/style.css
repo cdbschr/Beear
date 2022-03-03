@@ -5,7 +5,7 @@
   --secondary: #754c24;
 }
 
-/* Titre */
+/* Fonts */
 @font-face {
   font-family: "AlfaSlabOne-Regular";
   src: url("../fonts/AlfaSlabOne-Regular.woff2") format("woff2");
@@ -37,9 +37,7 @@ body {
   color: #fff;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: "AlfaSlabOne-Regular";
   text-transform: uppercase;
   font-size: 1.6rem;
@@ -108,7 +106,7 @@ li {
   max-width: 1200px;
 }
 
-/* Menu burger */
+/* menu burger */
 #menuToggle {
   display: block;
   position: relative;
@@ -285,7 +283,7 @@ li {
   padding: 70px 0;
 }
 
-/* main */
+/* Home */
 /* articles */
 #articles {
   text-align: justify;
