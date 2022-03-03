@@ -385,8 +385,8 @@ li {
 
 .articlers {
   width: 100%;
-  margin: 5px 5px;
-  padding: 15px;
+  margin: 18px 12px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -403,11 +403,6 @@ li {
 .articlers img {
   width: 80%;
   border-radius: 15px;
-}
-
-.articlers p {
-  text-align: justify;
-  margin-top: 10%;
 }
 
 /* Maps */
@@ -484,6 +479,10 @@ li {
 .linkfooter {
   width: 100%;
   color: #fff;
+}
+
+.st0 {
+  fill:#349937;
 }
 
 .linkfooter:hover {
@@ -881,7 +880,7 @@ li {
 
 /* ------------------ Page 404 ---------------------- */
 #body-404 {
-  background: url("../img/beear-404page.jpg") bottom fixed no-repeat;
+  background: url("/public/frontend/img/beear-404page.jpg") bottom fixed no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -899,7 +898,7 @@ li {
 }
 
 #h-bg-404 {
-  background-color: #1c1c1ce0;
+  background-color: rgba(28, 28, 28, 0.822);
   border-radius: 15px;
   padding: 15px;
 }

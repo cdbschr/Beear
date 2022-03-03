@@ -18,5 +18,5 @@ class Blanche extends Beer
 			"Bouquet fruité très doux, acidulé et très légèrement sucré : baies rouges, pêche, pêche de vignes, grains de raisins et mangue. Notes de céréales, puis banane et zestes de citron.",
 			"L’attaque est tonique : une acidité tendre interpelle les papilles et rend cette bière immédiatement rafraîchissante. Finement pétillante, texture fluide et douce chaleur en fond de bouche. Au fil de sa dégustation, elle dévoile progressivement des arômes de baies rouges qui se prolongent sous forme de zestes de citron. La finale est riche et agréable. Elle présente une étonnante et belle longueur sans être supportée par une amertume marquée."
 		);
-		}
+	}
 }

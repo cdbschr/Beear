@@ -7,6 +7,9 @@
         <span></span>
         <span></span>
         <ul id="menu">
+          <a href="/">
+            <li>Accueil</li>
+          </a>
           <a href="/#bblonde">
             <li>Produits</li>
           </a>
@@ -21,7 +24,7 @@
           </a>
           <div id="corporation">
             <a href="/"><img src="/public/frontend/img/Logotxt-Beear.png" alt="logo texte beear"></a>
-            <adress>Lanvaux<br><strong>56220 SAINT-GRAVÉ</strong></adress>
+            <address>Lanvaux<br><strong>56220 SAINT-GRAVÉ</strong></address>
           </div>
         </ul>
       </div>

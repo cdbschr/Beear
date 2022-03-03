@@ -6,9 +6,9 @@ let header = document.getElementById('generalheader');
 let baliseHeader = document.querySelector('header');
 let indexHeaderTxt = document.getElementById('flexcenterendheader');
 
-if (finUrl !== 'index.php') {
-	header.removeAttribute('id');
-	indexHeaderTxt.setAttribute('class','hidden');
-	baliseHeader.setAttribute('class', 'bg-otherpages');
-	header.setAttribute('id', 'otherpagesheader');
-}
+// if (finUrl !== '') {
+// 	header.removeAttribute('id');
+// 	indexHeaderTxt.setAttribute('class','hidden');
+// 	baliseHeader.setAttribute('class', 'bg-otherpages');
+// 	header.setAttribute('id', 'otherpagesheader');
+// }
