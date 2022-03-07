@@ -1,5 +1,5 @@
 <?php 
-require_once 'layouts/head.php';
+include_once 'layouts/head.php';
 require_once 'classes/newBeers.php';
 ?>
 
@@ -69,4 +69,4 @@ require_once 'classes/newBeers.php';
 		</a>
 	</section>
 </main>
-<?php require_once './layouts/footer.php'; ?>
+<?php include_once './layouts/footer.php'; ?>

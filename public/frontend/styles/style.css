@@ -1,8 +1,8 @@
 /* Charte graphique */
 :root {
-  --bg: #1c1c1c;
-  --primary: #349937;
-  --secondary: #754c24;
+  --bg: rgb(28, 28, 28);
+  --primary: rgba(52, 153, 55, 1);
+  --secondary: rgb(117, 76, 36);
 }
 
 /* Fonts */
@@ -65,7 +65,7 @@ li {
 
 .button {
   color: var(--primary);
-  background-color: #1c1c1c9a;
+  background-color: rgba(28, 28, 28, 0.604);
   font-weight: 600;
   padding: 14px 30px;
   border: 2px solid var(--primary);
@@ -88,11 +88,11 @@ li {
 }
 
 .hiddenmobile {
-  display: none !important;
+  display: none;
 }
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 /* header */
@@ -143,7 +143,7 @@ li {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -162,7 +162,7 @@ li {
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 #menuToggle input:checked ~ span:nth-last-child(3) {
@@ -235,10 +235,9 @@ li {
 }
 
 /* h1+button */
-#flexcenterendheader {
-  display: flex;
-  justify-content: center;
-}
+/* #flexcenterendheader {
+  /* display: flex;
+  justify-content: center;} */
 
 #endheader {
   position: absolute;
@@ -358,6 +357,31 @@ li {
 
 .linkbeer {
   margin: 5px auto;
+}
+
+/*=============TEST===============*/
+.bieres {
+  display: grid; 
+  grid-template-columns: 1.5fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "Beear-Blonde Beear-Brune"
+    "Beear-Blonde Beear-Blanche"; 
+  justify-content: center; 
+  align-content: center; 
+  justify-items: stretch; 
+  align-items: stretch; 
+}
+
+.bblonde { 
+	grid-area: Beear-Blonde; 
+}
+.bbrune { 
+	grid-area: Beear-Brune; 
+}
+.bblanche { 
+	grid-area: Beear-Blanche; 
 }
 
 /* Réseaux Sociaux */
@@ -938,7 +962,7 @@ li {
   }
 
   .hiddenmobile {
-    display: flex !important;
+    display: flex;
   }
 
   .articlers {

@@ -11,7 +11,7 @@ class Beears {
 	
 	public function foreachBeears() {
 		foreach ($this->beears as $beer) {
-			echo '<div id="' . $beer->getId() . '" class="presentationbiere">';
+			echo '<div class="' . $beer->getId() . '">';
 			echo '<header class="titrebiere">';
 			echo '<h3>' . $beer->getName() . '</h3>';
 			echo '<p>' . $beer->getSecName() . ' | Alc.' . $beer->getAlcDegree() . '</p>';

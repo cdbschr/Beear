@@ -1,5 +1,5 @@
 <?php
-include_once './app/Views/frontend/layouts/head.php';
+require_once './app/Views/frontend/layouts/head.php';
 require_once './app/Views/frontend/classes/newBeers.php';
 ?>
 
@@ -13,10 +13,10 @@ require_once './app/Views/frontend/classes/newBeers.php';
 			<p class="button">En savoir plus</p>
 		</a>
 	</article>
-	<section id="biere">
-	<?php $beears->foreachBeears(); ?>
+	<section id="bieres" class="bieres">
+		<?php $beears->foreachBeears(); ?>
 	</section>
-	<?php include_once 'layouts/socials.php'; ?>
+	<?php require_once 'layouts/socials.php'; ?>
 	<section id="map" class="container">
 		<header id="cadretxtmap">
 			<h3>Où nous retrouver ?</h3>
@@ -26,4 +26,4 @@ require_once './app/Views/frontend/classes/newBeers.php';
 	</section>
 </main>
 
-<?php include_once './app/Views/frontend/layouts/footer.php'; ?>
+<?php require_once './app/Views/frontend/layouts/footer.php'; ?>
