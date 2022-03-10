@@ -1,6 +1,5 @@
 <?php 
 include_once 'layouts/head.php';
-require_once 'classes/newBeers.php';
 ?>
 
 <main id="biereblanche" class="bieres container">
