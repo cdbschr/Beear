@@ -5,7 +5,7 @@ namespace Project\Models;
 use Exception;
 
 class Manager {
-  protected function dbAccess() {
+  protected static function dbAccess() {
     $dbConnection = "mysql:dbname=". $_ENV['DB_NAME'] ."; host=". $_ENV['DB_HOST'] .":". $_ENV['DB_PORT'] ."; charset=utf8";
     $user = $_ENV['DB_USERNAME'];
     $pwd = $_ENV['DB_PASSWORD'];
@@ -15,7 +15,7 @@ class Manager {
       return $db;
 
     } catch (Exception $e) {
-        die('Erreur: ' . $e->getmessage());
+        require './app/Views/errors/404.php';
     }
   }
 }

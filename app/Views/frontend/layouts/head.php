@@ -12,4 +12,4 @@
 </head>
 
 <body>
-  <?php include 'nav.php'; ?>
+  <?php require_once 'nav.php'; ?>

@@ -24,5 +24,5 @@
 		<img src="/public/frontend/img/reseaux-sociaux/malt2.jpg" alt="malt beear">
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quasi accusamus, soluta rem, amet saepe quae aperiam cumque, omnis veritatis laboriosam iusto facilis minus ad vel? Possimus amet totam harum!</p>
 	</article>
-	<?php include_once 'socialslinks.php' ?>
+	<?php require_once 'socialslinks.php' ?>
 </section>
