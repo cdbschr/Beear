@@ -1,6 +1,5 @@
 <?php
 require_once './app/Views/frontend/layouts/head.php';
-require_once './app/Views/frontend/classes/newBeers.php';
 ?>
 
 <main>
@@ -14,7 +13,7 @@ require_once './app/Views/frontend/classes/newBeers.php';
 		</a>
 	</article>
 	<section id="bieres" class="bieres">
-		<?php $beears->foreachBeears(); ?>
+		
 	</section>
 	<?php require_once 'layouts/socials.php'; ?>
 	<section id="map" class="container">

@@ -19,7 +19,7 @@ class ContactModel extends Manager {
     $this->content = $data['content'];
   }
 
-  public function postMail() {
+  public function postMail(string $lastname, string $firstname, string $mail, string $phone, string $object, string $content) {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -36,13 +36,28 @@ class ContactModel extends Manager {
     );
 
     $req->execute(array(
-      ':lastname' => $this->lastname,
-      ':firstname' => $this->firstname,
-      ':mail' => $this->mail,
-      ':phone' => $this->phone, 
-      ':object' => $this->object, 
-      ':content' => $this->content
+      ':lastname' => $lastname,
+      ':firstname' => $firstname,
+      ':mail' => $mail,
+      ':phone' => $phone, 
+      ':object' => $object, 
+      ':content' => $content
     ));
+    return $req;
+  }
+
+  public function getMails() {
+    $db = self::dbAccess();
+    
+    $req = $db->query('SELECT id, lastname, firstname, mail, phone, `object`, content FROM contacts ORDER BY id DESC');
+    return $req;
+  }
+
+  public function deleteMail($id) {
+    $db = self::dbAccess();
+
+    $req = $db->prepare('DELETE FROM contacts WHERE id = :id');
+    $req->execute(array(':id' => $id));
     return $req;
   }
 }
