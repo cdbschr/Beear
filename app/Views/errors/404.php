@@ -14,7 +14,7 @@
       <h2 id="h2-404">Vous avez perdu votre chemin ? <br><br> Ne vous inquiétez pas cliquez sur ce bouton pour retrouver la table</h2>
     </div>
     <a href="/">
-      <button class="button">Retourner à l'accueil</button>
+      <button class="button" a="/">Retourner à l'accueil</button>
     </a>
   </div>
 </body>
