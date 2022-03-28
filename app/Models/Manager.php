@@ -4,7 +4,7 @@ namespace Project\Models;
 
 use Exception;
 
-class Manager {
+abstract class Manager {
   // --------------- Connexion à la base de données ---------------
   private static $db = null;
   
@@ -18,13 +18,17 @@ class Manager {
     } else { 
       
       try {
-      self::$db = new \PDO($dbConnection, $user, $pwd);
+      self::$db = new \PDO($dbConnection, $user, $pwd, array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION));
       return self::$db;
 
       } catch (Exception $e) {
         require './app/Views/errors/404.php';
       }
     }
+  }
+  
+  public static function closeConnection() {
+    self::$db = null;
   }
 
   // --------------- Mise en place d'un mini ORM, avec * pour récupération plus générale ---------------
@@ -41,11 +45,30 @@ class Manager {
     return $objects;
   }
 
-  public static function find($id) {
+  // --------------- Requête pour lecture de toute les données d'une table ---------------
+  public static function findBy($column, $value) {
     $child = get_called_class();
 
-    $req = self::dbAccess()->prepare('SELECT * FROM `{$child}` WHERE id = :id');
-    $req->execute(array(':id' => $id));
+    $req = self::dbAccess()->prepare('SELECT * FROM `{$child}` WHERE `{$column}` = :value');
+    $req->execute(array(':value' => $value));
+
+    return new $child($req->fetch());
+  }
+  // --------------- Récupération d'un objet par son ID ---------------
+  public static function updateBy($column, $value, $data) {
+    $child = get_called_class();
+
+    $req = self::dbAccess()->prepare('UPDATE `{$child}` SET `{$column}` = :value WHERE `{$column}` = :value');
+    $req->execute(array(':value' => $value));
+
+    return new $child($req->fetch());
+  }
+  // --------------- Récupération d'un objet par son ID ---------------
+  public static function deleteBy($column, $value) {
+    $child = get_called_class();
+
+    $req = self::dbAccess()->prepare('DELETE FROM `{$child}` WHERE `{$column}` = :value');
+    $req->execute(array(':value' => $value));
 
     return new $child($req->fetch());
   }
