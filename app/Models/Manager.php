@@ -32,6 +32,7 @@ abstract class Manager {
   }
 
   // --------------- Mise en place d'un mini ORM, avec * pour récupération plus générale ---------------
+
   public static function all() {
     $objects = [];
 
@@ -45,7 +46,7 @@ abstract class Manager {
     return $objects;
   }
 
-  // --------------- Requête pour lecture de toute les données d'une table ---------------
+  // --------------- Requête pour afficher toute les données d'une colonne d'une table basé sur un élément d'une colonne ---------------
   public static function findBy($column, $value) {
     $child = get_called_class();
 
@@ -54,8 +55,9 @@ abstract class Manager {
 
     return new $child($req->fetch());
   }
-  // --------------- Récupération d'un objet par son ID ---------------
-  public static function updateBy($column, $value, $data) {
+
+  // --------------- Requête pour mettre à jour les données d'une colonne dans une table basé sur un élément d'une colonne  ---------------
+  public static function updateBy($column, $value) {
     $child = get_called_class();
 
     $req = self::dbAccess()->prepare('UPDATE `{$child}` SET `{$column}` = :value WHERE `{$column}` = :value');
@@ -63,7 +65,8 @@ abstract class Manager {
 
     return new $child($req->fetch());
   }
-  // --------------- Récupération d'un objet par son ID ---------------
+
+  // --------------- Requête pour supprimer les données d'une colonne dans une table basé sur un élément d'une colonne ---------------
   public static function deleteBy($column, $value) {
     $child = get_called_class();
 
