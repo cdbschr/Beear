@@ -3,12 +3,11 @@
 namespace Project\Controllers;
 
 class ContactController {
-  function contactPost($lastname, $firstname, $mail, $phone, $object, $content): void {
+  function contactPost($formContactData) {
     $data = [];
-    $postMail = new \Project\Models\ContactModel($data);
-
-    if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-      $mail = $postMail->postMail($lastname, $firstname, $mail, $phone, $object, $content);
+    
+    if(filter_var($formContactData['mail'], FILTER_VALIDATE_EMAIL)) {
+      $postMail = \Project\Models\ContactModel::postMail($formContactData);
       require 'app/Views/frontend/contact/contact-confirm.php';
     } else {
       header('Location: app/Views/frontend/contact/error.php');
