@@ -1,5 +1,6 @@
 <?php require_once './app/Views/frontend/layouts/head.php'; ?>
 <main id="valeurs" class="container">
+	<h1>Nos Valeurs</h1>
 	<section id="bio" class="valeurssection">
 		<img src="./public/frontend/img/valeurs/houblon.jpg" alt="houblon">
 		<div class="txtvaleurs">

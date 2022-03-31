@@ -3,7 +3,7 @@
 namespace Project\Controllers;
 
 class ContactController {
-  function contactPost($formContactData) {
+  function contactPost(array $formContactData) {
     $data = [];
     
     if(filter_var($formContactData['mail'], FILTER_VALIDATE_EMAIL)) {
