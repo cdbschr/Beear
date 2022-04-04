@@ -1,11 +1,12 @@
-<?php 
+<?php
+
+use Project\Models\{ContactModel};
 
 if(!isset($_SESSION)) {
 	session_start();
 }
 
 require_once __DIR__ . '/vendor/autoload.php';
-require './app/Controllers/ContactSanitizer.php';
 
 try {
   $frontController = new \Project\Controllers\FrontController();
@@ -22,10 +23,7 @@ try {
 			$frontController->contactPage();
 
 		}	elseif($_GET['action'] == 'contactForm') {
-			$data = new ContactSanitizer($_POST);
-
-			$formData = $data->sanitize();
-				
+			$data = new ContactModel($_POST);
 			if (!empty($formContactData['lastname']) && (!empty($formContactData['firstname']) && (!empty($formContactData['mail']) &&(!empty($formContactData['content'])) && (!empty($_POST['rgpd']))))) {
 				$contactController->contactPost($formContactData);
 			}

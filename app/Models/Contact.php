@@ -34,11 +34,11 @@ class ContactModel extends Manager {
 
     $req->execute(
       array(
-      ':lastname' => $formContactData['lastname'],
-      ':firstname' => $formContactData['firstname'],
-      ':mail' => $formContactData['mail'],
-      ':phone' => $formContactData['phone'],
-      ':content' => $formContactData['content']
+      ':lastname' => htmlspecialchars($formContactData['lastname']),
+      ':firstname' => htmlspecialchars($formContactData['firstname']),
+      ':mail' => htmlspecialchars($formContactData['mail']),
+      ':phone' => htmlspecialchars($formContactData['phone']),
+      ':content' => htmlspecialchars($formContactData['content'])
     ));
   }
 }
