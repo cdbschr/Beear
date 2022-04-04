@@ -41,15 +41,5 @@ class ContactModel extends Manager {
       ':content' => $formContactData['content']
     ));
   }
-
-  public function sanitizedPostMail() {
-    $data = [
-      'lastname' => htmlspecialchars($this->lastname),
-      'firstname' => htmlspecialchars($this->firstname),
-      'mail' => htmlspecialchars($this->mail),
-      'phone' => htmlspecialchars($this->phone),
-      'content' => htmlspecialchars($this->content)
-    ];
-    return $data;
-  }
 }
+

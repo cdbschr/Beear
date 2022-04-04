@@ -18,4 +18,12 @@ class FrontController {
   function contactPage(): void {
     require 'app/Views/frontend/contact/contact.php';
   }
+
+  function inscriptionPage(): void {
+    require 'app/Views/frontend/auth/register.php';
+  }
+
+  function connexionPage(): void {
+    require 'app/Views/frontend/auth/login.php';
+  }
 }

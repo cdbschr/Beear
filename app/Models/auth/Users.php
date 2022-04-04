@@ -23,9 +23,10 @@ class Users extends Manager {
         users(
           lastname, 
           firstname,  
-          mail
+          mail,
+          `password`
         ) 
-      VALUE (:lastname, :firstname, :mail)'
+      VALUE (:lastname, :firstname, :mail, :`password`)'
     );
   }
 }

@@ -3,7 +3,7 @@
 	<div id="contact" class="container">
 		<h1>Contact</h1>
 		<h4>Vous pouvez nous contacter directement via ce formulaire.</h4>
-		<form action="?action=contact" method="post" id="contactform">
+		<form action="/?action=contactForm" method="post" id="contactform">
 			<p><input type="text" placeholder="Nom *" name="lastname" id="nom" value="<?php if(isset($_POST["lastname"])) echo $_POST["lastname"] ?>" required></p>
 			<p><input type="text" placeholder="Prénom *" name="firstname" id="prenom" value="<?php if(isset($_POST["firstname"])) echo $_POST["firstname"] ?>" required></p>
 			<p><input type="email" placeholder="Adresse email *" name="mail" id="email" value="<?php if(isset($_POST["mail"])) echo $_POST["mail"] ?>" required></p>
