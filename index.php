@@ -20,7 +20,7 @@ try {
 		} elseif($_GET['action'] == 'contact') {
 			$frontController->contactPage();
 
-		}	elseif($_GET['action'] == 'contactForm') {
+		} elseif($_GET['action'] == 'contactForm') {
 			$data = new ContactModel($_POST);
 			if (!empty($formContactData['lastname']) && (!empty($formContactData['firstname']) && (!empty($formContactData['mail']) &&(!empty($formContactData['content'])) && (!empty($_POST['rgpd']))))) {
 				$contactController->contactPost($formContactData);
