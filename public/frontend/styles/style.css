@@ -639,10 +639,28 @@ li {
   width: 100%;
 }
 
+#contact p {
+  text-align: center;
+}
+
 #contact p:not(.contactflex) {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 8px auto;
-  text-align: center;
+}
+
+#contactform label {
+  width: 100%;
+  margin: 8px auto;
+  padding-left: 6%;
+  text-align: left; 
+}
+
+#contactform input:not(#rgpd) {
+  width: 100%;
+  margin: 8px auto;
 }
 
 #contact input:not(#envoyer, #rgpd),
@@ -663,7 +681,6 @@ li {
 }
 
 #contact textarea {
-  width: 50vw;
   padding: 15px 15px;
 }
 
@@ -674,6 +691,10 @@ li {
 
 #selectionfichier {
   margin: 15px auto;
+}
+
+.pbutton {
+  justify-content: center;
 }
 
 #envoyer {
@@ -1026,6 +1047,11 @@ li {
     width: 60vw;
   }
 
+  #contact textarea {
+    width: 60vw;
+    padding: 15px 15px;
+  }
+
   /*------------Page Actualités-----------*/
   #formjeuconcours
     input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd),
@@ -1240,6 +1266,11 @@ li {
 
   #contact h4 {
     text-align: center;
+  }
+
+  #contact textarea {
+    width: 50vw;
+    padding: 15px 15px;
   }
 
   /*------------Page Actualités -----------*/

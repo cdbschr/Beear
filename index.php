@@ -1,7 +1,5 @@
 <?php
 
-use Project\Models\{ContactModel};
-
 if(!isset($_SESSION)) {
 	session_start();
 }

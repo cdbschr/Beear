@@ -18,8 +18,8 @@ abstract class Manager {
     } else { 
       
       try {
-      self::$db = new \PDO($dbConnection, $user, $pwd, array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION));
-      return self::$db;
+        self::$db = new \PDO($dbConnection, $user, $pwd, array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION));
+        return self::$db;
 
       } catch (Exception $e) {
         require './app/Views/errors/404.php';

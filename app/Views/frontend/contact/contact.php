@@ -4,14 +4,29 @@
 		<h1>Contact</h1>
 		<h4>Vous pouvez nous contacter directement via ce formulaire.</h4>
 		<form action="/?action=contactForm" method="post" id="contactform">
-			<p><input type="text" placeholder="Nom *" name="lastname" id="nom" value="<?php if(isset($_POST["lastname"])) echo $_POST["lastname"] ?>" required></p>
-			<p><input type="text" placeholder="Prénom *" name="firstname" id="prenom" value="<?php if(isset($_POST["firstname"])) echo $_POST["firstname"] ?>" required></p>
-			<p><input type="email" placeholder="Adresse email *" name="mail" id="email" value="<?php if(isset($_POST["mail"])) echo $_POST["mail"] ?>" required></p>
-			<p><input type="tel" placeholder="Téléphone" name="phone" id="tel" value="<?php if(isset($_POST["phone"])) echo $_POST["phone"] ?>"></p>
-			<p><textarea name="content" placeholder="Rédigez votre message ici...*" id="message" rows="10" value="<?php if(isset($_POST["content"])) echo $_POST["content"] ?>" required></textarea></p>
+			<p>
+			<label for="lastname">Votre nom <span>*</span></label>
+			<input type="text" placeholder="Nom *" name="lastname" id="nom" value="<?php if(isset($_POST["lastname"])) echo $_POST["lastname"] ?>" required>
+			</p>
+			<p>
+				<label for="firstname">Votre prénom <span>*</span></label>
+				<input type="text" placeholder="Prénom *" name="firstname" id="prenom" value="<?php if(isset($_POST["firstname"])) echo $_POST["firstname"] ?>" required>
+			</p>
+			<p>
+				<label for="mail">Votre email <span>*</span></label>
+				<input type="email" placeholder="Adresse email *" name="mail" id="email" value="<?php if(isset($_POST["mail"])) echo $_POST["mail"] ?>" required>
+			</p>
+			<p>
+				<label for="phone">Votre téléphone</label>
+				<input type="tel" placeholder="Téléphone" name="phone" id="tel" value="<?php if(isset($_POST["phone"])) echo $_POST["phone"] ?>">
+			</p>
+			<p>
+				<label for="content">Votre message <span>*</span></label>
+				<textarea name="content" placeholder="Rédigez votre message ici...*" id="message" rows="10" value="<?php if(isset($_POST["content"])) echo $_POST["content"] ?>" required></textarea>
+			</p>
 			<p class="contactflex"><input type="checkbox" name="rgpd" id="rgpd" required>autorisation de conservation et utilisation des données *</p>
 			<p class="contactflex champoblig">* Champ obligatoire</p>
-			<p><button type="submit" id="envoyer" class="button">Envoyer</button></p>
+			<p class="pbutton"><button type="submit" id="envoyer" class="button">Envoyer</button></p>
 		</form>
 	</div>
 	<section id="map" class="container">

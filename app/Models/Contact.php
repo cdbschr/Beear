@@ -3,6 +3,7 @@
 namespace Project\Models;
 
 class ContactModel extends Manager {
+  protected int $id;
   protected string $lastname;
   protected string $firstname;
   protected string $mail;
@@ -10,14 +11,15 @@ class ContactModel extends Manager {
   protected string $content;
 
   public function __construct(array $data) {
-    $this->lastname = $data['lastname'];
-    $this->firstname = $data['firstname'];
-    $this->mail = $data['mail'];
-    $this->phone = $data['phone'];
-    $this->content = $data['content'];
+    $this->id = $data['id'];
+    $this->lastname = $data['lastname'] ?? '';
+    $this->firstname = $data['firstname'] ?? '';
+    $this->mail = $data['mail'] ?? '';
+    $this->phone = $data['phone'] ?? '';
+    $this->content = $data['content'] ?? '';
   }
 
-  public static function postMail(array $formContactData): void {
+  public static function postMail(array $formContactData) {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -27,9 +29,10 @@ class ContactModel extends Manager {
           firstname,  
           mail, 
           phone, 
-          content
+          content,
+          rgpd
         ) 
-      VALUE (:lastname, :firstname, :mail, :phone, :content)'
+      VALUE (:lastname, :firstname, :mail, :phone, :content, :rgpd)'
     );
 
     $req->execute(
@@ -38,8 +41,8 @@ class ContactModel extends Manager {
       ':firstname' => htmlspecialchars($formContactData['firstname']),
       ':mail' => htmlspecialchars($formContactData['mail']),
       ':phone' => htmlspecialchars($formContactData['phone']),
-      ':content' => htmlspecialchars($formContactData['content'])
+      ':content' => htmlspecialchars($formContactData['content']),
+      ':rgpd' => $formContactData['rgpd']
     ));
   }
 }
-
