@@ -3,7 +3,7 @@
   <div id="contact" class="container">
     <h1>Contact</h1>
     <h4>Vous pouvez nous contacter directement via ce formulaire.</h4>
-    <form action="/?action=contactForm" method="post" id="contactform">
+    <form action="/?action=post-contactform" method="post" id="contactform">
       <p>
         <label for="lastname">Votre nom <span>*</span></label>
         <input type="text" placeholder="Nom *" name="lastname" id="nom" value="<?php if (isset($_POST["lastname"])) echo htmlspecialchars($_POST["lastname"]) ?>" required>

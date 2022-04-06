@@ -1,22 +1,25 @@
-<?php 
+<?php
 
-namespace Project\Models;
+namespace Beear\Models;
 
-class Users extends Manager {
+class Users extends Manager
+{
   protected $id;
   protected $lastname;
   protected $firstname;
   protected $mail;
 
-  public function __construct(array $data) {
+  public function __construct(array $data)
+  {
     $this->id = $data['id'] ?? '';
     $this->lastname = $data['lastname'] ?? '';
     $this->firstname = $data['firstname'] ?? '';
     $this->mail = $data['mail'] ?? '';
   }
-  
+
   // --------------- Requête pour enregister un user ---------------
-  public static function register(array $data) {
+  public static function register(array $data)
+  {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -27,13 +30,24 @@ class Users extends Manager {
           mail,
           `password`
         ) 
-      VALUES (:lastname, :firstname, :mail, :`password`)');
+      VALUES (:lastname, :firstname, :mail, :`password`)'
+    );
 
-      return $req->execute([
-        ':lastname' => $data['lastname'],
-        ':firstname' => $data['firstname'],
-        ':mail' => $data['mail'],
-        ':`password`' => password_hash($data['password'], PASSWORD_DEFAULT)
-      ]);
+    return $req->execute([
+      ':lastname' => $data['lastname'],
+      ':firstname' => $data['firstname'],
+      ':mail' => $data['mail'],
+      ':`password`' => password_hash($data['password'], PASSWORD_DEFAULT)
+    ]);
+  }
+
+  public function userExist($mail)
+  {
+    $db = self::dbAccess();
+
+    $req = $db->prepare('SELECT * FROM users WHERE mail = :mail');
+    $req->execute(array(':mail' => $mail));
+
+    return $req->fetch();
   }
 }

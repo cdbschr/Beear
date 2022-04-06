@@ -3,7 +3,7 @@
     "description": "Beear - Brasserie fictive - Kercode",
     "autoload": {
         "psr-4": {
-            "Project\\": "./app"
+            "Beear\\": "./app"
         }
     },
     "authors": [

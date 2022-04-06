@@ -5,7 +5,7 @@ session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 
 try {
-  $dashboardController = new \Project\Controllers\DashboardController();
+  $dashboardController = new \Beear\Controllers\DashboardController();
 
   if (isset($_GET['action'])) {
     if ($_GET['action'] == 'valeurs') {

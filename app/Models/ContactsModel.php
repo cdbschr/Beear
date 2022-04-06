@@ -1,8 +1,9 @@
 <?php
 
-namespace Project\Models;
+namespace Beear\Models;
 
-class ContactModel extends Manager {
+class ContactModel extends Manager
+{
   protected int $id;
   protected string $lastname;
   protected string $firstname;
@@ -10,7 +11,8 @@ class ContactModel extends Manager {
   protected string $phone;
   protected string $content;
 
-  public function __construct(array $data) {
+  public function __construct(array $data)
+  {
     $this->lastname = $data['lastname'] ?? '';
     $this->firstname = $data['firstname'] ?? '';
     $this->mail = $data['mail'] ?? '';
@@ -19,7 +21,8 @@ class ContactModel extends Manager {
   }
 
   // --------------- Requête pour enregistrer le formulaire de contact dans la base de données ---------------
-  public static function postMail(array $formContactData) {
+  public static function postMail(array $formContactData)
+  {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -34,13 +37,14 @@ class ContactModel extends Manager {
       VALUES (:lastname, :firstname, :mail, :phone, :content)'
     );
 
-     return $req->execute(
+    return $req->execute(
       array(
-      ':lastname' => $formContactData['lastname'],
-      ':firstname' => $formContactData['firstname'],
-      ':mail' => $formContactData['mail'],
-      ':phone' => $formContactData['phone'],
-      ':content' => $formContactData['content']
-    ));
+        ':lastname' => $formContactData['lastname'],
+        ':firstname' => $formContactData['firstname'],
+        ':mail' => $formContactData['mail'],
+        ':phone' => $formContactData['phone'],
+        ':content' => $formContactData['content']
+      )
+    );
   }
 }
