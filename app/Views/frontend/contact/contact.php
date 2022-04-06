@@ -6,23 +6,23 @@
     <form action="/?action=contactForm" method="post" id="contactform">
       <p>
         <label for="lastname">Votre nom <span>*</span></label>
-        <input type="text" placeholder="Nom *" name="lastname" id="nom" value="<?php if (isset($_POST["lastname"])) echo $_POST["lastname"] ?>" required>
+        <input type="text" placeholder="Nom *" name="lastname" id="nom" value="<?php if (isset($_POST["lastname"])) echo htmlspecialchars($_POST["lastname"]) ?>" required>
       </p>
       <p>
         <label for="firstname">Votre prénom <span>*</span></label>
-        <input type="text" placeholder="Prénom *" name="firstname" id="prenom" value="<?php if (isset($_POST["firstname"])) echo $_POST["firstname"] ?>" required>
+        <input type="text" placeholder="Prénom *" name="firstname" id="prenom" value="<?php if (isset($_POST["firstname"])) echo htmlspecialchars($_POST["firstname"]) ?>" required>
       </p>
       <p>
         <label for="mail">Votre email <span>*</span></label>
-        <input type="email" placeholder="Adresse email *" name="mail" id="email" value="<?php if (isset($_POST["mail"])) echo $_POST["mail"] ?>" required>
+        <input type="email" placeholder="Adresse email *" name="mail" id="email" value="<?php if (isset($_POST["mail"])) echo htmlspecialchars($_POST["mail"]) ?>" required>
       </p>
       <p>
         <label for="phone">Votre téléphone</label>
-        <input type="tel" placeholder="Téléphone" name="phone" id="tel" value="<?php if (isset($_POST["phone"])) echo $_POST["phone"] ?>">
+        <input type="tel" placeholder="Téléphone" name="phone" id="tel" value="<?php if (isset($_POST["phone"])) echo htmlspecialchars($_POST["phone"]) ?>">
       </p>
       <p>
         <label for="content">Votre message <span>*</span></label>
-        <textarea name="content" placeholder="Rédigez votre message ici...*" id="message" rows="10" value="<?php if (isset($_POST["content"])) echo $_POST["content"] ?>" required></textarea>
+        <textarea name="content" placeholder="Rédigez votre message ici...*" id="message" rows="10" value="<?php if (isset($_POST["content"])) echo htmlspecialchars($_POST["content"]) ?>" required></textarea>
       </p>
       <p class="contactflex"><input type="checkbox" name="rgpd" id="rgpd" required>autorisation de conservation et utilisation des données *</p>
       <p class="contactflex champoblig">* Champ obligatoire</p>
