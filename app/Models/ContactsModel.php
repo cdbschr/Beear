@@ -11,7 +11,6 @@ class ContactModel extends Manager {
   protected string $content;
 
   public function __construct(array $data) {
-    $this->id = $data['id'];
     $this->lastname = $data['lastname'] ?? '';
     $this->firstname = $data['firstname'] ?? '';
     $this->mail = $data['mail'] ?? '';
@@ -30,19 +29,17 @@ class ContactModel extends Manager {
           mail, 
           phone, 
           content,
-          rgpd
         ) 
-      VALUE (:lastname, :firstname, :mail, :phone, :content, :rgpd)'
+      VALUES (:lastname, :firstname, :mail, :phone, :content)'
     );
 
-    $req->execute(
+     return $req->execute(
       array(
-      ':lastname' => htmlspecialchars($formContactData['lastname']),
-      ':firstname' => htmlspecialchars($formContactData['firstname']),
-      ':mail' => htmlspecialchars($formContactData['mail']),
-      ':phone' => htmlspecialchars($formContactData['phone']),
-      ':content' => htmlspecialchars($formContactData['content']),
-      ':rgpd' => $formContactData['rgpd']
+      ':lastname' => $formContactData['lastname'],
+      ':firstname' => $formContactData['firstname'],
+      ':mail' => $formContactData['mail'],
+      ':phone' => $formContactData['phone'],
+      ':content' => $formContactData['content']
     ));
   }
 }

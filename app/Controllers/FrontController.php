@@ -2,25 +2,34 @@
 
 namespace Project\Controllers;
 
-class FrontController {
+class FrontController extends Controller {
   function home(): void {
-    require 'app/Views/frontend/home.php';
+    include $this->viewFrontend('home');
   }
   
   function valeursPage(): void {
-    require 'app/Views/frontend/valeurs.php';
+    include $this->viewFrontend('valeurs');
   }
 
   function actualitesPage(): void {
-    require 'app/Views/frontend/actualites.php';
+    include $this->viewFrontend('actualites');
   }
   
   function contactPage(): void {
-    require 'app/Views/frontend/contact/contact.php';
+    include $this->viewFrontend('/contact/contact');
+  }
+
+  function contactPost(array $formContactData) {
+    if(filter_var($formContactData['mail'], FILTER_VALIDATE_EMAIL)) {
+      $postMail = new \Project\Models\ContactModel($formContactData);
+      require 'app/Views/frontend/contact/contact-confirm.php';
+    } else {
+      header('Location: app/Views/frontend/contact/error.php');
+    }
   }
 
   function inscriptionPage(): void {
-    require 'app/Views/frontend/auth/register.php';
+    include $this->viewFrontend('');
   }
 
   function connexionPage(): void {

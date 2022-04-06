@@ -2,8 +2,8 @@
 
 namespace Project\Controllers;
 
-class DashboardController {
+class DashboardController extends Controller {
   function admin(): void {
-    require 'app/Views/admin/admin.php';
+    include $this->viewAdmin('dashboard');
   }
 }
