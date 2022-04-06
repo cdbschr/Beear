@@ -14,7 +14,8 @@ class Users extends Manager {
     $this->firstname = $data['firstname'] ?? '';
     $this->mail = $data['mail'] ?? '';
   }
-
+  
+  // --------------- Requête pour enregister un user ---------------
   public static function register(array $data) {
     $db = self::dbAccess();
 

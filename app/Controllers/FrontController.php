@@ -22,7 +22,7 @@ class FrontController extends Controller {
   function contactPost(array $formContactData) {
     if(filter_var($formContactData['mail'], FILTER_VALIDATE_EMAIL)) {
       $postMail = new \Project\Models\ContactModel($formContactData);
-      require 'app/Views/frontend/contact/contact-confirm.php';
+      include $this->viewFrontend('/contact/contact-confirm');
     } else {
       header('Location: app/Views/frontend/contact/error.php');
     }

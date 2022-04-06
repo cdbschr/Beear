@@ -5,7 +5,9 @@ namespace Project\Models;
 use Exception;
 
 abstract class Manager {
-  // --------------- Connexion à la base de données ---------------
+  /* ----------------------------------------------------------------
+    ---------------- Connexion à la base de données -----------------
+    ---------------------------------------------------------------- */
   private static $db = null;
   
   protected static function dbAccess() {
@@ -31,7 +33,9 @@ abstract class Manager {
     self::$db = null;
   }
 
-  // --------------- Mise en place d'un mini ORM, avec * pour récupération plus générale ---------------
+  /* ----------------------------------------------------------------
+    ------------------ Mise en place d'un mini-ORM ------------------
+    ---------------------------------------------------------------- */
 
   public static function all() {
     $objects = [];

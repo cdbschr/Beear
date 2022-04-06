@@ -18,6 +18,7 @@ class ContactModel extends Manager {
     $this->content = $data['content'] ?? '';
   }
 
+  // --------------- Requête pour enregistrer le formulaire de contact dans la base de données ---------------
   public static function postMail(array $formContactData) {
     $db = self::dbAccess();
 

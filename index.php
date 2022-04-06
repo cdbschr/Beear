@@ -9,9 +9,14 @@ if(!isset($_SESSION)) {
 require_once __DIR__ . '/vendor/autoload.php';
 
 try {
+  // -------- Récupération des Controllers --------
   $frontController = new \Project\Controllers\FrontController();
 
+  // -------- Vérification dans le cas où il y a une action, sinon on retourne la page home --------
 	if(isset($_GET['action'])) { 
+    /* ----------------------------------------------------------------
+    ---------------- Affichage des pages dans le menu -----------------
+    ---------------------------------------------------------------- */
 		if($_GET['action'] == 'valeurs') {
       $frontController->valeursPage();
 
@@ -21,6 +26,9 @@ try {
 		} elseif($_GET['action'] == 'contact') {
 			$frontController->contactPage();
 
+    /* ----------------------------------------------------------------
+    ---------------- Gestion du formulaire de contact -----------------
+    ---------------------------------------------------------------- */
 		} elseif($_GET['action'] == 'contactForm') {
       
       if (!empty($formContactData['lastname']) && (!empty($formContactData['firstname']) && (!empty($formContactData['mail']) && (!empty($formContactData['content'])) && (!empty($_POST['rgpd']))))) {
@@ -34,6 +42,9 @@ try {
         $frontController->contactPost($formContactData);
 			}
       
+    /* ----------------------------------------------------------------
+    -------------------- Gestion de la Connexion ----------------------
+    ---------------------------------------------------------------- */
     } elseif($_GET['action'] == 'login') {
 			$frontController->connexionPage();
 
