@@ -21,9 +21,9 @@ class FrontController extends Controller
   }
 
   // -------- Envoi dans la db les informations du formulaire de Contact --------
-  function contactPost($formContactData): void {
-    if (filter_var($formContactData['mail'], FILTER_VALIDATE_EMAIL)) {
-      $postMail = \Beear\Models\ContactsModel::postMail($formContactData);
+  function contactPost($data): void {
+    if (filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
+      $postMail = \Beear\Models\ContactsModel::postMail($data);
       require $this->viewFrontend('/contact/contact-confirm');
     } else {
       header('Location:'.$this->viewFrontend('/contact/contact-error'));

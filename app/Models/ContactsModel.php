@@ -44,6 +44,16 @@ class ContactsModel extends Manager {
       )
     );
   }
+
+  public function sanitizedData() {
+    return array(
+      'lastname' => htmlspecialchars($this->lastname),
+      'firstname' => htmlspecialchars($this->firstname),
+      'mail' => htmlspecialchars($this->mail),
+      'phone' => htmlspecialchars($this->phone),
+      'content' => htmlspecialchars($this->content)
+    );
+  }
 }
 
 

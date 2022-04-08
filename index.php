@@ -28,22 +28,15 @@ try {
     ---------------- Gestion du formulaire de contact -----------------
     ---------------------------------------------------------------- */
     } elseif ($_GET['action'] == 'post-contactform') {
-
+      $data = new \Beear\Models\ContactsModel($_POST);
+      $sanitizedData = $data->sanitizedData();
       if (
-        !empty($formContactData['lastname']) &&
-        (!empty($formContactData['firstname']) &&
-          (!empty($formContactData['mail']) &&
-            (!empty($formContactData['content']))))
-      ) {
-
-        $formContactData = [
-          'lastname' => htmlspecialchars($_POST['lastname']),
-          'firstname' => htmlspecialchars($_POST['firstname']),
-          'mail' => htmlspecialchars($_POST['mail']),
-          'content' => htmlspecialchars($_POST['content'])
-        ];
-
-        $frontController->contactPost($formContactData);
+        !empty($satinizedData['lastname']) &&
+        (!empty($satinizedData['firstname']) &&
+        (!empty($satinizedData['mail']) &&
+        (!empty($satinizedData['content']))))
+        ) {
+        $frontController->contactPost($satinizedData);
       }
 
       /* ----------------------------------------------------------------

@@ -9,10 +9,10 @@ class UsersModel extends Manager {
   protected $mail;
 
   public function __construct(array $data) {
-    $this->id = $data['id'] ?? '';
-    $this->lastname = $data['lastname'] ?? '';
-    $this->firstname = $data['firstname'] ?? '';
-    $this->mail = $data['mail'] ?? '';
+    $this->id = $data['id'];
+    $this->lastname = $data['lastname'];
+    $this->firstname = $data['firstname'];
+    $this->mail = $data['mail'];
   }
 
   // --------------- Requête pour enregister un user ---------------
