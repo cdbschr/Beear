@@ -2,15 +2,13 @@
 
 namespace Beear\Models;
 
-class Users extends Manager
-{
+class UsersModel extends Manager { 
   protected $id;
   protected $lastname;
   protected $firstname;
   protected $mail;
 
-  public function __construct(array $data)
-  {
+  public function __construct(array $data) {
     $this->id = $data['id'] ?? '';
     $this->lastname = $data['lastname'] ?? '';
     $this->firstname = $data['firstname'] ?? '';
@@ -18,8 +16,7 @@ class Users extends Manager
   }
 
   // --------------- Requête pour enregister un user ---------------
-  public static function register(array $data)
-  {
+  public static function register(array $data) {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -41,13 +38,27 @@ class Users extends Manager
     ]);
   }
 
-  public function userExist($mail)
-  {
+  public static function userExist($mail) {
     $db = self::dbAccess();
 
     $req = $db->prepare('SELECT * FROM users WHERE mail = :mail');
     $req->execute(array(':mail' => $mail));
 
     return $req->fetch();
+  }
+
+  public static function login($mail, $password) {
+    $db = self::dbAccess();
+
+    $req = $db->prepare('SELECT * FROM users WHERE mail = :mail');
+    $req->execute(array(':mail' => $mail));
+
+    $user = $req->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+      return $user;
+    }
+
+    return false;
   }
 }

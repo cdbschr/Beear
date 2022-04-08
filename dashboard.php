@@ -12,7 +12,7 @@ try {
       $frontController->valeursPage();
     }
   } else {
-    $dahsboardController->admin();
+    $dashboardController->admin();
   }
 } catch (Exception $e) {
   require 'app/Views/errors/404.php';
