@@ -22,8 +22,9 @@ class FrontController extends Controller
 
   // -------- Envoi dans la db les informations du formulaire de Contact --------
   function contactPost($data): void {
+    $contact = new \Beear\Models\ContactsModel($data);
     if (filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
-      $postMail = \Beear\Models\ContactsModel::postMail($data);
+      $postMail = $contact::postMail($data);
       require $this->viewFrontend('/contact/contact-confirm');
     } else {
       header('Location:'.$this->viewFrontend('/contact/contact-error'));
@@ -62,18 +63,18 @@ class FrontController extends Controller
     include $this->viewFrontend('auth/login');
   }
 
-  function loginPost(): void {
-    $loginData = [
-      'mail' => htmlspecialchars($_POST['mail']),
-      'password' => htmlspecialchars($_POST['password'])
-    ];
+  // function loginPost(): void {
+  //   $loginData = [
+  //     'mail' => htmlspecialchars($_POST['mail']),
+  //     'password' => htmlspecialchars($_POST['password'])
+  //   ];
 
-    $login = \Beear\Models\UsersModel::login($loginData);
+  //   $login = \Beear\Models\UsersModel::login($loginData);
 
-    if ($login) {
-      header('Location:'.$this->viewFrontend('/auth/login-confirm'));
-    } else {
-      header('Location:'.$this->viewFrontend('/auth/login-error'));
-    }
-  }
+  //   if ($login) {
+  //     header('Location:'.$this->viewFrontend('/auth/login-confirm'));
+  //   } else {
+  //     header('Location:'.$this->viewFrontend('/auth/login-error'));
+  //   }
+  // }
 }

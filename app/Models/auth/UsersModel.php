@@ -47,6 +47,7 @@ class UsersModel extends Manager {
     return $req->fetch();
   }
 
+  // --------------- Requête pour se connecter ---------------
   public static function login($mail, $password) {
     $db = self::dbAccess();
 

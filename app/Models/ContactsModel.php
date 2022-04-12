@@ -45,7 +45,8 @@ class ContactsModel extends Manager {
     );
   }
 
-  public function sanitizedData() {
+  // --------------- Satinization des informations reçues pour éviter les failles ---------------
+  public function sanitizedDataContact() {
     return array(
       'lastname' => htmlspecialchars($this->lastname),
       'firstname' => htmlspecialchars($this->firstname),
@@ -55,16 +56,3 @@ class ContactsModel extends Manager {
     );
   }
 }
-
-
-// $formContactData = [
-//   ":lastname" => 'lastname',
-//   ":firstname" => 'firstname',
-//   ":mail" => 'mail',
-//   ":phone" => 'phone',
-//   ":content" => 'content'
-// ];
-
-// $dbtest = self::dbAccess();
-// $test = new ContactsModel($formContactData);
-// var_dump($test);

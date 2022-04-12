@@ -11,20 +11,17 @@ abstract class Manager {
   private static $db = null;
 
   protected static function dbAccess() {
-    $dbConnection = "mysql:dbname=" . $_ENV['DB_NAME'] . "; host=" . $_ENV['DB_HOST'] . ":" . $_ENV['DB_PORT'] . "; charset=utf8";
+    $path = "mysql:dbname=" . $_ENV['DB_NAME'] . "; host=" . $_ENV['DB_HOST'] . ":" . $_ENV['DB_PORT'] . "; charset=utf8";
     $user = $_ENV['DB_USERNAME'];
     $pwd = $_ENV['DB_PASSWORD'];
 
     if (isset(self::$db)) {
       return self::$db;
     } else {
+      self::$db = new \PDO($path, $user, $pwd);
+      self::$db->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
 
-      try {
-        self::$db = new \PDO($dbConnection, $user, $pwd, array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION));
-        return self::$db;
-      } catch (Exception $e) {
-        require './app/Views/errors/404.php';
-      }
+      return self::$db;
     }
   }
 
