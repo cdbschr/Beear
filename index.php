@@ -1,7 +1,5 @@
 <?php
 
-use Beear\Controllers\FrontController;
-
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -19,8 +17,10 @@ try {
     ---------------------------------------------------------------- */
     if ($_GET['action'] == 'valeurs') {
       $frontController->valeursPage();
+
     } elseif ($_GET['action'] == 'actus') {
       $frontController->actualitesPage();
+
     } elseif ($_GET['action'] == 'contact') {
       $frontController->contactPage();
 
@@ -35,7 +35,7 @@ try {
       $satinizedMail = $sanitizedDataContact['mail'];
       $satinizedContent = $sanitizedDataContact['content'];
       
-      if (!empty($satinizedLastname) && (!empty($satinizedFirstname) && (!empty($satinizedMail) && ($satinizedContent)))) {
+      if (!empty($satinizedLastname) && (!empty($satinizedFirstname) && (!empty($satinizedMail) && (!empty($satinizedContent))))) {
         $frontController->contactPost($satinizedData);
       }
 
@@ -44,8 +44,10 @@ try {
     ---------------------------------------------------------------- */
     } elseif ($_GET['action'] == 'login') {
       $frontController->connexionPage();
+
     } elseif ($_GET['action'] == 'register') {
       $frontController->inscriptionPage();
+
     } elseif ($_GET['action'] == 'post-register') {
       if (
         !empty($registerData['lastname']) &&
@@ -64,7 +66,7 @@ try {
         $frontController->registerPost($registerData);
       }
     } elseif ($_GET['action'] == 'deconnexion') {
-      //$frontController->deconnexionPage();
+      $frontController->deconnexion();
 
     }
   } else {

@@ -19,6 +19,7 @@ class ActusModel extends Manager {
     $this->image = $data['image'];
   }
 
+  // -------- Affichage de toutes les actus --------
   public static function getAllActus() {
     $db = self::dbAccess();
 
@@ -37,11 +38,11 @@ class ActusModel extends Manager {
         actus(
           title, 
           content, 
-          date, 
+          `date`, 
           author, 
-          image
+          `image`
         ) 
-      VALUES (:title, :content, :date, :author, :image)'
+      VALUES (:title, :content, :`date`, :author, :`image`)'
     );
 
     return $req->execute(
@@ -73,9 +74,9 @@ class ActusModel extends Manager {
       'UPDATE actus SET 
         title = :title, 
         content = :content, 
-        date = :date, 
+        `date` = :`date`, 
         author = :author, 
-        image = :image 
+        `image` = :`image` 
       WHERE id = :id'
     );
 

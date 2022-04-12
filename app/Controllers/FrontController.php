@@ -63,18 +63,24 @@ class FrontController extends Controller
     include $this->viewFrontend('auth/login');
   }
 
-  // function loginPost(): void {
-  //   $loginData = [
-  //     'mail' => htmlspecialchars($_POST['mail']),
-  //     'password' => htmlspecialchars($_POST['password'])
-  //   ];
+  function loginPost($mail, $password): void {
+    $login = \Beear\Models\UsersModel::login($mail, $password);
 
-  //   $login = \Beear\Models\UsersModel::login($loginData);
+    if ($login) {
+      header('Location:'.$this->viewFrontend('/auth/login-confirm'));
+    } else {
+      header('Location:'.$this->viewFrontend('/auth/login-error'));
+    }
 
-  //   if ($login) {
-  //     header('Location:'.$this->viewFrontend('/auth/login-confirm'));
-  //   } else {
-  //     header('Location:'.$this->viewFrontend('/auth/login-error'));
-  //   }
-  // }
+    $loginData = [
+      'mail' => htmlspecialchars($_POST['mail']),
+      'password' => htmlspecialchars($_POST['password'])
+    ];
+
+  }
+
+  function deconnexion(): void {
+    session_destroy();
+    header('Location:'.$this->viewFrontend('/'));
+  }
 }
