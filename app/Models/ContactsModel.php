@@ -21,6 +21,7 @@ class ContactsModel extends Manager {
   // --------------- Requête pour enregistrer le formulaire de contact dans la base de données ---------------
   public static function postMail($formContactData) {
     $db = self::dbAccess();
+    // var_dump($formContactData);die;
 
     $req = $db->prepare(
       'INSERT INTO 
@@ -29,7 +30,7 @@ class ContactsModel extends Manager {
           firstname,  
           mail, 
           phone, 
-          content,
+          content
         ) 
       VALUES (:lastname, :firstname, :mail, :phone, :content)'
     );

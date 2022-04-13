@@ -6,6 +6,9 @@ if (!isset($_SESSION)) {
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 try {
   // -------- Récupération des Controllers --------
   $frontController = new \Beear\Controllers\FrontController();
@@ -28,15 +31,18 @@ try {
     ---------------- Gestion du formulaire de contact -----------------
     ---------------------------------------------------------------- */
     } elseif ($_GET['action'] == 'post-contactform') {
+      $contact = new \Beear\Models\ContactsModel($_POST);
       $sanitizedDataContact = $contact->sanitizedDataContact();
 
-      $satinizedLastname = $sanitizedDataContact['lastname'];
-      $satinizedFirstname = $sanitizedDataContact['firstname'];
-      $satinizedMail = $sanitizedDataContact['mail'];
-      $satinizedContent = $sanitizedDataContact['content'];
+      $sanitizedLastname = $sanitizedDataContact['lastname'];
+      $sanitizedFirstname = $sanitizedDataContact['firstname'];
+      $sanitizedMail = $sanitizedDataContact['mail'];
+      $sanitizedContent = $sanitizedDataContact['content'];
+
+      // var_dump($sanitizedLastname); die;
       
-      if (!empty($satinizedLastname) && (!empty($satinizedFirstname) && (!empty($satinizedMail) && (!empty($satinizedContent))))) {
-        $frontController->contactPost($satinizedData);
+      if (!empty($sanitizedLastname) && (!empty($sanitizedFirstname) && (!empty($sanitizedMail) && (!empty($sanitizedContent))))) {
+        $frontController->contactPost($sanitizedDataContact);
       }
 
       /* ----------------------------------------------------------------

@@ -14,13 +14,15 @@ abstract class Manager {
     $path = "mysql:dbname=" . $_ENV['DB_NAME'] . "; host=" . $_ENV['DB_HOST'] . ":" . $_ENV['DB_PORT'] . "; charset=utf8";
     $user = $_ENV['DB_USERNAME'];
     $pwd = $_ENV['DB_PASSWORD'];
+    // var_dump($path);die;
 
     if (isset(self::$db)) {
       return self::$db;
     } else {
       self::$db = new \PDO($path, $user, $pwd);
       self::$db->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
-
+      
+      // var_dump(self::$db);die;
       return self::$db;
     }
   }

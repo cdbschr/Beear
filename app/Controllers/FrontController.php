@@ -2,8 +2,7 @@
 
 namespace Beear\Controllers;
 
-class FrontController extends Controller
-{
+class FrontController extends Controller {
   function home(): void {
     include $this->viewFrontend('home');
   }
@@ -22,7 +21,10 @@ class FrontController extends Controller
 
   // -------- Envoi dans la db les informations du formulaire de Contact --------
   function contactPost($data): void {
+
     $contact = new \Beear\Models\ContactsModel($data);
+    // var_dump($contact);die;
+
     if (filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
       $postMail = $contact::postMail($data);
       require $this->viewFrontend('/contact/contact-confirm');

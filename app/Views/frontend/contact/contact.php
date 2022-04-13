@@ -24,8 +24,8 @@
         <label for="content">Votre message <span>*</span></label>
         <textarea name="content" placeholder="Rédigez votre message ici...*" id="message" rows="10" value="<?php if (isset($_POST["content"])) echo htmlspecialchars($_POST["content"]) ?>" required></textarea>
       </p>
-      <!-- <p class="contactflex"><input type="checkbox" name="rgpd" id="rgpd" required>autorisation de conservation et utilisation des données *</p>
-      <p class="contactflex champoblig">* Champ obligatoire</p> -->
+      <p class="contactflex"><input type="checkbox" name="rgpd" id="rgpd" required>autorisation de conservation et utilisation des données *</p>
+      <p class="contactflex champoblig">* Champ obligatoire</p>
       <p class="pbutton"><button type="submit" id="envoyer" class="button">Envoyer</button></p>
     </form>
   </div>
