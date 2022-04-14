@@ -39,8 +39,6 @@ try {
       $sanitizedMail = $sanitizedDataContact['mail'];
       $sanitizedContent = $sanitizedDataContact['content'];
 
-      // var_dump($sanitizedLastname); die;
-      
       if (!empty($sanitizedLastname) && (!empty($sanitizedFirstname) && (!empty($sanitizedMail) && (!empty($sanitizedContent))))) {
         $frontController->contactPost($sanitizedDataContact);
       }

@@ -9,6 +9,7 @@ let header = document.getElementById("generalheader");
 let baliseHeader = document.querySelector("header");
 let indexHeaderTxt = document.getElementById("flexcenterendheader");
 
+// permet de changer le header en fonction de la page
 if (url !== DOMAIN) {
   if (finUrl !== REGEXWORD) {
     header.removeAttribute("id");
@@ -17,3 +18,5 @@ if (url !== DOMAIN) {
     header.setAttribute("id", "otherpagesheader");
   }
 }
+
+const PATHFOOTER = "/app/Views/frontend/layouts/footer.php";

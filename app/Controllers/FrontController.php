@@ -23,7 +23,6 @@ class FrontController extends Controller {
   function contactPost($data): void {
 
     $contact = new \Beear\Models\ContactsModel($data);
-    // var_dump($contact);die;
 
     if (filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
       $postMail = $contact::postMail($data);
