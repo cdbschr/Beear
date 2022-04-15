@@ -9,10 +9,22 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+function eCatcher($e) {
+  if($_ENV["APP_ENV"] == "development") {
+    $whoops = new \Whoops\Run;
+    $whoops->allowQuit(false);
+    $whoops->writeToOutput(false);
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $html = $whoops->handleException($e);
+
+    echo $html;
+  }
+
 try {
   // -------- Récupération des Controllers --------
   $frontController = new \Beear\Controllers\FrontController();
   $userController = new \Beear\Controllers\UsersController();
+  $actusController = new \Beear\Controllers\ActusController();
 
   // -------- Vérification dans le cas où il y a une action, sinon on retourne la page home --------
   if (isset($_GET['action'])) {
@@ -92,4 +104,8 @@ try {
   }
 } catch (Exception $e) {
   require 'app/Views/errors/404.php';
+} catch(Error $e) {
+  eCatcher($e);
+  require "app/views/errors/oups.php";
+}
 }

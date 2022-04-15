@@ -47,15 +47,6 @@ class UsersModel extends Manager {
     return $req->fetch();
   }
 
-  public static function sanitizedDataUser() {
-    return array (
-      'lastname' => htmlspecialchars($_POST['lastname']),
-      'firstname' => htmlspecialchars($_POST['firstname']),
-      'mail' => htmlspecialchars($_POST['mail']),
-      'password' => htmlspecialchars($_POST['password'])
-    );
-  }
-
   // --------------- Requête pour se connecter ---------------
   public static function login(array $dataUser): mixed {
     $db = self::dbAccess();
@@ -70,5 +61,15 @@ class UsersModel extends Manager {
     }
 
     return false;
+  }
+  
+  // --------------- Sanitizer ---------------
+  public static function sanitizedDataUser() {
+    return array (
+      'lastname' => htmlspecialchars($_POST['lastname']),
+      'firstname' => htmlspecialchars($_POST['firstname']),
+      'mail' => htmlspecialchars($_POST['mail']),
+      'password' => htmlspecialchars($_POST['password'])
+    );
   }
 }
