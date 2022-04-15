@@ -45,6 +45,16 @@ class ContactsModel extends Manager {
     );
   }
 
+  // --------------- Voir les mails avec toute les informations ---------------
+  public static function getAllMails(): mixed {
+    $db = self::dbAccess();
+
+    $req = $db->prepare('SELECT * FROM contact ORDER BY id DESC');
+    $req->execute();
+
+    return $req->fetch();
+  }
+
   // --------------- Satinization des informations reçues pour éviter les failles ---------------
   public function sanitizedDataContact(): array {
     return array(

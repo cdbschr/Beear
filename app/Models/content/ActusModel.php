@@ -3,7 +3,7 @@
 namespace Beear\Models;
 
 class ActusModel extends Manager {
-	protected int $id;
+  protected int $id;
   protected string $title;
   protected string $content;
   protected string $date;
@@ -23,7 +23,17 @@ class ActusModel extends Manager {
   public static function getAllActus() {
     $db = self::dbAccess();
 
-    $req = $db->prepare('SELECT * FROM actus ORDER BY id DESC');
+    $req = $db->prepare('SELECT * FROM articles ORDER BY id DESC');
+    $req->execute();
+
+    return $req->fetch();
+  }
+
+  // -------- Affichage de la dernière actualités en fonction de son ID --------
+  public static function getLastArticle() {
+    $db = self::dbAccess();
+
+    $req = $db->prepare('SELECT * FROM articles ORDER BY id DESC LIMIT 1');
     $req->execute();
 
     return $req->fetch();
@@ -35,7 +45,7 @@ class ActusModel extends Manager {
 
     $req = $db->prepare(
       'INSERT INTO 
-        actus(
+        articles(
           title, 
           content, 
           `date`, 
@@ -55,12 +65,12 @@ class ActusModel extends Manager {
       )
     );
   }
-  
+
   // -------- Lecture d'une actualité --------
   public static function getActu($id) {
     $db = self::dbAccess();
 
-    $req = $db->prepare('SELECT * FROM actus WHERE id = ?');
+    $req = $db->prepare('SELECT * FROM articles WHERE id = ?');
     $req->execute(array($id));
 
     return $req->fetch();
@@ -71,7 +81,7 @@ class ActusModel extends Manager {
     $db = self::dbAccess();
 
     $req = $db->prepare(
-      'UPDATE actus SET 
+      'UPDATE articles SET 
         title = :title, 
         content = :content, 
         `date` = :`date`, 
@@ -96,7 +106,7 @@ class ActusModel extends Manager {
   public static function deleteActu($id) {
     $db = self::dbAccess();
 
-    $req = $db->prepare('DELETE FROM actus WHERE id = :id');
+    $req = $db->prepare('DELETE FROM articles WHERE id = :id');
     $req->execute(array(':id' => $id));
   }
 

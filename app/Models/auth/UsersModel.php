@@ -64,7 +64,7 @@ class UsersModel extends Manager {
   }
   
   // --------------- Sanitizer ---------------
-  public static function sanitizedDataUser() {
+  public static function sanitizedDataUser(): array {
     return array (
       'lastname' => htmlspecialchars($_POST['lastname']),
       'firstname' => htmlspecialchars($_POST['firstname']),
