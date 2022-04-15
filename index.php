@@ -12,6 +12,7 @@ $dotenv->load();
 try {
   // -------- Récupération des Controllers --------
   $frontController = new \Beear\Controllers\FrontController();
+  $userController = new \Beear\Controllers\UsersController();
 
   // -------- Vérification dans le cas où il y a une action, sinon on retourne la page home --------
   if (isset($_GET['action'])) {
@@ -46,31 +47,44 @@ try {
       /* ----------------------------------------------------------------
     -------------------- Gestion de la Connexion ----------------------
     ---------------------------------------------------------------- */
+    
+      // ---------------- Connexion à un compte -----------------------
     } elseif ($_GET['action'] == 'login') {
-      $frontController->connexionPage();
+      $userController->connexionPage();
 
+    } elseif ($_GET['action'] == 'login-post') {
+      $user = new \Beear\Models\UsersModel($_POST);
+      $sanitizedDataUser = $user->sanitizedDataUser();
+
+      $sanitizedMail = $sanitizedDataUser['mail'];
+      $sanitizedPassword = $sanitizedDataUser['password'];
+
+      if (!empty($sanitizedMail) && (!empty($sanitizedPassword))) {
+        $userController->loginPost($sanitizedDataUser);
+      }
+
+      // ---------------- Enregistrement d'un compte -----------------------
     } elseif ($_GET['action'] == 'register') {
-      $frontController->inscriptionPage();
+      $userController->inscriptionPage();
 
     } elseif ($_GET['action'] == 'post-register') {
-      if (
-        !empty($registerData['lastname']) &&
-        (!empty($registerData['firstname']) &&
-          (!empty($registerData['mail']) &&
-            (!empty($registerData['password']))))
-      ) {
+      $register = new \Beear\Models\UsersModel($_POST);
+      $sanitizedDataRegister = $register->sanitizedDataUser();
 
-        $registerData = [
-          'lastname' => htmlspecialchars($_POST['lastname']),
-          'firstname' => htmlspecialchars($_POST['firstname']),
-          'mail' => htmlspecialchars($_POST['mail']),
-          'password' => htmlspecialchars($_POST['password'])
-        ];
+      $sanitizedLastname = $sanitizedDataRegister['lastname'];
+      $sanitizedFirstname = $sanitizedDataRegister['firstname'];
+      $sanitizedMail = $sanitizedDataRegister['mail'];
+      $sanitizedPassword = $sanitizedDataRegister['password'];
 
-        $frontController->registerPost($registerData);
+      if (!empty($sanitizedLastname) 
+      && (!empty($sanitizedFirstname) 
+      && (!empty($sanitizedMail) 
+      && (!empty($sanitizedPassword))))) {
+        $userController->registerPost($sanitizedDataRegister);
       }
+
     } elseif ($_GET['action'] == 'deconnexion') {
-      $frontController->deconnexion();
+      $userController->deconnexion();
 
     }
   } else {

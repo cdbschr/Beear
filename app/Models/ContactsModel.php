@@ -19,7 +19,7 @@ class ContactsModel extends Manager {
   }
 
   // --------------- Requête pour enregistrer le formulaire de contact dans la base de données ---------------
-  public static function postMail($formContactData) {
+  public static function postMail($formContactData): array {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -46,7 +46,7 @@ class ContactsModel extends Manager {
   }
 
   // --------------- Satinization des informations reçues pour éviter les failles ---------------
-  public function sanitizedDataContact() {
+  public function sanitizedDataContact(): array {
     return array(
       'lastname' => htmlspecialchars($this->lastname),
       'firstname' => htmlspecialchars($this->firstname),

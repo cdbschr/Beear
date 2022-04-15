@@ -16,7 +16,7 @@ class UsersModel extends Manager {
   }
 
   // --------------- Requête pour enregister un user ---------------
-  public static function register(array $data) {
+  public static function register(array $data): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -38,7 +38,7 @@ class UsersModel extends Manager {
     ]);
   }
 
-  public static function userExist($mail) {
+  public static function userExist($mail): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare('SELECT * FROM users WHERE mail = :mail');
@@ -47,16 +47,25 @@ class UsersModel extends Manager {
     return $req->fetch();
   }
 
+  public static function sanitizedDataUser() {
+    return array (
+      'lastname' => htmlspecialchars($_POST['lastname']),
+      'firstname' => htmlspecialchars($_POST['firstname']),
+      'mail' => htmlspecialchars($_POST['mail']),
+      'password' => htmlspecialchars($_POST['password'])
+    );
+  }
+
   // --------------- Requête pour se connecter ---------------
-  public static function login($mail, $password) {
+  public static function login(array $dataUser): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare('SELECT * FROM users WHERE mail = :mail');
-    $req->execute(array(':mail' => $mail));
+    $req->execute(array(':mail' => $dataUser['mail']));
 
     $user = $req->fetch();
 
-    if ($user && password_verify($password, $user['password'])) {
+    if ($user && password_verify($dataUser['password'], $user['password'])) {
       return $user;
     }
 
