@@ -2,7 +2,7 @@
 *Projet Beear / Brasserie fictive / Projet à Kercode - Vannes*
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/dab975edd1c92f8ff310/maintainability)](https://codeclimate.com/github/cdbschr/Beear/maintainability)
-[![Known Vulnerabilities](https://snyk.io/test/github/cdbschr/Beear/badge.svg)]
+[![Known Vulnerabilities](https://snyk.io/test/github/cdbschr/Beear/badge.svg)](https://snyk.io/test/github/cdbschr/Beear)
 
 ### HISTORIQUE DU FIL ROUGE
 #### v3 - PROJET FINAL - Site Dynamique, structure MVC et BDD
