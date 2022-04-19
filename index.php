@@ -17,8 +17,9 @@ function eCatcher($e) {
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
     $html = $whoops->handleException($e);
 
-    echo $html;
+    print_r($html) . "<br>";
   }
+}
 
 try {
   // -------- Récupération des Controllers --------
@@ -107,5 +108,4 @@ try {
 } catch(Error $e) {
   eCatcher($e);
   require "app/views/errors/oops.php";
-}
 }
