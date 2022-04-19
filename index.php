@@ -17,7 +17,7 @@ function eCatcher($e) {
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
     $html = $whoops->handleException($e);
 
-    print $html;
+    echo htmlspecialchars($html);
   }
 }
 
