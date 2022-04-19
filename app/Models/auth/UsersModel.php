@@ -38,7 +38,7 @@ class UsersModel extends Manager {
     ]);
   }
 
-  public static function userExist($mail): mixed {
+  public static function isUserExist($mail): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare('SELECT * FROM users WHERE mail = :mail');

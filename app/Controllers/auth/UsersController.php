@@ -9,7 +9,7 @@ class UsersController extends Controller {
 
   // -------- Apres verification, enregistrement dans la db des informations pour création d'un compte --------
   function registerPost(): void {
-    $userExist = \Beear\Models\UsersModel::userExist($_POST['mail']);
+    $userExist = \Beear\Models\UsersModel::isUserExist($_POST['mail']);
 
     if ($userExist) {
       header('Location:'.$this->viewFrontend('/auth/register-error'));
