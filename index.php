@@ -106,6 +106,6 @@ try {
   require 'app/Views/errors/404.php';
 } catch(Error $e) {
   eCatcher($e);
-  require "app/views/errors/oups.php";
+  require "app/views/errors/oops.php";
 }
 }
