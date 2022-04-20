@@ -24,7 +24,7 @@ function eCatcher($e) {
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
     $html = $whoops->handleException($e);
 
-    require './app/Views/toto.php';
+    require './app/Views/errors/eCatcher.php';
   }
 }
 
