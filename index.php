@@ -17,7 +17,6 @@ set_error_handler('errorHandler');
 
 function eCatcher($e) {
   if($_ENV["APP_ENV"] == "dev") {
-    // var_dump($e);die;
     $whoops = new \Whoops\Run;
     $whoops->allowQuit(false);
     $whoops->writeToOutput(false);

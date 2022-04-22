@@ -40,8 +40,8 @@ abstract class Manager {
 
     $req = 'SELECT * FROM `{$child}`';
 
-    foreach (self::dbAccess()->query($req) as $data) {
-      array_push($objects, new $child($data));
+    foreach (self::dbAccess()->prepare($req) as $data) {
+      $data->execute(array_push($objects, new $child($data)));
     }
     return $objects;
   }
