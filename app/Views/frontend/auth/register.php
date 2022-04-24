@@ -12,8 +12,8 @@
       <input type="password" class="form-control" id="inputPass" placeholder="Veuillez entrer votre mot de passe, ici..." required>
     </div>
     <div class="form-group">
-      <label for="input-password">Veuillez ré mot de passe</label>
-      <input type="password" class="form-control" id="inputPass" placeholder="Veuillez entrer votre mot de passe, ici..." required>
+      <label for="input-password">Veuillez confirmer votre mot de passe</label>
+      <input type="password" class="form-control" id="inputPass" placeholder="Veuillez confirmer votre mot de passe, ici..." required>
     </div>
     <button type="submit" class="button">Créer mon compte</button>
   </form>

@@ -32,7 +32,7 @@
             <li>Contact</li>
           </a>
           <div id="corporation">
-            <a href="/"><img src="/public/frontend/img/Logotxt-Beear.png" alt="logo texte beear"></a>
+            <a href="/"><img src="./public/frontend/img/Logotxt-Beear.png" alt="logo texte beear"></a>
             <address>Lanvaux<br><strong>56220 SAINT-GRAVÉ</strong></address>
           </div>
         </ul>
@@ -40,7 +40,7 @@
     </nav>
     <div id="entete">
       <figure id="logo">
-        <a href="/"><img src="/public/frontend/img/Logo-Beear.png" alt="logo beear"></a>
+        <a href="/"><img src="./public/frontend/img/Logo-Beear.png" alt="logo beear"></a>
       </figure>
       <nav id="menudesktop">
         <ul id="menunav">
