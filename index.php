@@ -79,7 +79,7 @@ try {
       $userController->connexionPage();
 
     } elseif ($_GET['action'] == 'login-post') {
-      $user = new \Beear\Models\UsersModel($_POST);
+      $user = new \Beear\Models\auth\UsersModel($_POST);
       $sanitizedDataUser = $user->sanitizedDataUser();
 
       $sanitizedMail = $sanitizedDataUser['mail'];
@@ -94,7 +94,7 @@ try {
       $userController->inscriptionPage();
 
     } elseif ($_GET['action'] == 'post-register') {
-      $register = new \Beear\Models\UsersModel($_POST);
+      $register = new \Beear\Models\auth\UsersModel($_POST);
       $sanitizedDataRegister = $register->sanitizedDataUser();
 
       $sanitizedLastname = $sanitizedDataRegister['lastname'];
