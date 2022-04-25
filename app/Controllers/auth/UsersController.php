@@ -1,6 +1,8 @@
 <?php
 
-namespace Beear\Controllers;
+namespace Beear\Controllers\auth;
+
+use Beear\Controllers\Controller;
 
 class UsersController extends Controller {
   function inscriptionPage(): void {
@@ -9,7 +11,7 @@ class UsersController extends Controller {
 
   // -------- Apres verification, enregistrement dans la db des informations pour création d'un compte --------
   function registerPost(): void {
-    $userExist = \Beear\Models\UsersModel::isUserExist($_POST['mail']);
+    $userExist = \Beear\Models\auth\UsersModel::isUserExist($_POST['mail']);
 
     if ($userExist) {
       header('Location:'.$this->viewFrontend('/auth/register-error'));
@@ -21,7 +23,7 @@ class UsersController extends Controller {
         'password' => htmlspecialchars($_POST['password'])
       ];
 
-      $register = \Beear\Models\UsersModel::register($registerData);
+      $register = \Beear\Models\auth\UsersModel::register($registerData);
 
       if ($register) {
         header('Location:'.$this->viewFrontend('/auth/register-confirm'));
@@ -36,7 +38,7 @@ class UsersController extends Controller {
   }
 
   function loginPost($loginData): void {
-    $login = \Beear\Models\UsersModel::login($loginData);
+    $login = \Beear\Models\auth\UsersModel::login($loginData);
     $loginData = [
       'mail' => htmlspecialchars($_POST['mail']),
       'password' => htmlspecialchars($_POST['password'])

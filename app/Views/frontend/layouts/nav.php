@@ -25,7 +25,7 @@
           <a href="/?action=valeurs">
             <li>Valeurs</li>
           </a>
-          <a href="/?action=actus">
+          <a href="/?action=actualites">
             <li>Actualités</li>
           </a>
           <a href="/?action=contact">
@@ -53,7 +53,7 @@
           <a href="/?action=valeurs">
             <li>Valeurs</li>
           </a>
-          <a href="/?action=actus">
+          <a href="/?action=actualites">
             <li>Actualités</li>
           </a>
           <a href="/?action=contact">

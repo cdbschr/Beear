@@ -1,6 +1,8 @@
 <?php
 
-namespace Beear\Models;
+namespace Beear\Models\auth;
+
+use Beear\Models\Manager;
 
 class UsersModel extends Manager { 
   protected $id;

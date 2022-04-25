@@ -1,6 +1,8 @@
 <?php
 
-namespace Beear\Models;
+namespace Beear\Models\content;
+
+use Beear\Models\Manager;
 
 class ActusModel extends Manager {
   protected int $id;

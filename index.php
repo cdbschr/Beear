@@ -30,24 +30,31 @@ function eCatcher($e) {
 try {
   // -------- Récupération des Controllers --------
   $frontController = new Beear\Controllers\FrontController();
-  $userController = new Beear\Controllers\UsersController();
-  $actusController = new Beear\Controllers\ActusController();
+  $userController = new Beear\Controllers\auth\UsersController();
+  $actusController = new Beear\Controllers\content\ActusController();
 
   // -------- Vérification dans le cas où il y a une action, sinon on retourne la page home --------
   if (isset($_GET['action'])) {
     /* ----------------------------------------------------------------
     ---------------- Affichage des pages dans le menu -----------------
     ---------------------------------------------------------------- */
-    if ($_GET['action'] == 'valeurs') {
+  if ($_GET['action'] == 'valeurs') {
       $frontController->valeursPage();
 
-    } elseif ($_GET['action'] == 'actus') {
-      $frontController->actualitesPage();
+    } elseif ($_GET['action'] == 'actualites') {
+      $actusController->showAllActus();
 
     } elseif ($_GET['action'] == 'contact') {
       $frontController->contactPage();
+    
+    /* ----------------------------------------------------------------
+    ---------------- Affichage des Actualités (Blog) ------------------
+    ---------------------------------------------------------------- */
+    } elseif($_GET['action'] == "actu") {
+      $id = $_GET['id'];
+      $actusController->showSingleActu($id);
 
-      /* ----------------------------------------------------------------
+    /* ----------------------------------------------------------------
     ---------------- Gestion du formulaire de contact -----------------
     ---------------------------------------------------------------- */
     } elseif ($_GET['action'] == 'post-contactform') {
@@ -63,11 +70,11 @@ try {
         $frontController->contactPost($sanitizedDataContact);
       }
 
-      /* ----------------------------------------------------------------
+    /* ----------------------------------------------------------------
     -------------------- Gestion de la Connexion ----------------------
     ---------------------------------------------------------------- */
     
-      // ---------------- Connexion à un compte -----------------------
+    // ---------------- Connexion à un compte -----------------------
     } elseif ($_GET['action'] == 'login') {
       $userController->connexionPage();
 
@@ -82,7 +89,7 @@ try {
         $userController->loginPost($sanitizedDataUser);
       }
 
-      // ---------------- Enregistrement d'un compte -----------------------
+    // ---------------- Enregistrement d'un compte -----------------------
     } elseif ($_GET['action'] == 'register') {
       $userController->inscriptionPage();
 
@@ -101,12 +108,11 @@ try {
       && (!empty($sanitizedPassword))))) {
         $userController->registerPost($sanitizedDataRegister);
       }
-
+    // ---------------- Déconnexion d'un compte -----------------------
     } elseif ($_GET['action'] == 'deconnexion') {
       $userController->deconnexion();
-
-    }
-  } else {
+    
+  }} else {
     $frontController->home();
   }
 } catch (Exception $e) {
