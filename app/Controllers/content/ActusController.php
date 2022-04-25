@@ -17,7 +17,7 @@ Class ActusController extends Controller {
   
   // -------- Affiche toutes les actualités --------
   public function showAllActus() {
-    $data = \Beear\Models\content\ActusModel::getAllActus();
+    $actualites = \Beear\Models\content\ActusModel::getAllActus();
 
     return $this->viewFrontend('actualites');
   }

@@ -61,12 +61,12 @@ try {
       $contact = new \Beear\Models\ContactsModel($_POST);
       $sanitizedDataContact = $contact->sanitizedDataContact();
 
-      $sanitizedLastname = $sanitizedDataContact['lastname'];
-      $sanitizedFirstname = $sanitizedDataContact['firstname'];
-      $sanitizedMail = $sanitizedDataContact['mail'];
-      $sanitizedContent = $sanitizedDataContact['content'];
+      $sanitizedContactLastname = $sanitizedDataContact['lastname'];
+      $sanitizedContactFirstname = $sanitizedDataContact['firstname'];
+      $sanitizedContactMail = $sanitizedDataContact['mail'];
+      $sanitizedContactContent = $sanitizedDataContact['content'];
 
-      if (!empty($sanitizedLastname) && (!empty($sanitizedFirstname) && (!empty($sanitizedMail) && (!empty($sanitizedContent))))) {
+      if (!empty($sanitizedContactLastname) && (!empty($sanitizedContactFirstname) && (!empty($sanitizedContactMail) && (!empty($sanitizedContactContent))))) {
         $frontController->contactPost($sanitizedDataContact);
       }
 
@@ -97,15 +97,15 @@ try {
       $register = new \Beear\Models\auth\UsersModel($_POST);
       $sanitizedDataRegister = $register->sanitizedDataUser();
 
-      $sanitizedLastname = $sanitizedDataRegister['lastname'];
-      $sanitizedFirstname = $sanitizedDataRegister['firstname'];
-      $sanitizedMail = $sanitizedDataRegister['mail'];
-      $sanitizedPassword = $sanitizedDataRegister['password'];
+      $sanitizedUserLastname = $sanitizedDataRegister['lastname'];
+      $sanitizedUserFirstname = $sanitizedDataRegister['firstname'];
+      $sanitizedUserMail = $sanitizedDataRegister['mail'];
+      $sanitizedUserPassword = $sanitizedDataRegister['password'];
 
-      if (!empty($sanitizedLastname) 
-      && (!empty($sanitizedFirstname) 
-      && (!empty($sanitizedMail) 
-      && (!empty($sanitizedPassword))))) {
+      if (!empty($sanitizedUserLastname) 
+      && (!empty($sanitizedUserFirstname) 
+      && (!empty($sanitizedUserMail) 
+      && (!empty($sanitizedUserPassword))))) {
         $userController->registerPost($sanitizedDataRegister);
       }
     // ---------------- Déconnexion d'un compte -----------------------
