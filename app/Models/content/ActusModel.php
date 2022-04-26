@@ -22,7 +22,7 @@ class ActusModel extends Manager {
   }
 
   // -------- Affichage de toutes les actus --------
-  public static function getAllActus() {
+  public static function getAllActus(): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare('SELECT * FROM articles ORDER BY id DESC');
@@ -32,7 +32,7 @@ class ActusModel extends Manager {
   }
 
   // -------- Affichage de la dernière actualités en fonction de son ID --------
-  public static function getLastArticle() {
+  public static function getLastArticle(): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare('SELECT * FROM articles ORDER BY id DESC LIMIT 1');
@@ -42,7 +42,7 @@ class ActusModel extends Manager {
   }
 
   // -------- Création d'une actualité --------
-  public static function createActu($data) {
+  public static function createActu($data): array {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -69,7 +69,7 @@ class ActusModel extends Manager {
   }
 
   // -------- Lecture d'une actualité --------
-  public static function getActu($id) {
+  public static function getActu($id): array {
     $db = self::dbAccess();
 
     $req = $db->prepare('SELECT * FROM articles WHERE id = ?');
@@ -79,7 +79,7 @@ class ActusModel extends Manager {
   }
 
   // -------- Mise à jour d'une actualité --------
-  public static function updateActu($data) {
+  public static function updateActu($data): array {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -105,7 +105,7 @@ class ActusModel extends Manager {
   }
 
   // -------- Suppression d'une actualité --------
-  public static function deleteActu($id) {
+  public static function deleteActu($id): void {
     $db = self::dbAccess();
 
     $req = $db->prepare('DELETE FROM articles WHERE id = :id');
@@ -113,7 +113,7 @@ class ActusModel extends Manager {
   }
 
   // -------- Sanitization des informations reçues pour éviter les failles --------
-  public function sanitizedData() {
+  public function sanitizedData(): mixed {
     return array(
       'title' => htmlspecialchars($this->title),
       'content' => htmlspecialchars($this->content),

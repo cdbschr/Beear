@@ -33,7 +33,7 @@ abstract class Manager {
     ------------------ Mise en place d'un mini-ORM ------------------
     ---------------------------------------------------------------- */
 
-  public static function all() {
+  public static function all(): array {
     $objects = [];
 
     $child = get_called_class();
@@ -47,7 +47,7 @@ abstract class Manager {
   }
 
   // --------------- Requête pour afficher toute les données d'une colonne d'une table basé sur un élément d'une colonne ---------------
-  public static function findBy($column, $value) {
+  public static function findBy($column, $value): object {
     $child = get_called_class();
 
     $req = self::dbAccess()->prepare('SELECT * FROM `{$child}` WHERE `{$column}` = :value');
@@ -57,7 +57,7 @@ abstract class Manager {
   }
 
   // --------------- Requête pour mettre à jour les données d'une colonne dans une table basé sur un élément d'une colonne  ---------------
-  public static function updateBy($column, $value) {
+  public static function updateBy($column, $value): object {
     $child = get_called_class();
 
     $req = self::dbAccess()->prepare('UPDATE `{$child}` SET `{$column}` = :value WHERE `{$column}` = :value');
@@ -67,7 +67,7 @@ abstract class Manager {
   }
 
   // --------------- Requête pour supprimer les données d'une colonne dans une table basé sur un élément d'une colonne ---------------
-  public static function deleteBy($column, $value) {
+  public static function deleteBy($column, $value): object {
     $child = get_called_class();
 
     $req = self::dbAccess()->prepare('DELETE FROM `{$child}` WHERE `{$column}` = :value');

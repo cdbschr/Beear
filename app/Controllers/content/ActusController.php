@@ -7,7 +7,7 @@ use Beear\Controllers\Controller;
 Class ActusController extends Controller {
   
   // -------- Affiche une actualité --------
-  public function showSingleActu($data) {
+  public function showSingleActu($data): string {
     $id = $data['id'];
     $actu = new \Beear\Models\content\ActusModel($id);
     $actu = $actu::getActu($id);
@@ -16,14 +16,14 @@ Class ActusController extends Controller {
   }
   
   // -------- Affiche toutes les actualités --------
-  public function showAllActus() {
+  public function showAllActus(): string {
     $actualites = \Beear\Models\content\ActusModel::getAllActus();
 
     return $this->viewFrontend('actualites');
   }
 
   // -------- Création d'une actualité --------
-  public function createActu($data) {
+  public function createActu($data): string {
     $actus = new \Beear\Models\content\ActusModel($data);
     $actus = $actus->sanitizedData();
 
@@ -33,7 +33,7 @@ Class ActusController extends Controller {
   }
 
   // -------- Modification d'une actualité --------
-  public function updateActu($data) {
+  public function updateActu($data): string {
     $actus = new \Beear\Models\content\ActusModel($data);
     $actus = $actus->sanitizedData();
 
@@ -43,7 +43,7 @@ Class ActusController extends Controller {
   }
 
   // -------- Suppression d'une actualité --------
-  public function deleteActu($data) {
+  public function deleteActu($data): string {
     $actus = new \Beear\Models\content\ActusModel($data);
     $actus = $actus->sanitizedData();
 
