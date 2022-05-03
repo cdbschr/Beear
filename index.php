@@ -31,7 +31,7 @@ try {
   // -------- Récupération des Controllers --------
   $frontController = new Beear\Controllers\FrontController();
   $userController = new Beear\Controllers\auth\UsersController();
-  $actusController = new Beear\Controllers\content\ActusController();
+  $beersController = new Beear\Controllers\content\BeersController();
 
   // -------- Vérification dans le cas où il y a une action, sinon on retourne la page home --------
   if (isset($_GET['action'])) {
@@ -42,18 +42,11 @@ try {
       $frontController->valeursPage();
 
     } elseif ($_GET['action'] == 'actualites') {
-      $actusController->showAllActus();
+      $frontController->actualitesPage();
 
     } elseif ($_GET['action'] == 'contact') {
       $frontController->contactPage();
     
-    /* ----------------------------------------------------------------
-    ---------------- Affichage des Actualités (Blog) ------------------
-    ---------------------------------------------------------------- */
-    } elseif($_GET['action'] == "actu") {
-      $id = $_GET['id'];
-      $actusController->showSingleActu($id);
-
     /* ----------------------------------------------------------------
     ---------------- Gestion du formulaire de contact -----------------
     ---------------------------------------------------------------- */
