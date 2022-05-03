@@ -4,7 +4,7 @@ namespace Beear\Models\content;
 
 use Beear\Models\Manager;
 
-class BeearsModel extends Manager {
+class BeersModel extends Manager {
   protected int $id;
   protected string $idname;
   protected string $name;
@@ -36,6 +36,7 @@ class BeearsModel extends Manager {
   //get beer by id
   public function getBeerById(int $id): mixed {
     $db = self::dbAccess();
+    
     $req = $db->prepare('SELECT * FROM beers WHERE id = ?');
     $req->execute(array($id));
     $beer = $req->fetch();
@@ -48,7 +49,6 @@ class BeearsModel extends Manager {
 
     $req = $db->prepare('SELECT * FROM beers ORDER BY id DESC LIMIT 3');
     $req->execute();
-
     return $req->fetch();
   }
 
