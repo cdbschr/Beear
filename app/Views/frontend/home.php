@@ -4,7 +4,15 @@ require_once './app/Views/frontend/layouts/head.php';
 
 <main>
   <section id="bieres" class="bieres">
-
+    <article>
+      
+    </article>
+    <article>
+      
+    </article>
+    <article>
+      
+    </article>
   </section>
   <?php require_once 'layouts/socials.php'; ?>
   <section id="map" class="container">

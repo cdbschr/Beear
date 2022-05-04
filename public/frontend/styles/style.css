@@ -249,7 +249,6 @@ li {
 /* logo */
 #logo a {
   display: flex;
-  justify-content: flex-end;
   margin-right: 30px;
 }
 
@@ -1153,13 +1152,14 @@ li {
 
   #menudesktop {
     display: flex;
-    align-self: center;
     height: 150px;
     justify-content: flex-end;
+    width: 70%;
   }
 
   #entete {
     display: flex;
+    justify-content: space-between;
   }
 
   #logo {
@@ -1175,6 +1175,7 @@ li {
     display: flex;
     width: 85%;
     align-self: center;
+    justify-content: flex-end;
   }
 
   #menunav li {
@@ -1259,9 +1260,41 @@ li {
   }
 
   /*------------Page Contact-----------*/
+  #contactsection {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+  }
+
+  #contactpage h1, #contactpage h4 {
+    width: 100%;
+    text-align: center;
+  }
+
+  #contactpage h4 {
+    margin-bottom: 30px;
+  }
+  
+  #contact {
+    width: 50%;
+  }
+
+  #contactform {
+    width: 80%;
+  }
+
+  #map {
+    width: 45%;
+    margin: 0;
+  }
+
+  #map iframe {
+    max-height: 650px;
+  }
+  
   #contact input:not(#contact input[type="radio"], #envoyer, #rgpd),
   #biere-selection {
-    width: 50vw;
+    width: 100%;
   }
 
   #contact h4 {
@@ -1269,7 +1302,7 @@ li {
   }
 
   #contact textarea {
-    width: 50vw;
+    width: 100%;
     padding: 15px 15px;
   }
 
