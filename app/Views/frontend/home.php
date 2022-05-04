@@ -3,15 +3,6 @@ require_once './app/Views/frontend/layouts/head.php';
 ?>
 
 <main>
-  <article id="articles" class="container">
-    <h2>Actualités</h2>
-    <h4>Pour Noel, jeu concours incroyable</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem necessitatibus pariatur quam dignissimos, accusantium voluptate aspernatur vero laudantium ad aperiam eum sint? Facilis sed delectus enim? Aperiam placeat maiores aspernatur pariatur culpa molestias accusantium ullam voluptatibus rem, quis qui sint incidunt, debitis, natus fugit?</p>
-    <img src="./public/frontend/img/actualites/jeuconcours.jpg" alt="jeu concours">
-    <a href="/?action=actus" class="flex-button">
-      <p class="button">En savoir plus</p>
-    </a>
-  </article>
   <section id="bieres" class="bieres">
 
   </section>

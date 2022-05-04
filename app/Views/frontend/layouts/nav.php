@@ -25,9 +25,6 @@
           <a href="/?action=valeurs">
             <li>Valeurs</li>
           </a>
-          <a href="/?action=actualites">
-            <li>Actualités</li>
-          </a>
           <a href="/?action=contact">
             <li>Contact</li>
           </a>
@@ -52,9 +49,6 @@
           </a>
           <a href="/?action=valeurs">
             <li>Valeurs</li>
-          </a>
-          <a href="/?action=actualites">
-            <li>Actualités</li>
           </a>
           <a href="/?action=contact">
             <li>Contact</li>
