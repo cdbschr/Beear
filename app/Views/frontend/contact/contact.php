@@ -1,5 +1,5 @@
 <?php require_once './app/Views/frontend/layouts/head.php'; ?>
-<main id="contactpage">
+<main id="contactpage" class="container">
   <h1>Contact</h1>
   <h4>Vous pouvez nous contacter directement via ce formulaire.</h4>
   <section id="contactsection">

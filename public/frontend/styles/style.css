@@ -449,7 +449,7 @@ li {
 #map {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -1269,10 +1269,12 @@ li {
   #contactpage h1, #contactpage h4 {
     width: 100%;
     text-align: center;
+    font-size: 3rem;
   }
 
   #contactpage h4 {
     margin-bottom: 30px;
+    font-size: 1.7rem;
   }
   
   #contact {
@@ -1280,16 +1282,21 @@ li {
   }
 
   #contactform {
-    width: 80%;
+    width: 100%;
+  }
+
+  #contactform label {
+    margin: 0 auto;
+    padding: 0;
   }
 
   #map {
-    width: 45%;
-    margin: 0;
+    width: 47%;
+    margin: 0 auto;
   }
 
   #map iframe {
-    max-height: 650px;
+    max-height: 450px;
   }
   
   #contact input:not(#contact input[type="radio"], #envoyer, #rgpd),

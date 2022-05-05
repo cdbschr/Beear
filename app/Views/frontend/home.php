@@ -15,7 +15,7 @@ require_once './app/Views/frontend/layouts/head.php';
     </article>
   </section>
   <?php require_once 'layouts/socials.php'; ?>
-  <section id="map" class="container">
+  <section id="homemap" class="container">
     <header id="cadretxtmap">
       <h3>Où nous retrouver ?</h3>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima expedita veniam repellendus quia, illum quas dignissimos dolorum culpa voluptatum perspiciatis fuga sit eos fugit soluta quae nostrum voluptas quos doloribus.</p>
