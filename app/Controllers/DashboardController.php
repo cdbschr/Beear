@@ -4,6 +4,6 @@ namespace Beear\Controllers;
 
 class DashboardController extends Controller {
   function admin(): void {
-    include $this->viewAdmin('dashboard');
+    include $this->viewAdmin('admin');
   }
 }

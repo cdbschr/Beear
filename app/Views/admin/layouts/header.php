@@ -10,6 +10,4 @@
   <link rel="icon" href="/public/frontend/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/public/frontend/styles/style.css">
 </head>
-
 <body>
-  <?php require_once 'nav.php'; ?>

@@ -1,6 +1,6 @@
 <header>
   <div id="logmenu" class="containermobile">
-    <!-- quand connecté, afficher juste le lien Accéder au Dashboard-->
+    <!-- quand connecté, afficher juste le lien Accéder au Dashboard -->
     <?php if (isset($_SESSION['user'])): ?>
       <a href="<?= $this->viewAdmin('dashboard') ?>" class="button">Accéder au Dashboard</a>
     <?php else: ?>
@@ -16,16 +16,16 @@
         <span></span>
         <span></span>
         <ul id="menu">
-          <a href="/">
+          <a href="/" title="Accueil">
             <li>Accueil</li>
           </a>
-          <a href="/#bblonde">
+          <a href="/#bblonde" title="Produits">
             <li>Produits</li>
           </a>
-          <a href="/?action=valeurs">
+          <a href="/?action=valeurs" title="Valeurs">
             <li>Valeurs</li>
           </a>
-          <a href="/?action=contact">
+          <a href="/?action=contact" title="Contact">
             <li>Contact</li>
           </a>
           <div id="corporation">
@@ -41,16 +41,16 @@
       </figure>
       <nav id="menudesktop">
         <ul id="menunav">
-          <a href="/">
+          <a href="/" title="Accueil">
             <li>Accueil</li>
           </a>
-          <a href="/#bblonde">
+          <a href="/#bblonde" title="Produits">
             <li>Produits</li>
           </a>
-          <a href="/?action=valeurs">
+          <a href="/?action=valeurs" title="Valeurs">
             <li>Valeurs</li>
           </a>
-          <a href="/?action=contact">
+          <a href="/?action=contact" title="Contact">
             <li>Contact</li>
           </a>
         </ul>
@@ -59,7 +59,7 @@
     <div id="flexcenterendheader">
       <div id="endheader" class="container">
         <h1>Et si vous découvriez nos bières ?</h1>
-        <a href="/#articles" class="flex-button">
+        <a href="/#articles" class="flex-button" title="Afficher les bières">
           <p class="button">Je découvre</p>
         </a>
       </div>

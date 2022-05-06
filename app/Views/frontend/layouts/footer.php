@@ -1,5 +1,5 @@
 <footer id="generalfooter" class="container">
-  <a href="index.php" id="linklogofooter"><img src="./public/frontend/img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
+  <a href="index.php" id="linklogofooter" title="Accueil"><img src="./public/frontend/img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
   <div id="lieu">
     <h4>SIÈGE</h4>
     <adress>
@@ -9,10 +9,13 @@
   </div>
   <?php require_once 'socialssvg.php'; ?>
   <div id="linksfooter">
-    <a href="#" class="linkfooter" rel="nofollow">
+    <a href="#" class="linkfooter" rel="nofollow" title="Mentions légales">
       <p>Mentions légales</p>
     </a>
-    <a href="#" class="linkfooter" rel="nofollow">
+    <a href="#" class="linkfooter" rel="nofollow" title="RGPD">
+      <p>RGPD</p>
+    </a>
+    <a href="#" class="linkfooter" rel="nofollow" title="Plan du site">
       <p>Plan du site</p>
     </a>
   </div>

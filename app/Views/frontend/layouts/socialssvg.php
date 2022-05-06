@@ -1,5 +1,5 @@
 <div id="socialsnetwork">
-  <a href="https://facebook.com" rel="nofollow" target="_blank">
+  <a href="https://facebook.com" rel="nofollow" target="_blank" title="facebook">
     <xml version="1.0" encoding="utf-8"?>
     <svg version="1.1" id="facebook-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
@@ -10,7 +10,7 @@
       c26.5,0,48-21.5,48-48V80C448,53.5,426.5,32,400,32z"/>
     </svg>
   </a>
-  <a href="https://instagram.com" rel="nofollow" target="_blank">
+  <a href="https://instagram.com" rel="nofollow" target="_blank" title="instagram">
     <xml version="1.0" encoding="utf-8"?>
     <svg version="1.1" id="instagram-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
@@ -28,7 +28,7 @@
       s41.5-24.6,67-25.8c26.4-1.5,105.6-1.5,132,0c25.6,1.3,48.3,7.2,67,25.8s24.6,41.4,25.9,67C384.4,216.4,384.4,295.6,382.9,322z"/>
     </svg>
   </a>
-  <a href="https://twitter.com" rel="nofollow" target="_blank">
+  <a href="https://twitter.com" rel="nofollow" target="_blank" title="twitter">
     <xml version="1.0" encoding="utf-8"?>
     <svg version="1.1" id="twitter-icon" class="iconsocialsnetwork" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">

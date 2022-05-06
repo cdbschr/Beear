@@ -21,7 +21,7 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quasi accusamus, soluta rem, amet saepe quae aperiam cumque, omnis veritatis laboriosam iusto facilis minus ad vel? Possimus amet totam harum!</p>
   </article>
   <article class="articlers hiddenmobile">
-    <img src="./public/frontend/img/reseaux-sociaux/malt2.jpg" alt="malt beear">
+    <img src="./public/frontend/img/reseaux-sociaux/malt2.jpg" alt="malt bio beear">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quasi accusamus, soluta rem, amet saepe quae aperiam cumque, omnis veritatis laboriosam iusto facilis minus ad vel? Possimus amet totam harum!</p>
   </article>
   <?php require_once 'socialslinks.php' ?>
