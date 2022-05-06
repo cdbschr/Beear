@@ -106,28 +106,8 @@ li {
   max-width: 1200px;
 }
 
-#logmenu {
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-#logmenu>a {
-  font-family: "Roboto", sans-serif;
-  font-weight: 800;
-  margin-top: 10px;
-}
-
-#logmenu>a:nth-child(1):hover {
-  color: var(--primary);
-}
-
-#buttonlogmenu {
-  padding:5px 4px;
-  width: 10rem;
-  margin-left: 1rem;
-  text-transform: none;
+#logmenu { 
+  display: none;
 }
 
 /* menu burger */
@@ -249,7 +229,7 @@ li {
 /* logo */
 #logo a {
   display: flex;
-  margin-right: 30px;
+  justify-content: flex-end;
 }
 
 #logo img {
@@ -447,7 +427,7 @@ li {
 
 /* Maps */
 #homemap iframe {
-  max-width: 1200px;
+  max-width: 100%;
   max-height: 350px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -1151,6 +1131,30 @@ li {
     background-image: url("../img/bg-desktop.jpg");
     background-position: left;
     margin: 0 auto;
+  }
+
+  #logmenu {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  #logmenu>a {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    margin-top: 10px;
+  }
+  
+  #logmenu>a:nth-child(1):hover {
+    color: var(--primary);
+  }
+  
+  #buttonlogmenu {
+    padding:5px 4px;
+    width: 10rem;
+    margin-left: 1rem;
+    text-transform: none;
   }
 
   #menuburger {

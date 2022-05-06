@@ -1,13 +1,5 @@
 <header>
-  <div id="logmenu" class="containermobile">
-    <!-- quand connecté, afficher juste le lien Accéder au Dashboard -->
-    <?php if (isset($_SESSION['user'])): ?>
-      <a href="<?= $this->viewAdmin('dashboard') ?>" class="button">Accéder au Dashboard</a>
-    <?php else: ?>
-      <a href="/?action=register">Se créer un compte</a>
-      <a href="/?action=login" id="buttonlogmenu" class="button">Se connecter</a>
-    <?php endif; ?>
-  </div>
+  
   <div id="generalheader">
     <nav id="menuburger" role="navigation">
       <div id="menuToggle">
@@ -35,6 +27,15 @@
         </ul>
       </div>
     </nav>
+    <div id="logmenu">
+      <!-- quand connecté, afficher juste le lien Accéder au Dashboard -->
+      <?php if (isset($_SESSION['user'])): ?>
+        <a href="<?= $this->viewAdmin('dashboard') ?>" class="button">Accéder au Dashboard</a>
+      <?php else: ?>
+        <a href="/?action=register">Se créer un compte</a>
+        <a href="/?action=login" id="buttonlogmenu" class="button">Se connecter</a>
+      <?php endif; ?>
+    </div>
     <div id="entete">
       <figure id="logo">
         <a href="/"><img src="./public/frontend/img/Logo-Beear.png" alt="logo beear"></a>
