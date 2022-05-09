@@ -1,5 +1,4 @@
 <header>
-  
   <div id="generalheader">
     <nav id="menuburger" role="navigation">
       <div id="menuToggle">
