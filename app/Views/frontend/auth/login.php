@@ -11,10 +11,6 @@
   </div>
   <button type="submit" class="btn btn-primary">Se connecter</button>
 </form>
-div.
-<h4>Déjà inscrit ? </h4>
-<a href="register.php">Inscrivez-vous</a>
-  
 </main>
 
 <?php require_once './app/Views/frontend/layouts/footer.php'; ?>

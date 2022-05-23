@@ -12,6 +12,15 @@
     <a href="#" class="linkfooter" rel="nofollow" title="Mentions légales">
       <p>Mentions légales</p>
     </a>
+    <?php if (isset($_SESSION['user'])) : ?>
+      <a href="<?= $this->viewAdmin('dashboard') ?>" class="linkfooter" rel="nofollow" title="Accéder au Dashboard">
+        <p>Accéder au Dashboard</p>
+      </a>
+    <?php else : ?>
+      <a href="/?action=login" id="buttonlogmenu" class="linkfooter" rel="nofollow" title="Se connecter">
+        <p>Se connecter</p>
+      </a>
+    <?php endif; ?>
     <a href="#" class="linkfooter" rel="nofollow" title="RGPD">
       <p>RGPD</p>
     </a>
