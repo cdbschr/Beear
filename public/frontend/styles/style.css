@@ -940,7 +940,7 @@ li {
 
 /* ------------------ Page Dashboard ---------------------- */
 
-#pres-dashboard {
+.pres-dashboard {
   background: linear-gradient(to bottom, rgba(101, 101, 95, 0.107), rgba(0, 0, 0, 0.545)),url('/public/admin/img/bg-dashboard.jpg') no-repeat center;
   background-size: cover;
   width: 100%;
@@ -952,7 +952,7 @@ li {
   margin-bottom: 40px;
 }
 
-#pres-dashboard a {
+.pres-dashboard a {
   width: 170px;
   height: 50px;
   font-size: 0.8em;
@@ -960,9 +960,12 @@ li {
   top: 10px;
   right: 10px;
   align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#pres-txt-dashboard {
+.pres-txt-dashboard {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -971,28 +974,28 @@ li {
   margin: 0 auto;
 }
 
-#pres-txt-dashboard h1 {
+.pres-txt-dashboard h1 {
   width: 100%;
   margin-bottom: 20px;
 }
 
-#pres-txt-dashboard h4 {
+.pres-txt-dashboard h4 {
   width: 100%;
   margin-bottom: 40px;
 }
 
-#dashboardmenu {
+.dashboardmenu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-#dashboardmenu li {
+.dashboardmenu li {
   width: 100%;
   margin: 0 70px 30px;
 }
 
-#dashboardmenu a {
+.dashboardmenu a {
   width: 100%;
   padding: 30px;
   text-align: center;
@@ -1193,6 +1196,11 @@ li {
   /*------------Page Bières-----------*/
   .presbiere img {
     width: 25%;
+  }
+
+  /*------------Page Dashboard-----------*/
+  .dashboardmenu li { 
+    width: 50%;
   }
 }
 
@@ -1426,4 +1434,10 @@ li {
   .presbiere img {
     width: 20%;
   }
+
+  /*------------Page Dashboard-----------*/
+  .dashboardmenu li { 
+    width: 20%;
+  }
+
 }

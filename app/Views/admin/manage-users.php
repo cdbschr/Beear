@@ -6,12 +6,13 @@ require_once 'app/Views/admin/layouts/header.php';
     <div class="container">
     <a href="" class="button" title="deconnexion">Déconnexion</a>
     <div class="container pres-txt-dashboard">
-      <h1>Bienvenue sur le dashboard de Beear</h1>
-      <h4>Bonjour <!-- utilisateur --></h4>
+      <h1>Bienvenue sur la partie GESTION DES UTILISATEURS</h1>
     </div>
     </div>
   </section>
-  <?php require_once 'layouts/nav.php'; ?>
+  <section>
+    
+  </section>
 </main>
 </body>
 </html>
