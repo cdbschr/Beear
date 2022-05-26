@@ -4,7 +4,7 @@ namespace Beear\Models\content;
 
 use Beear\Models\Manager;
 
-class BeersModel extends Manager {
+class Beers extends Manager {
   protected int $id;
   protected string $idname;
   protected string $name;

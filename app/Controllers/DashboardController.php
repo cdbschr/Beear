@@ -3,15 +3,15 @@
 namespace Beear\Controllers;
 
 class DashboardController extends Controller {
-  function admin(): void {
+  public function admin(): void {
     include $this->viewAdmin('admin');
   }
 
-  function managebeers(): void {
+  public function managebeers(): void {
     include $this->viewAdmin('manage-beers');
   }
 
-  function manageusers(): void {
+  public function manageusers(): void {
     include $this->viewAdmin('manage-users');
   }
 }

@@ -1,5 +1,5 @@
 <?php
-require_once 'app/Views/admin/layouts/header.php';
+require_once 'app/Views/admin/layouts/head.php';
 ?>
 <main>
   <section class="pres-dashboard">

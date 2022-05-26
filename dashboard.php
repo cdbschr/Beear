@@ -9,6 +9,8 @@ $dotenv->load();
 
 try {
   $dashboardController = new \Beear\Controllers\DashboardController();
+  $usersController = new \Beear\Controllers\auth\Users();
+  $beersController = new \Beear\Controllers\content\Beers();
 
   if (isset($_GET['action'])) {
     if ($_GET['action'] == 'beers') {

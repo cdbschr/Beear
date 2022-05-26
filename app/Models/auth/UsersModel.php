@@ -4,7 +4,7 @@ namespace Beear\Models\auth;
 
 use Beear\Models\Manager;
 
-class UsersModel extends Manager { 
+class Users extends Manager { 
   protected $id;
   protected $lastname;
   protected $firstname;
@@ -18,7 +18,7 @@ class UsersModel extends Manager {
   }
 
   // --------------- Requête pour enregister un user ---------------
-  public static function register(array $data): mixed {
+  public static function registerUser(array $data): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -63,6 +63,32 @@ class UsersModel extends Manager {
     }
 
     return false;
+  }
+
+  public static function updateMailUser(array $data): mixed {
+    $db = self::dbAccess();
+
+    $req = $db->prepare(
+      'UPDATE users SET mail = :mail WHERE id = :id'
+    );
+
+    return $req->execute([
+      ':mail' => $data['mail'],
+      ':id' => $data['id']
+    ]);
+  }
+
+  public static function updatePasswordUser(array $data): mixed {
+    $db = self::dbAccess();
+
+    $req = $db->prepare(
+      'UPDATE users SET `password` = :password WHERE id = :id'
+    );
+
+    return $req->execute([
+      ':password' => password_hash($data['password'], PASSWORD_DEFAULT),
+      ':id' => $data['id']
+    ]);
   }
   
   // --------------- Sanitizer ---------------

@@ -8,7 +8,7 @@
   <meta name="description" content="Les meilleures bières du Morbihan, de Bretagne et de France sont ici. Bières blondes, brunes, blanches.">
   <link rel="shortcut icon" href="./public/frontend/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="./public/frontend/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./public/frontend/styles/style.css">
+  <link rel="stylesheet" href="./public/styles/style.css">
 </head>
 
 <body>

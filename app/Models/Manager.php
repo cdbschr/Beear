@@ -37,6 +37,7 @@ abstract class Manager {
     $objects = [];
 
     $child = get_called_class();
+    $child = strtolower($child);
 
     $req = 'SELECT * FROM `{$child}`';
 
@@ -49,6 +50,7 @@ abstract class Manager {
   // --------------- Requête pour afficher toute les données d'une colonne d'une table basé sur un élément d'une colonne ---------------
   public static function findBy($column, $value): object {
     $child = get_called_class();
+    $child = strtolower($child);
 
     $req = self::dbAccess()->prepare('SELECT * FROM `{$child}` WHERE `{$column}` = :value');
     $req->execute(array(':value' => $value));
@@ -59,6 +61,7 @@ abstract class Manager {
   // --------------- Requête pour mettre à jour les données d'une colonne dans une table basé sur un élément d'une colonne  ---------------
   public static function updateBy($column, $value): object {
     $child = get_called_class();
+    $child = strtolower($child);
 
     $req = self::dbAccess()->prepare('UPDATE `{$child}` SET `{$column}` = :value WHERE `{$column}` = :value');
     $req->execute(array(':value' => $value));
@@ -69,6 +72,7 @@ abstract class Manager {
   // --------------- Requête pour supprimer les données d'une colonne dans une table basé sur un élément d'une colonne ---------------
   public static function deleteBy($column, $value): object {
     $child = get_called_class();
+    $child = strtolower($child);
 
     $req = self::dbAccess()->prepare('DELETE FROM `{$child}` WHERE `{$column}` = :value');
     $req->execute(array(':value' => $value));
