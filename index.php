@@ -9,23 +9,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-  // -------- Transformation du Warning en exception --------
+// -------- Transformation du Warning en exception --------
 function errorHandler($errno, $errstr, $errfile, $errline) {
-  throw new Exception($errstr, $errno);
+	throw new Exception($errstr, $errno);
 }
+
 set_error_handler('errorHandler');
-
-function eCatcher($e) {
-  if($_ENV["APP_ENV"] == "dev") {
-    $whoops = new \Whoops\Run;
-    $whoops->allowQuit(false);
-    $whoops->writeToOutput(false);
-    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-    $html = $whoops->handleException($e);
-
-    require './app/Views/errors/eCatcher.php';
-  }
-}
 
 try {
   // -------- Récupération des Controllers --------

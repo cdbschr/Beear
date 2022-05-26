@@ -3,10 +3,16 @@
 session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once 'index.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
+
+// -------- Transformation du Warning en exception --------
+function errorHandler($errno, $errstr, $errfile, $errline) {
+	throw new Exception($errstr, $errno);
+}
+
+set_error_handler('errorHandler');
 
 try {
   $dashboardController = new \Beear\Controllers\DashboardController();
