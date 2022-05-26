@@ -11,12 +11,20 @@ try {
   $dashboardController = new \Beear\Controllers\DashboardController();
 
   if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'valeurs') {
-      $frontController->valeursPage();
+    if ($_GET['action'] == 'beers') {
+      $dashboardController->managebeers();
     }
+
+    elseif ($_GET['action'] == 'users') {
+      $dashboardController->manageusers();
+    }
+
   } else {
     $dashboardController->admin();
   }
 } catch (Exception $e) {
   require 'app/Views/errors/404.php';
+} catch(Error $e) {
+  eCatcher($e);
+  require 'app/Views/errors/oops.php';
 }
