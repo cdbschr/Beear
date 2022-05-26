@@ -13,8 +13,6 @@ require_once 'app/Views/admin/layouts/head.php';
   </section>
   <section class="admin-manage container">
     <div class="admin-manage-users">
-      <h2>Gestion des utilisateurs</h2>
-      <div class="admin-manage-users-table">
         <table>
           <thead>
             <tr>
@@ -27,22 +25,21 @@ require_once 'app/Views/admin/layouts/head.php';
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($data['users'] as $user): ?>
+            <!-- <?php //foreach ($data['users'] as $user): ?>
               <tr>
-                <td><?= $user->lastname; ?></td>
-                <td><?= $user->firstname; ?></td>
-                <td><?= $user->email; ?></td>
-                <td><?= $user->role; ?></td>
-                <td><?= $user->created_at; ?></td>
+                <td><?php // $user->lastname; ?></td>
+                <td><?php // $user->firstname; ?></td>
+                <td><?php // $user->email; ?></td>
+                <td><?php // $user->role; ?></td>
+                <td><?php // $user->created_at; ?></td>
                 <td>
-                  <!-- <a href="<?php //$router->generate('admin_user_edit', ['id' => $user->id]); ?>" class="button">Modifier</a>
+                  <a href="<?php //$router->generate('admin_user_edit', ['id' => $user->id]); ?>" class="button">Modifier</a>
                   <a href="<?php //$router->generate('admin_user_delete', ['id' => $user->id]); ?>" class="button">Supprimer</a> -->
-                </td>
-              </tr>
-            <?php endforeach; ?>
+                <!-- </td>
+              </tr> -->
+            <?php // endforeach; ?>
           </tbody>
         </table>
-      </div>
     </div>
   </section>
 </main>

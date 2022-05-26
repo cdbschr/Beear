@@ -3,6 +3,7 @@
 session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
+require_once 'app/errors/eCatcher.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -33,6 +34,7 @@ try {
   }
 } catch (Exception $e) {
   require 'app/Views/errors/404.php';
+
 } catch(Error $e) {
   eCatcher($e);
   require 'app/Views/errors/oops.php';

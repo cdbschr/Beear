@@ -55,4 +55,12 @@ class Users extends Controller {
     session_destroy();
     header('Location:'.$this->viewFrontend('/'));
   }
+
+  public function checkUser(): bool {
+    if (isset($_SESSION['user'])) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
