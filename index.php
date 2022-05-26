@@ -30,8 +30,8 @@ function eCatcher($e) {
 try {
   // -------- Récupération des Controllers --------
   $frontController = new Beear\Controllers\FrontController();
-  $userController = new Beear\Controllers\auth\UsersController();
-  $beersController = new Beear\Controllers\content\BeersController();
+  $userController = new Beear\Controllers\auth\Users();
+  $beersController = new Beear\Controllers\content\Beers();
 
   // -------- Vérification dans le cas où il y a une action, sinon on retourne la page home --------
   if (isset($_GET['action'])) {
@@ -75,7 +75,7 @@ try {
       $userController->connexionPage();
 
     } elseif ($_GET['action'] == 'login-post') {
-      $user = new \Beear\Models\auth\UsersModel($_POST);
+      $user = new \Beear\Models\auth\Users($_POST);
       $sanitizedDataUser = $user->sanitizedDataUser();
 
       $sanitizedMail = $sanitizedDataUser['mail'];
@@ -90,7 +90,7 @@ try {
       $userController->inscriptionPage();
 
     } elseif ($_GET['action'] == 'post-register') {
-      $register = new \Beear\Models\auth\UsersModel($_POST);
+      $register = new \Beear\Models\auth\Users($_POST);
       $sanitizedDataRegister = $register->sanitizedDataUser();
 
       $sanitizedLastname = $sanitizedDataRegister['lastname'];

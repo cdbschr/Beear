@@ -99,7 +99,7 @@ li {
 #generalheader {
   height: 100vh;
   position: relative;
-  background-image: url(../img/bg-mobile.jpg);
+  background-image: url(../frontend/img/bg-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -266,7 +266,7 @@ li {
 .bg-otherpages {
   height: 30%;
   position: relative;
-  background-image: url(../img/bg-pages.jpg);
+  background-image: url(../frontend/img/bg-pages.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1008,7 +1008,7 @@ li {
 /* Tablette min */
 @media screen and (min-width: 576px) {
   #generalheader {
-    background-image: url("../img/bg-tablet.jpg");
+    background-image: url("../frontend/img/bg-tablet.jpg");
   }
 
   #logo img {
@@ -1216,7 +1216,7 @@ li {
   }
 
   #generalheader {
-    background-image: url("../img/bg-desktop.jpg");
+    background-image: url("../frontend/img/bg-desktop.jpg");
     background-position: left;
     margin: 0 auto;
   }
