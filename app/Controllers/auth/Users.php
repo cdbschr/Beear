@@ -14,7 +14,7 @@ class Users extends Controller {
     $userExist = \Beear\Models\auth\Users::isUserExist($_POST['mail']);
 
     if ($userExist) {
-      header('Location:'.$this->viewFrontend('/auth/register-error'));
+      throw new \Exception('Cette adresse mail est déjà utilisée');
     } else {
       $registerData = [
         'lastname' => htmlspecialchars($_POST['lastname']),

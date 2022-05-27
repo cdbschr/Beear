@@ -12,6 +12,9 @@ require_once 'app/Views/admin/layouts/head.php';
     </div>
   </section>
   <section class="admin-manage container">
+    <div class="new">
+      <a href="">Ajouter un utilisateur</a>
+    </div>
     <div class="admin-manage-users">
         <table>
           <thead>

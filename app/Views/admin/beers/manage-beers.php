@@ -6,7 +6,7 @@ require_once 'app/Views/admin/layouts/head.php';
     <div class="container">
     <a href="" class="button" title="deconnexion">Déconnexion</a>
     <div class="container pres-txt-dashboard">
-      <h1>Bienvenue sur la partie GESTION DES BIÈRES</h1>
+      <h1>Bienvenue sur la partie gestion des bières</h1>
     </div>
     </div>
   </section>
