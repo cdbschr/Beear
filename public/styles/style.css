@@ -893,13 +893,13 @@ li {
 }
 
 /* ------------------ Page 404 ---------------------- */
-#body-404 {
+.body-error {
   background: url("/public/frontend/img/beear-404page.jpg") bottom fixed no-repeat;
   background-size: cover;
   position: relative;
 }
 
-#div-404 {
+.div-error {
   width: 50%;
   height: 50%;
   position: absolute;
@@ -911,30 +911,30 @@ li {
   justify-content: center;
 }
 
-#h-bg-404 {
+.h-bg-error {
   background-color: rgba(28, 28, 28, 0.822);
   border-radius: 15px;
   padding: 15px;
 }
 
-#div-404 h1 {
+.div-error h1 {
   color: var(--primary);
   font-size: 3rem;
   text-align: center;
   margin-bottom: 10px;
 }
 
-#h2-404 {
+.h2-error {
   text-align: center;
 }
 
-#div-404 button {
+.div-error button {
   margin-top: 30px;
   padding: 15px;
   background-color: #1c1c1ce0;
 }
 
-#div-404 button:hover {
+.div-error button:hover {
   background-color: var(--primary);
 }
 
