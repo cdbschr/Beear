@@ -23,7 +23,7 @@ class ContactsModel extends Manager {
     $db = self::dbAccess();
 
     $req = $db->prepare(
-      'INSERT INTO 
+      "INSERT INTO 
         contact(
           lastname, 
           firstname,  
@@ -31,7 +31,7 @@ class ContactsModel extends Manager {
           phone, 
           content
         ) 
-      VALUES (:lastname, :firstname, :mail, :phone, :content)'
+      VALUES (:lastname, :firstname, :mail, :phone, :content)"
     );
 
     return $req->execute(
@@ -45,11 +45,11 @@ class ContactsModel extends Manager {
     );
   }
 
-  // --------------- Voir les mails avec toute les informations ---------------
+  // --------------- Voir les mails avec toutes les informations ---------------
   public static function getAllMails(): mixed {
     $db = self::dbAccess();
 
-    $req = $db->prepare('SELECT * FROM contact ORDER BY id DESC');
+    $req = $db->prepare("SELECT * FROM contact ORDER BY id DESC");
     $req->execute();
 
     return $req->fetch();

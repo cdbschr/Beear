@@ -37,8 +37,8 @@ class Beers extends Manager {
   public function getBeerById(int $id): mixed {
     $db = self::dbAccess();
     
-    $req = $db->prepare('SELECT * FROM beers WHERE id = ?');
-    $req->execute(array($id));
+    $req = $db->prepare("SELECT * FROM beers WHERE id = :id");
+    $req->execute(array(':id' => $id));
     $beer = $req->fetch();
     return $beer;
   }
@@ -47,7 +47,7 @@ class Beers extends Manager {
   public static function getThreeLastBeers(): mixed {
     $db = self::dbAccess();
 
-    $req = $db->prepare('SELECT * FROM beers ORDER BY id DESC LIMIT 3');
+    $req = $db->prepare("SELECT * FROM beers ORDER BY id DESC LIMIT 3");
     $req->execute();
     return $req->fetch();
   }
