@@ -4,27 +4,27 @@ namespace Beear\Controllers;
 
 class FrontController extends Controller {
   function home(): void {
-    include $this->viewFrontend('home');
+    require_once $this->viewFrontend('home');
   }
 
   function valeursPage(): void {
-    include $this->viewFrontend('valeurs');
+    require_once $this->viewFrontend('valeurs');
   }
 
   function actualitesPage(): void {
-    include $this->viewFrontend('actualites');
+    require_once $this->viewFrontend('actualites');
   }
 
   function contactPage(): void {
-    include $this->viewFrontend('/contact/contact');
+    require_once $this->viewFrontend('/contact/contact');
   }
 
   function rgpdPage(): void {
-    include $this->viewFrontend('rgpd');
+    require_once $this->viewFrontend('rgpd');
   }
 
   function mentionsPage(): void {
-    include $this->viewFrontend('mentionslegales');
+    require_once $this->viewFrontend('mentionslegales');
   }
 
   // -------- Envoi dans la db les informations du formulaire de Contact --------
@@ -34,7 +34,7 @@ class FrontController extends Controller {
 
     if (filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
       $postMail = $contact::postMail($data);
-      require $this->viewFrontend('/contact/contact-confirm');
+      require_once $this->viewFrontend('/contact/contact-confirm');
     } else {
       header('Location:'.$this->viewFrontend('/contact/contact-error'));
     }

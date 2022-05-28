@@ -6,7 +6,7 @@ use Beear\Controllers\Controller;
 
 class Users extends Controller {
   function connexionPage(): void {
-    include $this->viewFrontend('auth/login');
+    require_once $this->viewFrontend('auth/login');
   }
   
   function loginPost($loginData): void {
@@ -24,13 +24,13 @@ class Users extends Controller {
   }
 
   function inscriptionPage(): void {
-    include $this->viewAdmin('users/add-user');
+    require_once $this->viewAdmin('users/add-user');
   }
-
+  
   // -------- Apres verification, enregistrement dans la db des informations pour création d'un compte --------
   function addUser(): void {
     $userExist = \Beear\Models\auth\Users::isUserExist($_POST['mail']);
-
+    
     if ($userExist) {
       throw new \Exception('Cette adresse mail est déjà utilisée');
     } else {
@@ -40,11 +40,11 @@ class Users extends Controller {
         'mail' => htmlspecialchars($_POST['mail']),
         'password' => htmlspecialchars($_POST['password'])
       ];
-
-      $register = \Beear\Models\auth\Users::registerUser($registerData);
+      
+      $register = \Beear\Models\auth\Users::createUser($registerData);
 
       if ($register) {
-        header('Location:'.$this->viewFrontend('/auth/register-confirm'));
+        header('Location:'.self::viewAdmin('/auth/register-confirm'));
       } else {
         throw new \Exception('Une erreur est survenue lors de l\'enregistrement');
       }
@@ -56,16 +56,17 @@ class Users extends Controller {
     $user = new \Beear\Models\auth\Users($data);
     $user->updateMailUser($data)->updatePasswordUser($data);
 
-    $this->viewAdmin('users/manage-users');
+    require_once $this->viewAdmin('users/manage-users');
   }
 
   // -------- suppression d'un utilisateur par rapport à son id --------
   function deleteUser($data): void {
     $id = htmlspecialchars($data['id']);
     $user = new \Beear\Models\auth\Users($data);
+    var_dump($user);die;
     $user->deleteBy('id', $id);
 
-    $this->viewAdmin('users/manage-users');
+    require_once $this->viewAdmin('users/manage-users');
   }
 
   function deconnexion(): void {
@@ -73,7 +74,7 @@ class Users extends Controller {
     header('Location:'.$this->viewFrontend('/'));
   }
 
-  public function checkUser(): bool {
+  function checkUser(): bool {
     if (isset($_SESSION['user'])) {
       return true;
     } else {
