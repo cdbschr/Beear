@@ -1,6 +1,6 @@
 <?php require_once './app/Views/frontend/layouts/head.php'; ?> 
 
-<main>
+<main id="login" class="container">
   <h1>Page de Connexion</h1>
 <form>
   <div class="form-group">
