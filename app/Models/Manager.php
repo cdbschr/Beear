@@ -33,50 +33,48 @@ abstract class Manager {
     ------------------ Mise en place d'un mini-ORM ------------------
     ---------------------------------------------------------------- */
 
-  public static function all(): array {
+  public static function all() {
     $objects = [];
 
-    $child = get_called_class();
-    $child = strtolower($child);
-
-    $req = 'SELECT * FROM `{$child}`';
-
+    $class = explode('\\', get_called_class());
+    $table = strtolower($class[array_key_last($class)]);
+    
+    $req = "SELECT * FROM {$table}";
+    
     foreach (self::dbAccess()->prepare($req) as $data) {
-      $data->execute(array_push($objects, new $child($data)));
+      $data->execute(array_push($objects, new $table($data)));
     }
     return $objects;
   }
 
   // --------------- Requête pour afficher toute les données d'une colonne d'une table basé sur un élément d'une colonne ---------------
-  public static function findBy($column, $value): object {
-    $child = get_called_class();
-    $child = strtolower($child);
+  public static function findBy($column, $value) {
+    $class = explode('\\', get_called_class());
+    $table = strtolower($class[array_key_last($class)]);
 
-    $req = self::dbAccess()->prepare('SELECT * FROM `{$child}` WHERE `{$column}` = :value');
+    $req = self::dbAccess()->prepare("SELECT * FROM `{$table}` WHERE `{$column}` = :value");
     $req->execute(array(':value' => $value));
 
-    return new $child($req->fetch());
+    return $req->fetch();
   }
 
   // --------------- Requête pour mettre à jour les données d'une colonne dans une table basé sur un élément d'une colonne  ---------------
-  public static function updateBy($column, $value): object {
-    $child = get_called_class();
-    $child = strtolower($child);
+  public static function updateBy($column, $value) {
+    $class = explode('\\', get_called_class());
+    $table = strtolower($class[array_key_last($class)]);
 
-    $req = self::dbAccess()->prepare('UPDATE `{$child}` SET `{$column}` = :value WHERE `{$column}` = :value');
+    $req = self::dbAccess()->prepare("UPDATE `{$table}` SET `{$column}` = :value WHERE `{$column}` = :value");
     $req->execute(array(':value' => $value));
 
-    return new $child($req->fetch());
+    return $req->fetch();
   }
 
   // --------------- Requête pour supprimer les données d'une colonne dans une table basé sur un élément d'une colonne ---------------
-  public static function deleteBy($column, $value): object {
-    $child = get_called_class();
-    $child = strtolower($child);
+  public static function deleteBy($column, $value) {
+    $class = explode('\\', get_called_class());
+    $table = strtolower($class[array_key_last($class)]);
 
-    $req = self::dbAccess()->prepare('DELETE FROM `{$child}` WHERE `{$column}` = :value');
+    $req = self::dbAccess()->prepare("DELETE FROM `{$table}` WHERE `{$column}` = :value");
     $req->execute(array(':value' => $value));
-
-    return new $child($req->fetch());
   }
 }
