@@ -998,10 +998,6 @@ li {
 .dashboardmenu a {
   width: 100%;
   padding: 30px;
-  text-align: center;
-  border: var(--primary) solid 2px;
-  border-radius: 15px;
-  text-transform: uppercase;
   display: block;
 }
 
@@ -1440,4 +1436,7 @@ li {
     width: 20%;
   }
 
+  .dashboardmenu a {
+    padding: 26px;
+  }
 }

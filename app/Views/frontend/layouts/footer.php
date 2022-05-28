@@ -9,7 +9,7 @@
   </div>
   <?php require_once 'socialssvg.php'; ?>
   <div id="linksfooter">
-    <a href="#" class="linkfooter" rel="nofollow" title="Mentions légales">
+    <a href="/?action=mentionslegales" class="linkfooter" rel="nofollow" title="Mentions légales">
       <p>Mentions légales</p>
     </a>
     <?php if (isset($_SESSION['user'])) : ?>
@@ -21,7 +21,7 @@
         <p>Se connecter</p>
       </a>
     <?php endif; ?>
-    <a href="#" class="linkfooter" rel="nofollow" title="RGPD">
+    <a href="/?action=rgpd" class="linkfooter" rel="nofollow" title="RGPD">
       <p>RGPD</p>
     </a>
     <a href="#" class="linkfooter" rel="nofollow" title="Plan du site">

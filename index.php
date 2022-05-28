@@ -36,6 +36,12 @@ try {
 
     } elseif ($_GET['action'] == 'contact') {
       $frontController->contactPage();
+
+    } elseif ($_GET['action'] == 'rgpd') {
+      $frontController->rgpdPage();
+
+    } elseif ($_GET['action'] == 'mentionslegales') {
+      $frontController->mentionsPage();
     
     /* ----------------------------------------------------------------
     ---------------- Gestion du formulaire de contact -----------------

@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if(!isset($_SESSION)){
+  session_start();
+}
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'app/Errors/eCatcher.php';
@@ -24,9 +26,33 @@ try {
     if ($_GET['action'] == 'beers') {
       $dashboardController->managebeers();
     }
+    
+    elseif ($_GET['action'] == 'addBeer') {
+      // $beersController->addBeer($data);
+    }
+    
+    elseif ($_GET['action'] == 'updateBeer') {
+      $beersController->updateBeer($data);
+    }
+
+    elseif ($_GET['action'] == 'deleteBeer') {
+      $beersController->deleteBeer($data);
+    }
 
     elseif ($_GET['action'] == 'users') {
       $dashboardController->manageusers();
+    }
+
+    elseif ($_GET['action'] == 'addUser') {
+      $usersController->addUser();
+    }
+
+    elseif ($_GET['action'] == 'updateUser') {
+      $usersController->updateUser($data['id']);
+    }
+    
+    elseif ($_GET['action'] == 'deleteUser') {
+      $usersController->deleteUser($_GET['id']);
     }
 
   } else {

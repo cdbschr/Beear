@@ -1,5 +1,5 @@
 <?php require_once './app/Views/frontend/layouts/head.php'; ?>
-<main>
+<main id="mentionslegales" class="container">
 	
 <h1>Mentions Légales</h1>
 

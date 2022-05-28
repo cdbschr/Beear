@@ -1,6 +1,6 @@
 <?php require_once './app/Views/frontend/layouts/head.php'; ?>
 
-<main class="container">
+<main id="rgpd" class="container">
 <h1>Politique de Protection des Données Personnelles</h1>
 
 <p><i>www.beear.camilledebusscher.fr</i> est engagé dans une démarche continue de conformité avec le Règlement général sur la protection des données du 27 avril 2016. Avec ce nouveau règlement <i>www.beear.camilledebusscher.fr</i> renforce sa politique de protection de données personnelles afin que les données de nos utilisateurs soient collectées et utilisées de manière transparente, confidentielle et sécurisée.</p>

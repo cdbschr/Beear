@@ -19,6 +19,14 @@ class FrontController extends Controller {
     include $this->viewFrontend('/contact/contact');
   }
 
+  function rgpdPage(): void {
+    include $this->viewFrontend('rgpd');
+  }
+
+  function mentionsPage(): void {
+    include $this->viewFrontend('mentionslegales');
+  }
+
   // -------- Envoi dans la db les informations du formulaire de Contact --------
   function contactPost($data): void {
 
