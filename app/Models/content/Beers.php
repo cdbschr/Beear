@@ -56,7 +56,7 @@ class Beers extends Manager {
   public static function createBeer(array $data): void {
     $db = self::dbAccess();
 
-    $req = $db->prepare('INSERT INTO beers (idname, name, hook, alcdegree, desc, ibu, temp, voyez, sentez, goutez, img) VALUES (:idname, :name, :hook, :alcdegree, :desc, :ibu, :temp, :voyez, :sentez, :goutez, :img)');
+    $req = $db->prepare("INSERT INTO beers (idname, name, hook, alcdegree, desc, ibu, temp, voyez, sentez, goutez, img) VALUES (:idname, :name, :hook, :alcdegree, :desc, :ibu, :temp, :voyez, :sentez, :goutez, :img)");
     $req->execute([
       ':idname' => $data['idname'],
       ':name' => $data['name'],
@@ -76,7 +76,7 @@ class Beers extends Manager {
   public static function updateBeer(array $data): void {
     $db = self::dbAccess();
 
-    $req = $db->prepare('UPDATE beers SET idname = :idname, name = :name, hook = :hook, alcdegree = :alcdegree, desc = :desc, ibu = :ibu, temp = :temp, voyez = :voyez, sentez = :sentez, goutez = :goutez, img = :img WHERE id = :id');
+    $req = $db->prepare("UPDATE beers SET idname = :idname, name = :name, hook = :hook, alcdegree = :alcdegree, desc = :desc, ibu = :ibu, temp = :temp, voyez = :voyez, sentez = :sentez, goutez = :goutez, img = :img WHERE id = :id");
     $req->execute([
       ':idname' => $data['idname'],
       ':name' => $data['name'],
@@ -97,7 +97,7 @@ class Beers extends Manager {
   public static function deleteBeer(int $id): void {
     $db = self::dbAccess();
 
-    $req = $db->prepare('DELETE FROM beers WHERE id = :id');
+    $req = $db->prepare("DELETE FROM beers WHERE id = :id");
     $req->execute([
       ':id' => $id
     ]);

@@ -5,31 +5,31 @@ namespace Beear\Models\auth;
 use Beear\Models\Manager;
 
 class Users extends Manager { 
-  protected $id;
   protected $lastname;
   protected $firstname;
   protected $mail;
+  protected $password;
 
   public function __construct(array $data) {
-    $this->id = $data['id'];
     $this->lastname = $data['lastname'];
     $this->firstname = $data['firstname'];
     $this->mail = $data['mail'];
+    $this->password = $data['password'];
   }
 
   // --------------- Requête pour enregister un user ---------------
-  public static function registerUser(array $data): mixed {
+  public static function createUser(array $data): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare(
-      'INSERT INTO 
+      "INSERT INTO 
         users(
           lastname, 
           firstname,  
           mail,
           `password`
         ) 
-      VALUES (:lastname, :firstname, :mail, :`password`)'
+      VALUES (:lastname, :firstname, :mail, :`password`)"
     );
 
     return $req->execute([
@@ -43,7 +43,7 @@ class Users extends Manager {
   public static function isUserExist($mail): mixed {
     $db = self::dbAccess();
 
-    $req = $db->prepare('SELECT * FROM users WHERE mail = :mail');
+    $req = $db->prepare("SELECT * FROM users WHERE mail = :mail");
     $req->execute(array(':mail' => $mail));
 
     return $req->fetch();
@@ -53,7 +53,7 @@ class Users extends Manager {
   public static function login(array $dataUser): mixed {
     $db = self::dbAccess();
 
-    $req = $db->prepare('SELECT * FROM users WHERE mail = :mail');
+    $req = $db->prepare("SELECT * FROM users WHERE mail = :mail");
     $req->execute(array(':mail' => $dataUser['mail']));
 
     $user = $req->fetch();
@@ -69,7 +69,7 @@ class Users extends Manager {
     $db = self::dbAccess();
 
     $req = $db->prepare(
-      'UPDATE users SET mail = :mail WHERE id = :id'
+      "UPDATE users SET mail = :mail WHERE id = :id"
     );
 
     return $req->execute([
@@ -82,7 +82,7 @@ class Users extends Manager {
     $db = self::dbAccess();
 
     $req = $db->prepare(
-      'UPDATE users SET `password` = :password WHERE id = :id'
+      "UPDATE users SET `password` = :password WHERE id = :id"
     );
 
     return $req->execute([
