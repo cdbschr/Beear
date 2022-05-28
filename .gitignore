@@ -2,5 +2,8 @@
 /.vscode
 /node_modules
 /vendor
-/snippet
 /.cpanel.yml
+
+# À enlever avant production
+snippet
+test.php
