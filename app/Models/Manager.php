@@ -39,7 +39,7 @@ abstract class Manager {
     $class = explode('\\', get_called_class());
     $table = strtolower($class[array_key_last($class)]);
     
-    $req = "SELECT * FROM {$table}";
+    $req = "SELECT * FROM `{$table}`";
     
     foreach (self::dbAccess()->prepare($req) as $data) {
       $data->execute(array_push($objects, new $table($data)));
