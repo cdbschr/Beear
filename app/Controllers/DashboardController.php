@@ -7,27 +7,31 @@ class DashboardController extends Controller {
     require_once $this->viewAdmin('admin');
   }
 
-  public function managebeers(): void {
+  public function manageBeers(): void {
     require_once $this->viewAdmin('beers/manage-beers');
   }
   
-  public function addbeer(): void {
+  public function addBeer(): void {
     require_once $this->viewAdmin('beers/add-beer');
   }
 
-  public function updatebeer(): void {
+  public function updateBeer($id): void {
+    $id = \Beear\Models\content\Beers::findBy('id', $id);
+
     require_once $this->viewAdmin('beers/update-beer');
   }
 
-  public function manageusers(): void {
+  public function manageUsers(): void {
     require_once $this->viewAdmin('users/manage-users');
   }
 
-  public function addusers(): void {
-    require_once $this->viewAdmin('users/add-users');
+  public function addUser(): void {
+    require_once $this->viewAdmin('users/add-user');
   }
 
-  public function updateusers(): void {
-    require_once $this->viewAdmin('users/update-users');
+  public function updateUser($id): void {
+    $id = \Beear\Models\auth\Users::findBy('id', $id);
+
+    require_once $this->viewAdmin('users/update-user');
   }
 }

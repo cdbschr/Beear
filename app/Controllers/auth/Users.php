@@ -22,10 +22,6 @@ class Users extends Controller {
       throw new \Exception('Identifiants incorrects');
     }
   }
-
-  function inscriptionPage(): void {
-    require_once $this->viewAdmin('users/add-user');
-  }
   
   // -------- Apres verification, enregistrement dans la db des informations pour création d'un compte --------
   function addUser(): void {
@@ -42,6 +38,7 @@ class Users extends Controller {
       ];
       
       $register = \Beear\Models\auth\Users::createUser($registerData);
+      var_dump($register);die;
 
       if ($register) {
         header('Location:'.self::viewAdmin('/auth/register-confirm'));

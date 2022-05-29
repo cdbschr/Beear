@@ -7,7 +7,7 @@ require_once 'app/Views/admin/layouts/head.php';
     <a href="" class="button" title="deconnexion">Déconnexion</a>
     <div class="container pres-txt-dashboard">
       <h1>Bienvenue sur le dashboard de Beear</h1>
-      <h4>Bonjour <?= $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?></h4>
+      <h4>Bonjour <?php // echo $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?></h4>
     </div>
     </div>
   </section>

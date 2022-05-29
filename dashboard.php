@@ -31,8 +31,8 @@ try {
       $dashboardController->managebeers();
     }
     
-    elseif ($_GET['action'] == 'addBeer') {
-      $beersController->createBeer($data);
+    elseif ($_GET['action'] == 'addBeer-page') {
+      $dashboardController->addBeer();
     }
     
     elseif ($_GET['action'] == 'updateBeer') {
@@ -44,11 +44,11 @@ try {
     }
 
     elseif ($_GET['action'] == 'users') {
-      $dashboardController->manageusers();
+      $dashboardController->manageUsers();
     }
 
     elseif ($_GET['action'] == 'addUser-page') {
-      $usersController->inscriptionPage();
+      $dashboardController->addUser();
     }
 
     elseif ($_GET['action'] == 'addUser-post') {
@@ -68,12 +68,12 @@ try {
       }
     }
 
-    elseif ($_GET['action'] == 'updateUser') {
-      // $usersController->updateUser($data['id']);
+    elseif ($_GET['action'] == 'updateUser-page') {
+      $usersController->updateUser($data['id']);
     }
     
     elseif ($_GET['action'] == 'deleteUser') {
-      // $usersController->deleteUser($_GET['id']);
+      $usersController->deleteUser($_GET['id']);
     }
 
   } else {

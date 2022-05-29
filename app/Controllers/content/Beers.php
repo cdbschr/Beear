@@ -29,16 +29,29 @@ Class Beers extends Controller {
     require_once $this->viewAdmin('/beers/manage-beers');
   }
 
-  public function updateBeer($data): void {
-    $beers = new \Beear\Models\content\Beers($data);
-    $beers->updateBeer($data);
+  public function verifyExtension($fileName) {
+    $name = $fileName;
+    $extension = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+    $extensionAllowed = array('jpg', 'jpeg', 'png', 'gif');
+
+    if (in_array($extension, $extensionAllowed)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function updateBeer($id): void {
+    $idBeer = \Beear\Models\content\Beers::findBy('id', $id);
+
+    $idBeer->updateBeer($id);
 
     require_once $this->viewAdmin('/beers/update-beer');
   }
 
-  public function deleteBeer($data): void {
-    $beers = new \Beear\Models\content\Beers($data);
-    $beers->deleteBeer($data);
+  public function deleteBeer($id): void {
+    $beers = \Beear\Models\content\Beers::findBy('id', $id);
+    $beers->deleteBeer($id);
 
     require_once $this->viewAdmin('/beers/manage-beers');
   }
