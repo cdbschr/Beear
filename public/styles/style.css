@@ -87,6 +87,10 @@ li {
   width: 100%;
 }
 
+.db {
+  display: block;
+}
+
 .hiddenmobile {
   display: none;
 }
