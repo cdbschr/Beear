@@ -23,12 +23,16 @@ try {
   $beersController = new \Beear\Controllers\content\Beers();
 
   if (isset($_GET['action'])) {
+
+    /* ----------------------------------------------------------------
+    ------------------------------ Bières -----------------------------
+    ---------------------------------------------------------------- */
     if ($_GET['action'] == 'beers') {
       $dashboardController->managebeers();
     }
     
     elseif ($_GET['action'] == 'addBeer') {
-      // $beersController->addBeer($data);
+      $beersController->createBeer($data);
     }
     
     elseif ($_GET['action'] == 'updateBeer') {
@@ -43,16 +47,33 @@ try {
       $dashboardController->manageusers();
     }
 
-    elseif ($_GET['action'] == 'addUser') {
-      $usersController->addUser();
+    elseif ($_GET['action'] == 'addUser-page') {
+      $usersController->inscriptionPage();
+    }
+
+    elseif ($_GET['action'] == 'addUser-post') {
+      $register = new \Beear\Models\auth\Users($_POST);
+      $sanitizedDataRegister = $register->sanitizedDataUser();
+
+      $sanitizedLastname = $sanitizedDataRegister['lastname'];
+      $sanitizedFirstname = $sanitizedDataRegister['firstname'];
+      $sanitizedMail = $sanitizedDataRegister['mail'];
+      $sanitizedPassword = $sanitizedDataRegister['password'];
+
+      if (!empty($sanitizedLastname) 
+      && (!empty($sanitizedFirstname) 
+      && (!empty($sanitizedMail) 
+      && (!empty($sanitizedPassword))))) {
+        $userController->addUser($sanitizedDataRegister);
+      }
     }
 
     elseif ($_GET['action'] == 'updateUser') {
-      $usersController->updateUser($data['id']);
+      // $usersController->updateUser($data['id']);
     }
     
     elseif ($_GET['action'] == 'deleteUser') {
-      $usersController->deleteUser($_GET['id']);
+      // $usersController->deleteUser($_GET['id']);
     }
 
   } else {

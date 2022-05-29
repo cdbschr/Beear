@@ -13,7 +13,7 @@ require_once 'app/Views/admin/layouts/head.php';
   </section>
   <section class="admin-manage container">
     <div class="new">
-      <a href="">Ajouter un utilisateur</a>
+      <a href="/dashboard.php?action=addUser-page" title="ajouter un utilisateur">Ajouter un utilisateur</a>
     </div>
     <div class="admin-manage-users">
         <table>

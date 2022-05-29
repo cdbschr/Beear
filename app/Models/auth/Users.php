@@ -5,12 +5,14 @@ namespace Beear\Models\auth;
 use Beear\Models\Manager;
 
 class Users extends Manager { 
+  protected $id;
   protected $lastname;
   protected $firstname;
   protected $mail;
   protected $password;
 
   public function __construct(array $data) {
+    $this->id = $data['id'];
     $this->lastname = $data['lastname'];
     $this->firstname = $data['firstname'];
     $this->mail = $data['mail'];

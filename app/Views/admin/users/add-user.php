@@ -11,19 +11,32 @@ require_once 'app/Views/admin/layouts/head.php';
     </div>
   </section>
   <section>
-    <form>
-      <div class="form-group">
-        <label for="input-email">Votre adresse mail</label>
-        <input type="email" class="form-control" id="inputMail" aria-describedby="emailHelp" placeholder="Veuillez entrer votre adresse mail, ici..." required>
+    <form id="register" action="dashboard.php?action=addUser" >
+    <div class="form-group">
+        <label for="input-lastname">Nom</label>
+        <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Saisissez le nom..." required>
       </div>
       <div class="form-group">
-        <label for="input-password">Votre mot de passe</label>
-        <input type="password" class="form-control" id="inputPass" placeholder="Veuillez entrer votre mot de passe, ici..." required>
+        <label for="input-firstname">Prénom</label>
+        <input type="text" class="form-control" name="firstname" aria-describedby="firstnameHelp" placeholder="Saisissez le prénom..." required>
       </div>
       <div class="form-group">
-        <label for="input-password">Veuillez confirmer votre mot de passe</label>
-        <input type="password" class="form-control" id="inputPass" placeholder="Veuillez confirmer votre mot de passe, ici..." required>
+        <label for="input-email">Adresse mail</label>
+        <input type="email" class="form-control" name="mail" aria-describedby="emailHelp" placeholder="Saisissez l'adresse mail..." required>
       </div>
+      <div class="form-group">
+        <label for="input-password">Mot de passe</label>
+        <input type="password" class="form-control" name="password" placeholder="Saisissez un mot de passe..." required>
+      </div>
+      <select name="role" id="role-select">
+        <option value=""> -- Veuillez choisir un rôle -- </option>
+        <?php //foreach ($roles as $role) : ?>
+          <!-- <option value="<?php //echo //$role->id ?>"><?php //echo //$role->name ?></option> -->
+        <?php //endforeach; ?>
+        <option value="admin">Admin</option>
+        <option value="editor">Editeur</option>
+        <option value="members">Membre</option>
+      </select>
       <button type="submit" class="button">Créer le compte</button>
     </form>
   </section>
