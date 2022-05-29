@@ -67,7 +67,7 @@ try {
     ---------------------------------------------------------------- */
     
     // ---------------- Connexion à un compte -----------------------
-    } elseif ($_GET['action'] == 'login') {
+    } elseif ($_GET['action'] == 'login-page') {
       $userController->connexionPage();
 
     } elseif ($_GET['action'] == 'login-post') {
@@ -81,25 +81,6 @@ try {
         $userController->loginPost($sanitizedDataUser);
       }
 
-    // ---------------- Enregistrement d'un compte -----------------------
-    } elseif ($_GET['action'] == 'register') {
-      $userController->inscriptionPage();
-
-    } elseif ($_GET['action'] == 'post-register') {
-      $register = new \Beear\Models\auth\Users($_POST);
-      $sanitizedDataRegister = $register->sanitizedDataUser();
-
-      $sanitizedLastname = $sanitizedDataRegister['lastname'];
-      $sanitizedFirstname = $sanitizedDataRegister['firstname'];
-      $sanitizedMail = $sanitizedDataRegister['mail'];
-      $sanitizedPassword = $sanitizedDataRegister['password'];
-
-      if (!empty($sanitizedLastname) 
-      && (!empty($sanitizedFirstname) 
-      && (!empty($sanitizedMail) 
-      && (!empty($sanitizedPassword))))) {
-        $userController->registerPost($sanitizedDataRegister);
-      }
     // ---------------- Déconnexion d'un compte -----------------------
     } elseif ($_GET['action'] == 'deconnexion') {
       $userController->deconnexion();

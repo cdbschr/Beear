@@ -17,7 +17,7 @@
         <p>Accéder au Dashboard</p>
       </a>
     <?php else : ?>
-      <a href="/?action=login" id="buttonlogmenu" class="linkfooter" rel="nofollow" title="Se connecter">
+      <a href="/?action=login-page" id="buttonlogmenu" class="linkfooter" rel="nofollow" title="Se connecter">
         <p>Se connecter</p>
       </a>
     <?php endif; ?>
