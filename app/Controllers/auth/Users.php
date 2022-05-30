@@ -30,6 +30,7 @@ class Users extends Controller {
     if ($userExist) {
       throw new \Exception('Cette adresse mail est déjà utilisée');
     } else {
+      //ne pas sanitizé ici
       $registerData = [
         'lastname' => htmlspecialchars($_POST['lastname']),
         'firstname' => htmlspecialchars($_POST['firstname']),

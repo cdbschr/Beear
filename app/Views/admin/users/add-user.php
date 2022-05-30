@@ -11,7 +11,7 @@ require_once 'app/Views/admin/layouts/head.php';
     </div>
   </section>
   <section>
-    <form id="register" action="dashboard.php?action=addUser-post" >
+    <form method="POST" id="register-user" action="dashboard.php?action=addUser-post">
     <div class="form-group">
       <label for="input-lastname">Nom</label>
       <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Saisissez le nom..." required>
