@@ -25,6 +25,10 @@ class DashboardController extends Controller {
     require_once $this->viewAdmin('users/manage-users');
   }
 
+  public function confirmPageUsers(): void {
+    require_once $this->viewAdmin('users/register-confirm');
+  }
+
   public function addUser(): void {
     require_once $this->viewAdmin('users/add-user');
   }

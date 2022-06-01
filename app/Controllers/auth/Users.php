@@ -2,6 +2,8 @@
 
 namespace Beear\Controllers\auth;
 
+require_once '../DashboardController.php';
+
 use Beear\Controllers\Controller;
 
 class Users extends Controller {
@@ -24,28 +26,13 @@ class Users extends Controller {
   }
   
   // -------- Apres verification, enregistrement dans la db des informations pour création d'un compte --------
-  function addUser(): void {
-    $userExist = \Beear\Models\auth\Users::isUserExist($_POST['mail']);
-    
-    if ($userExist) {
-      throw new \Exception('Cette adresse mail est déjà utilisée');
-    } else {
-      //ne pas sanitizé ici
-      $registerData = [
-        'lastname' => htmlspecialchars($_POST['lastname']),
-        'firstname' => htmlspecialchars($_POST['firstname']),
-        'mail' => htmlspecialchars($_POST['mail']),
-        'password' => htmlspecialchars($_POST['password'])
-      ];
-      
-      $register = \Beear\Models\auth\Users::createUser($registerData);
-      var_dump($register);die;
+  function addUser($data): void {
+    $obj = \Beear\Models\auth\Users::createUser($data);
 
-      if ($register) {
-        header('Location:'.self::viewAdmin('/auth/register-confirm'));
-      } else {
-        throw new \Exception('Une erreur est survenue lors de l\'enregistrement');
-      }
+    if ($data) {
+      header(confirmPageUsers());
+    } else {
+      throw new \Exception('Une erreur est survenue lors de l\'enregistrement');
     }
   }
 
@@ -54,7 +41,7 @@ class Users extends Controller {
     $user = new \Beear\Models\auth\Users($data);
     $user->updateMailUser($data)->updatePasswordUser($data);
 
-    require_once $this->viewAdmin('users/manage-users');
+    require_once $this->viewAdmin('Users/manage-Users');
   }
 
   // -------- suppression d'un utilisateur par rapport à son id --------
@@ -64,7 +51,7 @@ class Users extends Controller {
     var_dump($user);die;
     $user->deleteBy('id', $id);
 
-    require_once $this->viewAdmin('users/manage-users');
+    require_once $this->viewAdmin('Users/manage-Users');
   }
 
   function deconnexion(): void {

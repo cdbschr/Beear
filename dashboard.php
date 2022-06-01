@@ -6,6 +6,7 @@ if(!isset($_SESSION)){
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'app/Errors/eCatcher.php';
+require_once 'app/Controllers/auth/UsersSanitizer.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -52,19 +53,19 @@ try {
     }
 
     elseif ($_GET['action'] == 'addUser-post') {
-      $register = new \Beear\Models\auth\Users($_POST);
-      $sanitizedDataRegister = $register->sanitizedDataUser();
-
-      $sanitizedLastname = $sanitizedDataRegister['lastname'];
-      $sanitizedFirstname = $sanitizedDataRegister['firstname'];
-      $sanitizedMail = $sanitizedDataRegister['mail'];
-      $sanitizedPassword = $sanitizedDataRegister['password'];
-
+      $sanitize = new \Beear\Controllers\auth\UsersSanitizer($_POST);
+      $data = $sanitize->sanitizedDataUser();
+      
+      $sanitizedLastname = $data['lastname'];
+      $sanitizedFirstname = $data['firstname'];
+      $sanitizedMail = $data['mail'];
+      $sanitizedPassword = $data['password'];
+      
       if (!empty($sanitizedLastname) 
-      && (!empty($sanitizedFirstname) 
-      && (!empty($sanitizedMail) 
-      && (!empty($sanitizedPassword))))) {
-        $userController->addUser($sanitizedDataRegister);
+      && !empty($sanitizedFirstname) 
+      && !empty($sanitizedMail) 
+      && !empty($sanitizedPassword)) {
+        $usersController->addUser($data);
       }
     }
 

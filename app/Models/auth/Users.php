@@ -5,6 +5,8 @@ namespace Beear\Models\auth;
 use Beear\Models\Manager;
 
 class Users extends Manager { 
+  
+  
   protected $id;
   protected $lastname;
   protected $firstname;
@@ -29,16 +31,16 @@ class Users extends Manager {
           lastname, 
           firstname,  
           mail,
-          `password`
+          password
         ) 
-      VALUES (:lastname, :firstname, :mail, :`password`)"
+      VALUES (:lastname, :firstname, :mail, :password)"
     );
 
     return $req->execute([
       ':lastname' => $data['lastname'],
       ':firstname' => $data['firstname'],
       ':mail' => $data['mail'],
-      ':`password`' => password_hash($data['password'], PASSWORD_DEFAULT)
+      ':password' => password_hash($data['password'], PASSWORD_DEFAULT)
     ]);
   }
 
@@ -91,15 +93,5 @@ class Users extends Manager {
       ':password' => password_hash($data['password'], PASSWORD_DEFAULT),
       ':id' => $data['id']
     ]);
-  }
-  
-  // --------------- Sanitizer ---------------
-  public static function sanitizedDataUser(): array {
-    return array (
-      'lastname' => htmlspecialchars($_POST['lastname']),
-      'firstname' => htmlspecialchars($_POST['firstname']),
-      'mail' => htmlspecialchars($_POST['mail']),
-      'password' => htmlspecialchars($_POST['password'])
-    );
   }
 }
