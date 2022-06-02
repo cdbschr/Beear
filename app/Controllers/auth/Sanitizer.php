@@ -2,7 +2,7 @@
 
 namespace Beear\Controllers\auth;
 
-class UsersSanitizer {
+class Sanitizer {
   private array $register;
 
   public function __construct($register) {

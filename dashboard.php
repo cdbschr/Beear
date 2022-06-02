@@ -53,7 +53,7 @@ try {
     }
 
     elseif ($_GET['action'] == 'addUser-post') {
-      $sanitize = new \Beear\Controllers\auth\UsersSanitizer($_POST);
+      $sanitize = new \Beear\Controllers\auth\Sanitizer($_POST);
       $register = $sanitize->sanitizedRegister();
       
       $sanitizedLastname = $register['lastname'];
