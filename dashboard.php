@@ -57,8 +57,8 @@ try {
     }
 
     elseif ($_GET['action'] == 'addUser-post') {
-      $sanitize = new \Beear\Controllers\auth\Sanitizer($_POST);
-      $register = $sanitize->sanitizedRegister();
+      $sanitizedDataRegister = new \Beear\Controllers\auth\Sanitizer($_POST);
+      $register = $sanitizedDataRegister->sanitizedRegister();
       
       $sanitizedLastname = $register['lastname'];
       $sanitizedFirstname = $register['firstname'];
