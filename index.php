@@ -6,6 +6,7 @@ if (!isset($_SESSION)) {
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'app/Errors/eCatcher.php';
+require_once 'app/Controllers/auth/Sanitizer.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -22,6 +23,7 @@ try {
   $frontController = new Beear\Controllers\FrontController();
   $userController = new Beear\Controllers\auth\Users();
   $beersController = new Beear\Controllers\content\Beers();
+  $mailsController = new Beear\Controllers\content\Mails();
 
   // -------- Vérification dans le cas où il y a une action, sinon on retourne la page home --------
   if (isset($_GET['action'])) {
@@ -30,9 +32,6 @@ try {
     ---------------------------------------------------------------- */
   if ($_GET['action'] == 'valeurs') {
       $frontController->valeursPage();
-
-    } elseif ($_GET['action'] == 'actualites') {
-      $frontController->actualitesPage();
 
     } elseif ($_GET['action'] == 'contact') {
       $frontController->contactPage();
@@ -47,7 +46,7 @@ try {
     ---------------- Gestion du formulaire de contact -----------------
     ---------------------------------------------------------------- */
     } elseif ($_GET['action'] == 'post-contactform') {
-      $contact = new \Beear\Models\ContactsModel($_POST);
+      $contact = new \Beear\Models\Mails($_POST);
       $sanitizedDataContact = $contact->sanitizedDataContact();
 
       $sanitizedLastname = $sanitizedDataContact['lastname'];
@@ -59,7 +58,7 @@ try {
       && (!empty($sanitizedFirstname) 
       && (!empty($sanitizedMail) 
       && (!empty($sanitizedContent))))) {
-        $frontController->contactPost($sanitizedDataContact);
+        $mailsController->contactPost($sanitizedDataContact);
       }
 
     /* ----------------------------------------------------------------
@@ -71,8 +70,8 @@ try {
       $userController->connexionPage();
 
     } elseif ($_GET['action'] == 'login-post') {
-      $user = new \Beear\Models\auth\Users($_POST);
-      $sanitizedDataUser = $user->sanitizedDataUser();
+      $user = new \Beear\Controllers\auth\Sanitizer($_POST);
+      $sanitizedDataUser = $user->sanitizedLogin();
 
       $sanitizedMail = $sanitizedDataUser['mail'];
       $sanitizedPassword = $sanitizedDataUser['password'];
