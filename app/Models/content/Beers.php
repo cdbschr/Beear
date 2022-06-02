@@ -53,22 +53,22 @@ class Beers extends Manager {
   }
 
   //create a beer
-  public static function createBeer(array $data): void {
+  public static function createBeer(array $createBeer): void {
     $db = self::dbAccess();
 
     $req = $db->prepare("INSERT INTO beers (idname, name, hook, alcdegree, desc, ibu, temp, voyez, sentez, goutez, img) VALUES (:idname, :name, :hook, :alcdegree, :desc, :ibu, :temp, :voyez, :sentez, :goutez, :img)");
     $req->execute([
-      ':idname' => $data['idname'],
-      ':name' => $data['name'],
-      ':hook' => $data['hook'],
-      ':alcdegree' => $data['alcdegree'],
-      ':desc' => $data['desc'],
-      ':ibu' => $data['ibu'],
-      ':temp' => $data['temp'],
-      ':voyez' => $data['voyez'],
-      ':sentez' => $data['sentez'],
-      ':goutez' => $data['goutez'],
-      ':img' => $data['img']
+      ':idname' => $createBeer['idname'],
+      ':name' => $createBeer['name'],
+      ':hook' => $createBeer['hook'],
+      ':alcdegree' => $createBeer['alcdegree'],
+      ':desc' => $createBeer['desc'],
+      ':ibu' => $createBeer['ibu'],
+      ':temp' => $createBeer['temp'],
+      ':voyez' => $createBeer['voyez'],
+      ':sentez' => $createBeer['sentez'],
+      ':goutez' => $createBeer['goutez'],
+      ':img' => $createBeer['img']
     ]);
   }
 
@@ -101,22 +101,5 @@ class Beers extends Manager {
     $req->execute([
       ':id' => $id
     ]);
-  }
-
-  public function sanitizedData(): mixed {
-    return array (
-      'id' => htmlspecialchars($this->id),
-      'idname' => htmlspecialchars($this->idname),
-      'name' => htmlspecialchars($this->name),
-      'hook' => htmlspecialchars($this->hook),
-      'alcdegree' => htmlspecialchars($this->alcdegree),
-      'desc' => htmlspecialchars($this->desc),
-      'ibu' => htmlspecialchars($this->ibu),
-      'temp' => htmlspecialchars($this->temp),
-      'voyez' => htmlspecialchars($this->voyez),
-      'sentez' => htmlspecialchars($this->sentez),
-      'goutez' => htmlspecialchars($this->goutez),
-      'img' => htmlspecialchars($this->img)
-    );
   }
 }

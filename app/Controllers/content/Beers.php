@@ -22,11 +22,14 @@ Class Beers extends Controller {
     require_once $this->viewFrontend('home');
   }
 
-  public function createBeer($data): void {
-    $beers = new \Beear\Models\content\Beers($data);
-    $beers->createBeer($data);
+  public function createBeer($createBeer): void {
+    $req = \Beear\Models\content\Beers::createBeer($createBeer);
 
-    require_once $this->viewAdmin('/beers/manage-beers');
+    if($req) {
+      header('Location:'.$this->viewadmin('/beers/manage-beers'));
+    } else {
+      throw new \Exception('Impossible de créer la bière');
+    }
   }
 
   public function verifyExtension($fileName) {
