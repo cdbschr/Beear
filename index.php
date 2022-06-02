@@ -7,6 +7,7 @@ if (!isset($_SESSION)) {
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'app/Errors/eCatcher.php';
 require_once 'app/Controllers/auth/Sanitizer.php';
+require_once 'app/Controllers/content/MailsSanitizer.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -46,7 +47,7 @@ try {
     ---------------- Gestion du formulaire de contact -----------------
     ---------------------------------------------------------------- */
     } elseif ($_GET['action'] == 'post-contactform') {
-      $contact = new \Beear\Models\Mails($_POST);
+      $contact = new \Beear\Controllers\content\MailsSanitizer($_POST);
       $sanitizedDataContact = $contact->sanitizedDataContact();
 
       $sanitizedLastname = $sanitizedDataContact['lastname'];

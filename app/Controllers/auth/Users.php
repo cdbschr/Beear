@@ -56,7 +56,7 @@ class Users extends Controller {
   // -------- gestion et verification de la connexion --------
   function deconnexion(): void {
     session_destroy();
-    header('Location:'.$this->viewFrontend('/'));
+    header('Location:/');
   }
 
   function checkUser(): bool {

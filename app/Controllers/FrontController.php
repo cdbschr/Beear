@@ -27,7 +27,4 @@ class FrontController extends Controller {
   function mentionsPage(): void {
     require_once $this->viewFrontend('mentionslegales');
   }
-
-  // -------- Envoi dans la db les informations du formulaire de Contact --------
-  
 }

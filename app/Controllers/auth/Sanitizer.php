@@ -11,7 +11,7 @@ class Sanitizer {
   }
 
   public function sanitizedRegister() {
-    return $register = array(
+    return array(
       'lastname' => htmlspecialchars($this->lastname),
       'firstname' => htmlspecialchars($this->firstname),
       'mail' => htmlspecialchars($this->mail),
@@ -20,7 +20,7 @@ class Sanitizer {
   }
 
   public function sanitizedLogin() {
-    return $login = array(
+    return array(
       'mail' => htmlspecialchars($this->mail),
       'password' => htmlspecialchars($this->password)
     );

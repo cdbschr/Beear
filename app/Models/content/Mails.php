@@ -1,6 +1,8 @@
 <?php
 
-namespace Beear\Models;
+namespace Beear\Models\content;
+
+use Beear\Models\Manager;
 
 class Mails extends Manager {
   protected int $id;
@@ -55,14 +57,5 @@ class Mails extends Manager {
     return $req->fetch();
   }
 
-  // --------------- Satinization des informations reçues pour éviter les failles ---------------
-  public function sanitizedDataContact(): array {
-    return array (
-      'lastname' => htmlspecialchars($this->lastname),
-      'firstname' => htmlspecialchars($this->firstname),
-      'mail' => htmlspecialchars($this->mail),
-      'phone' => htmlspecialchars($this->phone),
-      'content' => htmlspecialchars($this->content)
-    );
-  }
+  
 }
