@@ -3,25 +3,21 @@
 namespace Beear\Controllers\auth;
 
 class UsersSanitizer {
-  private $data = [ ];
+  private array $register;
 
-  public function __construct($data) {
-    $this->lastname = $data['lastname'];
-    $this->firstname = $data['firstname'];
-    $this->mail = $data['mail'];
-    $this->password = $data['password'];
+  public function __construct($register) {
+    $this->lastname = $register['lastname'];
+    $this->firstname = $register['firstname'];
+    $this->mail = $register['mail'];
+    $this->password = $register['password'];
   }
 
-  public function sanitizedDataUser() {
-    $data = [
+  public function sanitizedRegister() {
+    return $register = array(
       'lastname' => htmlspecialchars($this->lastname),
       'firstname' => htmlspecialchars($this->firstname),
       'mail' => htmlspecialchars($this->mail),
       'password' => htmlspecialchars($this->password)
-    ];
-
-    return $data;
+    );
   }
-
-
 }

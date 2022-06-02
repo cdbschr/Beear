@@ -22,7 +22,7 @@ class Users extends Manager {
   }
 
   // --------------- Requête pour enregister un user ---------------
-  public static function createUser(array $data): mixed {
+  public static function createUser(array $register): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -37,10 +37,10 @@ class Users extends Manager {
     );
 
     return $req->execute([
-      ':lastname' => $data['lastname'],
-      ':firstname' => $data['firstname'],
-      ':mail' => $data['mail'],
-      ':password' => password_hash($data['password'], PASSWORD_DEFAULT)
+      ':lastname' => $register['lastname'],
+      ':firstname' => $register['firstname'],
+      ':mail' => $register['mail'],
+      ':password' => password_hash($register['password'], PASSWORD_DEFAULT)
     ]);
   }
 

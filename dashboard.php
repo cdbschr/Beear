@@ -54,18 +54,18 @@ try {
 
     elseif ($_GET['action'] == 'addUser-post') {
       $sanitize = new \Beear\Controllers\auth\UsersSanitizer($_POST);
-      $data = $sanitize->sanitizedDataUser();
+      $register = $sanitize->sanitizedRegister();
       
-      $sanitizedLastname = $data['lastname'];
-      $sanitizedFirstname = $data['firstname'];
-      $sanitizedMail = $data['mail'];
-      $sanitizedPassword = $data['password'];
+      $sanitizedLastname = $register['lastname'];
+      $sanitizedFirstname = $register['firstname'];
+      $sanitizedMail = $register['mail'];
+      $sanitizedPassword = $register['password'];
       
       if (!empty($sanitizedLastname) 
       && !empty($sanitizedFirstname) 
       && !empty($sanitizedMail) 
       && !empty($sanitizedPassword)) {
-        $usersController->addUser($data);
+        $usersController->addUser($register);
       }
     }
 

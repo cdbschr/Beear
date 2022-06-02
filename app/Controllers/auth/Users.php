@@ -24,10 +24,10 @@ class Users extends Controller {
   }
   
   // -------- Apres verification, enregistrement dans la db des informations pour création d'un compte --------
-  function addUser($data): void {
-    $register = \Beear\Models\auth\Users::createUser($data);
+  function addUser($register): void {
+    $req = \Beear\Models\auth\Users::createUser($register);
 
-    if ($register) {
+    if ($req) {
       header('Location:'.$this->viewAdmin('users/register-confirm'));
     } else {
       throw new \Exception('Une erreur est survenue lors de l\'enregistrement');
