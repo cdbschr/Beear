@@ -2,8 +2,6 @@
 
 namespace Beear\Controllers\auth;
 
-require_once '../DashboardController.php';
-
 use Beear\Controllers\Controller;
 
 class Users extends Controller {
@@ -27,10 +25,10 @@ class Users extends Controller {
   
   // -------- Apres verification, enregistrement dans la db des informations pour création d'un compte --------
   function addUser($data): void {
-    $obj = \Beear\Models\auth\Users::createUser($data);
+    $register = \Beear\Models\auth\Users::createUser($data);
 
-    if ($data) {
-      header(confirmPageUsers());
+    if ($register) {
+      header('Location:'.$this->viewAdmin('users/register-confirm'));
     } else {
       throw new \Exception('Une erreur est survenue lors de l\'enregistrement');
     }
