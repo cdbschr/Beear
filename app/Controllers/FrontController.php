@@ -3,40 +3,31 @@
 namespace Beear\Controllers;
 
 class FrontController extends Controller {
+  // -------- Page principale --------
   function home(): void {
     require_once $this->viewFrontend('home');
   }
 
+  // -------- Page valeur --------
   function valeursPage(): void {
     require_once $this->viewFrontend('valeurs');
   }
 
-  function actualitesPage(): void {
-    require_once $this->viewFrontend('actualites');
-  }
-
+  // -------- Page contact --------
   function contactPage(): void {
     require_once $this->viewFrontend('/contact/contact');
   }
 
+  // -------- Page rgpd --------
   function rgpdPage(): void {
     require_once $this->viewFrontend('rgpd');
   }
 
+  // -------- Page mentions légales --------
   function mentionsPage(): void {
     require_once $this->viewFrontend('mentionslegales');
   }
 
   // -------- Envoi dans la db les informations du formulaire de Contact --------
-  function contactPost($data): void {
-
-    $contact = new \Beear\Models\ContactsModel($data);
-
-    if (filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
-      $postMail = $contact::postMail($data);
-      require_once $this->viewFrontend('/contact/contact-confirm');
-    } else {
-      header('Location:'.$this->viewFrontend('/contact/contact-error'));
-    }
-  }
+  
 }

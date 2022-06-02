@@ -3,24 +3,12 @@
 namespace Beear\Controllers;
 
 class DashboardController extends Controller {
+  // -------- Page du dashboard  --------
   public function admin(): void {
     require_once $this->viewAdmin('admin');
   }
 
-  public function manageBeers(): void {
-    require_once $this->viewAdmin('beers/manage-beers');
-  }
-  
-  public function addBeer(): void {
-    require_once $this->viewAdmin('beers/add-beer');
-  }
-
-  public function updateBeer($id): void {
-    $id = \Beear\Models\content\Beers::findBy('id', $id);
-
-    require_once $this->viewAdmin('beers/update-beer');
-  }
-
+  // -------- Pages liées à l'authentification  --------
   public function manageUsers(): void {
     require_once $this->viewAdmin('users/manage-users');
   }
@@ -37,5 +25,20 @@ class DashboardController extends Controller {
     $id = \Beear\Models\auth\Users::findBy('id', $id);
 
     require_once $this->viewAdmin('users/update-user');
+  }
+
+  // -------- Pages liées aux Bières  --------
+  public function manageBeers(): void {
+    require_once $this->viewAdmin('beers/manage-beers');
+  }
+  
+  public function addBeer(): void {
+    require_once $this->viewAdmin('beers/add-beer');
+  }
+
+  public function updateBeer($id): void {
+    $id = \Beear\Models\content\Beers::findBy('id', $id);
+
+    require_once $this->viewAdmin('beers/update-beer');
   }
 }

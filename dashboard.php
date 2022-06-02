@@ -6,7 +6,7 @@ if(!isset($_SESSION)){
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'app/Errors/eCatcher.php';
-require_once 'app/Controllers/auth/UsersSanitizer.php';
+require_once 'app/Controllers/auth/Sanitizer.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -22,6 +22,7 @@ try {
   $dashboardController = new \Beear\Controllers\DashboardController();
   $usersController = new \Beear\Controllers\auth\Users();
   $beersController = new \Beear\Controllers\content\Beers();
+  
 
   if (isset($_GET['action'])) {
 

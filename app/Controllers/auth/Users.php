@@ -9,6 +9,7 @@ class Users extends Controller {
     require_once $this->viewFrontend('auth/login');
   }
   
+  // -------- connexion à son compte --------
   function loginPost($loginData): void {
     $login = \Beear\Models\auth\Users::login($loginData);
     $loginData = [
@@ -23,7 +24,7 @@ class Users extends Controller {
     }
   }
   
-  // -------- Apres verification, enregistrement dans la db des informations pour création d'un compte --------
+  // -------- enregistrement dans la db des informations pour création d'un compte --------
   function addUser($register): void {
     $req = \Beear\Models\auth\Users::createUser($register);
 
@@ -52,6 +53,7 @@ class Users extends Controller {
     require_once $this->viewAdmin('Users/manage-Users');
   }
 
+  // -------- gestion et verification de la connexion --------
   function deconnexion(): void {
     session_destroy();
     header('Location:'.$this->viewFrontend('/'));
