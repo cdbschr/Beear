@@ -73,9 +73,10 @@ try {
     } elseif ($_GET['action'] == 'login-post') {
       $mail= htmlspecialchars($_POST['mail']);
       $password = htmlspecialchars($_POST['password']);
-
+      
       if (!empty($mail) && !empty($password)) {
         $req = $userController->loginPost($mail, $password);
+        var_dump($req);die;
       }
 
     // ---------------- Déconnexion d'un compte -----------------------

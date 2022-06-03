@@ -53,12 +53,12 @@ class Users extends Manager {
 
 
   // --------------- Requête pour se connecter ---------------
-  public static function login(string $mail): void {
+  public static function login(string $mail): mixed {
     $db = self::dbAccess();
     
     $req = $db->prepare("SELECT * FROM users WHERE mail = :mail");
     $req->execute([':mail' => $mail]);
-    $req->fetchAll();
+    $req->fetch();
   }
 
   // --------------- Requête pour mettre à jour un mail d'un user ---------------
