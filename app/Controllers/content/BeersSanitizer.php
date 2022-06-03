@@ -18,7 +18,7 @@ class BeersSanitizer {
     $this->img = $createBeer['img'];
   }
 
-  public function sanitizedBeers() {
+  public function sanitizedBeers(): array {
     return array(
       'id' => htmlspecialchars($this->id),
       'idname' => htmlspecialchars($this->idname),

@@ -18,11 +18,4 @@ class Sanitizer {
       'password' => htmlspecialchars($this->password)
     );
   }
-
-  public function sanitizedLogin() {
-    return array(
-      'mail' => htmlspecialchars($this->mail),
-      'password' => htmlspecialchars($this->password)
-    );
-  }
 }

@@ -56,9 +56,9 @@ try {
       $sanitizedContent = $sanitizedDataContact['content'];
 
       if (!empty($sanitizedLastname)
-      && (!empty($sanitizedFirstname) 
-      && (!empty($sanitizedMail) 
-      && (!empty($sanitizedContent))))) {
+      && !empty($sanitizedFirstname)
+      && !empty($sanitizedMail)
+      && !empty($sanitizedContent)) {
         $mailsController->contactPost($sanitizedDataContact);
       }
 
@@ -71,14 +71,11 @@ try {
       $userController->connexionPage();
 
     } elseif ($_GET['action'] == 'login-post') {
-      $user = new \Beear\Controllers\auth\Sanitizer($_POST);
-      $sanitizedDataUser = $user->sanitizedLogin();
+      $mail= htmlspecialchars($_POST['mail']);
+      $password = htmlspecialchars($_POST['password']);
 
-      $sanitizedMail = $sanitizedDataUser['mail'];
-      $sanitizedPassword = $sanitizedDataUser['password'];
-
-      if (!empty($sanitizedMail) && (!empty($sanitizedPassword))) {
-        $userController->loginPost($sanitizedDataUser);
+      if (!empty($mail) && !empty($password)) {
+        $req = $userController->loginPost($mail, $password);
       }
 
     // ---------------- Déconnexion d'un compte -----------------------

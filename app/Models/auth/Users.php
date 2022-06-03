@@ -5,8 +5,6 @@ namespace Beear\Models\auth;
 use Beear\Models\Manager;
 
 class Users extends Manager { 
-  
-  
   protected $id;
   protected $lastname;
   protected $firstname;
@@ -20,9 +18,9 @@ class Users extends Manager {
     $this->mail = $data['mail'];
     $this->password = $data['password'];
   }
-
+  
   // --------------- Requête pour enregister un user ---------------
-  public static function createUser(array $register): mixed {
+  public static function createUser(array $register): array {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -31,7 +29,7 @@ class Users extends Manager {
           lastname, 
           firstname,  
           mail,
-          password
+          `password`
         ) 
       VALUES (:lastname, :firstname, :mail, :password)"
     );
@@ -44,32 +42,27 @@ class Users extends Manager {
     ]);
   }
 
-  public static function isUserExist($mail): mixed {
+  // --------------- Requête pour récupérer un user-role ---------------
+  public static function getRoles(): mixed {
     $db = self::dbAccess();
 
-    $req = $db->prepare("SELECT * FROM users WHERE mail = :mail");
-    $req->execute(array(':mail' => $mail));
+    $req = $db->prepare("SELECT id, `name` FROM `user-roles`");
 
-    return $req->fetch();
+    return $req->execute()->fetchAll();
   }
+
 
   // --------------- Requête pour se connecter ---------------
-  public static function login(array $dataUser): mixed {
+  public static function login(string $mail): void {
     $db = self::dbAccess();
-
+    
     $req = $db->prepare("SELECT * FROM users WHERE mail = :mail");
-    $req->execute(array(':mail' => $dataUser['mail']));
-
-    $user = $req->fetch();
-
-    if ($user && password_verify($dataUser['password'], $user['password'])) {
-      return $user;
-    }
-
-    return false;
+    $req->execute([':mail' => $mail]);
+    $req->fetchAll();
   }
 
-  public static function updateMailUser(array $data): mixed {
+  // --------------- Requête pour mettre à jour un mail d'un user ---------------
+  public static function updateMailUser(array $data): array {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -82,7 +75,8 @@ class Users extends Manager {
     ]);
   }
 
-  public static function updatePasswordUser(array $data): mixed {
+  // --------------- Requête pour mettre à jour un password d'un user ---------------
+  public static function updatePasswordUser(array $data): array {
     $db = self::dbAccess();
 
     $req = $db->prepare(

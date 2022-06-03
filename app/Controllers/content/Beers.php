@@ -22,13 +22,13 @@ Class Beers extends Controller {
     require_once $this->viewFrontend('home');
   }
 
-  public function createBeer($createBeer): void {
+  public function createBeer($createBeer): mixed {
     $req = \Beear\Models\content\Beers::createBeer($createBeer);
 
     if($req) {
       header('Location:'.$this->viewadmin('/beers/manage-beers'));
     } else {
-      throw new \Exception('Impossible de créer la bière');
+      $e = throw new \Exception('Impossible de créer la bière');
     }
   }
 

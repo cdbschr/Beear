@@ -10,17 +10,20 @@ class Users extends Controller {
   }
   
   // -------- connexion à son compte --------
-  function loginPost($loginData): void {
-    $login = \Beear\Models\auth\Users::login($loginData);
-    $loginData = [
-      'mail' => htmlspecialchars($_POST['mail']),
-      'password' => htmlspecialchars($_POST['password'])
-    ];
+  function loginPost($mail, $password): void {
+    $login = \Beear\Models\auth\Users::login($mail);
     
-    if ($login) {
+    if ($login && password_verify($password, $login['password'])) {
+      $_SESSION['mail'] = $login['mail'];
+      $_SESSION['id'] = $login['id'];
+      $_SESSION['firstname'] = $login['firstname'];
+      $_SESSION['lastname'] = $login['lastname'];
+      $_SESSION['role'] = $login['role'];
+
       header('Location:'.$this->viewAdmin('dashboard'));
+
     } else {
-      throw new \Exception('Identifiants incorrects');
+      $e = throw new \Exception('Identifiants incorrects');
     }
   }
   
@@ -30,15 +33,16 @@ class Users extends Controller {
 
     if ($req) {
       header('Location:'.$this->viewAdmin('users/register-confirm'));
+
     } else {
-      throw new \Exception('Une erreur est survenue lors de l\'enregistrement');
+      $e = throw new \Exception('Une erreur est survenue lors de l\'enregistrement');
     }
   }
 
   // -------- mise à jour d'un utilisateur par rapport à son id --------
   function updateUser($data): void {
     $user = new \Beear\Models\auth\Users($data);
-    $user->updateMailUser($data)->updatePasswordUser($data);
+    $user->updateMailUser($data) || $user->updatePasswordUser($data);
 
     require_once $this->viewAdmin('Users/manage-Users');
   }
@@ -62,6 +66,7 @@ class Users extends Controller {
   function checkUser(): bool {
     if (isset($_SESSION['user'])) {
       return true;
+
     } else {
       return false;
     }

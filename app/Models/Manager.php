@@ -33,7 +33,7 @@ abstract class Manager {
     ------------------ Mise en place d'un mini-ORM ------------------
     ---------------------------------------------------------------- */
 
-  public static function all() {
+  public static function all(): array {
     $objects = [];
 
     $class = explode('\\', get_called_class());
@@ -48,7 +48,7 @@ abstract class Manager {
   }
 
   // --------------- Requête pour afficher toute les données d'une colonne d'une table basé sur un élément d'une colonne ---------------
-  public static function findBy($column, $value) {
+  public static function findBy($column, $value): mixed {
     $class = explode('\\', get_called_class());
     $table = strtolower($class[array_key_last($class)]);
 
@@ -59,7 +59,7 @@ abstract class Manager {
   }
 
   // --------------- Requête pour mettre à jour les données d'une colonne dans une table basé sur un élément d'une colonne  ---------------
-  public static function updateBy($column, $value) {
+  public static function updateBy($column, $value): mixed {
     $class = explode('\\', get_called_class());
     $table = strtolower($class[array_key_last($class)]);
 
@@ -70,7 +70,7 @@ abstract class Manager {
   }
 
   // --------------- Requête pour supprimer les données d'une colonne dans une table basé sur un élément d'une colonne ---------------
-  public static function deleteBy($column, $value) {
+  public static function deleteBy($column, $value): void {
     $class = explode('\\', get_called_class());
     $table = strtolower($class[array_key_last($class)]);
 
