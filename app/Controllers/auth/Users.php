@@ -23,19 +23,19 @@ class Users extends Controller {
       header('Location:'.$this->viewAdmin('dashboard'));
 
     } else {
-      $e = throw new \Exception('Identifiants incorrects');
+      throw new \Exception($e = 'Identifiants incorrects');
     }
   }
   
   // -------- enregistrement dans la db des informations pour création d'un compte --------
   function addUser($register): void {
-    $r = \Beear\Models\auth\Users::createUser($register);
+    $req = \Beear\Models\auth\Users::createUser($register);
 
-    if ($r) {
+    if ($req) {
       header('Location:'.$this->viewAdmin('users/register-confirm'));
 
     } else {
-      $e = throw new \Exception('Une erreur est survenue lors de l\'enregistrement');
+      throw new \Exception($e = 'Une erreur est survenue lors de l\'enregistrement');
     }
   }
 

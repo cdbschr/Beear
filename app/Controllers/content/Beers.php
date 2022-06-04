@@ -28,7 +28,7 @@ Class Beers extends Controller {
     if($req) {
       header('Location:'.$this->viewadmin('/beers/manage-beers'));
     } else {
-      $e = throw new \Exception('Impossible de créer la bière');
+      throw new \Exception($e = 'Impossible de créer la bière');
     }
   }
 
