@@ -5,69 +5,44 @@ namespace Beear\Models\auth;
 use Beear\Models\Manager;
 
 class Users extends Manager { 
-  protected $id;
-  protected $lastname;
-  protected $firstname;
-  protected $mail;
-  protected $password;
-
-  public function __construct(array $data) {
-    $this->id = $data['id'];
-    $this->lastname = $data['lastname'];
-    $this->firstname = $data['firstname'];
-    $this->mail = $data['mail'];
-    $this->password = $data['password'];
-  }
-  
   // --------------- Requête pour enregister un user ---------------
-  public static function createUser(array $register): array {
+  public function createUser($pseudo, $mail, $password, $id_roles = null): bool {
     $db = self::dbAccess();
 
     $req = $db->prepare(
       "INSERT INTO 
         users(
-          lastname, 
-          firstname,  
+          pseudo, 
           mail,
-          `password`
+          `password`,
+          id_roles
         ) 
-      VALUES (:lastname, :firstname, :mail, :password)"
+      VALUES (:pseudo, :mail, :password, :id_roles)"
     );
 
     return $req->execute([
-      ':lastname' => $register['lastname'],
-      ':firstname' => $register['firstname'],
-      ':mail' => $register['mail'],
-      ':password' => password_hash($register['password'], PASSWORD_DEFAULT)
+      ':pseudo' => $pseudo,
+      ':mail' => $mail,
+      ':password' => password_hash($password, PASSWORD_DEFAULT),
+      ':id_roles' => $id_roles
     ]);
   }
 
-  // --------------- Requête pour récupérer un user-role ---------------
-  public static function getRoles(): mixed {
-    $db = self::dbAccess();
-
-    $req = $db->prepare("SELECT id, `name` FROM `user-roles`");
-
-    return $req->execute()->fetchAll();
-  }
-
-
   // --------------- Requête pour se connecter ---------------
-  public static function login(string $mail): mixed {
+  public static function login(string $mail): array {
     $db = self::dbAccess();
     
-    $req = $db->prepare("SELECT * FROM users WHERE mail = :mail");
+    $req = $db->prepare("SELECT mail, `password` FROM users WHERE mail = :mail");
     $req->execute([':mail' => $mail]);
-    $req->fetch();
+
+    return $req->fetch();
   }
 
   // --------------- Requête pour mettre à jour un mail d'un user ---------------
-  public static function updateMailUser(array $data): array {
+  public function updateMailUser(array $data): mixed {
     $db = self::dbAccess();
 
-    $req = $db->prepare(
-      "UPDATE users SET mail = :mail WHERE id = :id"
-    );
+    $req = $db->prepare("UPDATE users SET mail = :mail WHERE id = :id");
 
     return $req->execute([
       ':mail' => $data['mail'],
@@ -76,7 +51,7 @@ class Users extends Manager {
   }
 
   // --------------- Requête pour mettre à jour un password d'un user ---------------
-  public static function updatePasswordUser(array $data): array {
+  public function updatePasswordUser(array $data): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -87,5 +62,23 @@ class Users extends Manager {
       ':password' => password_hash($data['password'], PASSWORD_DEFAULT),
       ':id' => $data['id']
     ]);
+  }
+
+  // --------------- Requête pour supprimer un user ---------------
+  public function deleteUser(int $id): mixed {
+    $db = self::dbAccess();
+
+    $req = $db->prepare("DELETE FROM users WHERE id = :id");
+
+    return $req->execute([':id' => $id]);
+  }
+
+  public static function getAllUsers() {
+    $db = self::dbAccess();
+
+    $req = $db->prepare("SELECT pseudo, mail, `name`, created_at FROM users INNER JOIN `user-roles` ON `users`.id_roles = `user-roles`.id;");
+    $req->execute();
+
+    return $req->fetchAll();
   }
 }

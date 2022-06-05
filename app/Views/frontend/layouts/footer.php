@@ -12,9 +12,9 @@
     <a href="/?action=mentionslegales" class="linkfooter" rel="nofollow" title="Mentions légales">
       <p>Mentions légales</p>
     </a>
-    <?php if (isset($_SESSION['user'])) : ?>
-      <a href="<?= $this->viewAdmin('dashboard') ?>" class="linkfooter" rel="nofollow" title="Accéder au Dashboard">
-        <p>Accéder au Dashboard</p>
+    <?php if (isset($_SESSION['mail'])) : ?>
+      <a href="/dashboard.php" class="linkfooter" rel="nofollow" title="Accéder au Dashboard">
+        <p>Accéder au dashboard</p>
       </a>
     <?php else : ?>
       <a href="/?action=login-page" id="buttonlogmenu" class="linkfooter" rel="nofollow" title="Se connecter">

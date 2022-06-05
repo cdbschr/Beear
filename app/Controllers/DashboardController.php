@@ -9,8 +9,10 @@ class DashboardController extends Controller {
   }
 
   // -------- Pages liées à l'authentification  --------
-  public function manageUsers(): void {
+  public function manageUsers(): mixed {
     require_once $this->viewAdmin('users/manage-users');
+
+    $users = \Beear\Models\auth\Users::getAllUsers();
   }
 
   public function confirmPageUsers(): void {

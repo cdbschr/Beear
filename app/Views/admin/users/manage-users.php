@@ -17,8 +17,7 @@ require_once 'app/Views/admin/layouts/head.php';
         <table>
           <thead>
             <tr>
-              <th>Nom</th>
-              <th>Prénom</th>
+              <th>Pseudo</th>
               <th>Email</th>
               <th>Rôle</th>
               <th>Date de Création</th>
@@ -26,19 +25,22 @@ require_once 'app/Views/admin/layouts/head.php';
             </tr>
           </thead>
           <tbody>
-            <!-- <?php //foreach ($data['users'] as $user): ?>
+            <?php foreach($users as $user): ?>
               <tr>
-                <td><?php // $user->lastname; ?></td>
-                <td><?php // $user->firstname; ?></td>
-                <td><?php // $user->email; ?></td>
-                <td><?php // $user->role; ?></td>
-                <td><?php // $user->created_at; ?></td>
+                <td><?= $user['pseudo']; ?></td>
+                <td><?= $user['mail']; ?></td>
+                <td><?= $user['name']; ?></td>
+                <td><?= $user['created_at']; ?></td>
                 <td>
-                  <a href="<?php //$router->generate('admin_user_edit', ['id' => $user->id]); ?>" class="button">Modifier</a>
-                  <a href="<?php //$router->generate('admin_user_delete', ['id' => $user->id]); ?>" class="button">Supprimer</a> -->
-                <!-- </td>
-              </tr> -->
-            <?php // endforeach; ?>
+                  <a href="/dashboard.php?action=editUser-page&id=<?= $user['id']; ?>" title="modifier l'utilisateur">
+                    UPDATE
+                  </a>
+                  <a href="/dashboard.php?action=deleteUser-post&id=<?= $user['id']; ?>" title="supprimer l'utilisateur">
+                    DELETE
+                  </a>
+                </td>
+              </tr>
+              <?php endforeach; ?>
           </tbody>
         </table>
     </div>

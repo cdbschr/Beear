@@ -6,8 +6,7 @@ if (!isset($_SESSION)) {
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'app/Errors/eCatcher.php';
-require_once 'app/Controllers/auth/Sanitizer.php';
-require_once 'app/Controllers/content/MailsSanitizer.php';
+
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -22,7 +21,7 @@ set_error_handler('errorHandler');
 try {
   // -------- Récupération des Controllers --------
   $frontController = new Beear\Controllers\FrontController();
-  $userController = new Beear\Controllers\auth\Users();
+  $usersController = new Beear\Controllers\auth\Users();
   $beersController = new Beear\Controllers\content\Beers();
   $mailsController = new Beear\Controllers\content\Mails();
 
@@ -46,21 +45,21 @@ try {
     /* ----------------------------------------------------------------
     ---------------- Gestion du formulaire de contact -----------------
     ---------------------------------------------------------------- */
-    } elseif ($_GET['action'] == 'post-contactform') {
-      $contact = new \Beear\Controllers\content\MailsSanitizer($_POST);
-      $sanitizedDataContact = $contact->sanitizedDataContact();
+  } elseif ($_GET['action'] == 'post-contactform') {
+    $contact = new \Beear\Security\MailsSanitizer($_POST);
+    $sanitizedDataContact = $contact->sanitizedDataContact();
 
-      $sanitizedLastname = $sanitizedDataContact['lastname'];
-      $sanitizedFirstname = $sanitizedDataContact['firstname'];
-      $sanitizedMail = $sanitizedDataContact['mail'];
-      $sanitizedContent = $sanitizedDataContact['content'];
+    $sanitizedLastname = $sanitizedDataContact['lastname'];
+    $sanitizedFirstname = $sanitizedDataContact['firstname'];
+    $sanitizedMail = $sanitizedDataContact['mail'];
+    $sanitizedContent = $sanitizedDataContact['content'];
 
-      if (!empty($sanitizedLastname)
-      && !empty($sanitizedFirstname)
-      && !empty($sanitizedMail)
-      && !empty($sanitizedContent)) {
-        $mailsController->contactPost($sanitizedDataContact);
-      }
+    if (!empty($sanitizedLastname)
+    && !empty($sanitizedFirstname)
+    && !empty($sanitizedMail)
+    && !empty($sanitizedContent)) {
+      $mailsController->contactPost($sanitizedDataContact);
+    }
 
     /* ----------------------------------------------------------------
     -------------------- Gestion de la Connexion ----------------------
@@ -68,20 +67,19 @@ try {
     
     // ---------------- Connexion à un compte -----------------------
     } elseif ($_GET['action'] == 'login-page') {
-      $userController->connexionPage();
+      $usersController->connexionPage();
 
     } elseif ($_GET['action'] == 'login-post') {
       $mail= htmlspecialchars($_POST['mail']);
       $password = htmlspecialchars($_POST['password']);
       
       if (!empty($mail) && !empty($password)) {
-        $req = $userController->loginPost($mail, $password);
-        var_dump($req);die;
+        $usersController->loginPost($mail, $password);
       }
 
     // ---------------- Déconnexion d'un compte -----------------------
     } elseif ($_GET['action'] == 'deconnexion') {
-      $userController->deconnexion();
+      $usersController->deconnexion();
     
   }} else {
     $frontController->home();

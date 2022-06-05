@@ -1,3 +1,7 @@
+<?php  if(!isset($_SESSION['id']))
+  throw new Exception("Vous n'êtes pas connecté");
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

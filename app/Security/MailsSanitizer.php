@@ -1,6 +1,6 @@
 <?php
 
-namespace Beear\Controllers\content;
+namespace Beear\Security;
 
 class MailsSanitizer {
   public function __construct(array $data) {

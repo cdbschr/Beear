@@ -6,7 +6,6 @@ if(!isset($_SESSION)){
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'app/Errors/eCatcher.php';
-require_once 'app/Controllers/auth/Sanitizer.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -38,11 +37,11 @@ try {
     }
     
     elseif ($_GET['action'] == 'updateBeer') {
-      $beersController->updateBeer($data);
+      // $beersController->updateBeer($data);
     }
 
     elseif ($_GET['action'] == 'deleteBeer') {
-      $beersController->deleteBeer($data);
+      // $beersController->deleteBeer($data);
     }
 
     /* ----------------------------------------------------------------
@@ -57,28 +56,29 @@ try {
     }
 
     elseif ($_GET['action'] == 'addUser-post') {
-      $sanitizedDataRegister = new \Beear\Controllers\auth\Sanitizer($_POST);
-      $register = $sanitizedDataRegister->sanitizedRegister();
-      
-      $sanitizedLastname = $register['lastname'];
-      $sanitizedFirstname = $register['firstname'];
-      $sanitizedMail = $register['mail'];
-      $sanitizedPassword = $register['password'];
-      
-      if (!empty($sanitizedLastname) 
-      && !empty($sanitizedFirstname) 
-      && !empty($sanitizedMail) 
-      && !empty($sanitizedPassword)) {
-        $usersController->addUser($register);
+      $pseudo = htmlspecialchars($_POST['pseudo']);
+      $mail = htmlspecialchars($_POST['mail']);
+      $password = htmlspecialchars($_POST['password']);
+      $id_roles = htmlspecialchars($_POST['id_roles']);
+
+      if($id_roles === 'admin') {
+        $id_roles = 1;
+      } else if ($id_roles === 'editor') {
+        $id_roles = 2;
+      } else {
+        $id_roles = 3;
       }
+
+      $usersController->addUser($pseudo, $mail, $password, $id_roles);
     }
 
     elseif ($_GET['action'] == 'updateUser-page') {
-      $usersController->updateUser($data['id']);
     }
     
     elseif ($_GET['action'] == 'deleteUser') {
-      $usersController->deleteUser($_GET['id']);
+    }
+    elseif($_GET['action'] == 'deconnect') {
+      $usersController->deconnexion();
     }
 
   } else {

@@ -13,30 +13,22 @@ class Users extends Controller {
   function loginPost($mail, $password): void {
     $login = \Beear\Models\auth\Users::login($mail);
     
-    if ($login && password_verify($password, $login['password'])) {
+    if (password_verify($password, $login['password'])) {
       $_SESSION['mail'] = $login['mail'];
       $_SESSION['id'] = $login['id'];
-      $_SESSION['firstname'] = $login['firstname'];
-      $_SESSION['lastname'] = $login['lastname'];
-      $_SESSION['role'] = $login['role'];
+      $_SESSION['pseudo'] = $login['pseudo'];
+      $_SESSION['id_roles'] = $login['id_roles'];
 
-      header('Location:'.$this->viewAdmin('dashboard'));
-
-    } else {
-      throw new \Exception($e = 'Identifiants incorrects');
+      header('Location:/dashboard.php');
     }
   }
   
   // -------- enregistrement dans la db des informations pour création d'un compte --------
-  function addUser($register): void {
-    $req = \Beear\Models\auth\Users::createUser($register);
+  function addUser($pseudo, $mail, $password, $id_roles): mixed {
+    $user = new \Beear\Models\auth\Users();
 
-    if ($req) {
-      header('Location:'.$this->viewAdmin('users/register-confirm'));
-
-    } else {
-      throw new \Exception($e = 'Une erreur est survenue lors de l\'enregistrement');
-    }
+    $user->createUser($pseudo, $mail, $password, $id_roles);
+    header('Location:'.$this->viewAdmin('users/register-confirm'));
   }
 
   // -------- mise à jour d'un utilisateur par rapport à son id --------
@@ -51,7 +43,6 @@ class Users extends Controller {
   function deleteUser($data): void {
     $id = htmlspecialchars($data['id']);
     $user = new \Beear\Models\auth\Users($data);
-    var_dump($user);die;
     $user->deleteBy('id', $id);
 
     require_once $this->viewAdmin('Users/manage-Users');
@@ -63,8 +54,17 @@ class Users extends Controller {
     header('Location:/');
   }
 
-  function checkUser(): bool {
-    if (isset($_SESSION['user'])) {
+  public function checkUser(): bool {
+    if (isset($_SESSION['mail'])) {
+      return true;
+
+    } else {
+      return false;
+    }
+  }
+
+  public function checkAdmin(): bool {
+    if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] == 1) {
       return true;
 
     } else {
