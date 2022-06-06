@@ -33,8 +33,8 @@ class DashboardController extends Controller {
 
   // -------- Pages liées aux Bières  --------
   public function manageBeers(): void {
-    // $object = new \Beear\Models\content\Beers($data);
-    // $beers = $object->getAllUsers();
+    $object = new \Beear\Models\content\Beers();
+    $beers = $object->getAllBeers();
 
     require_once $this->viewAdmin('beers/manage-beers');
   }

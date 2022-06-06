@@ -5,7 +5,6 @@ namespace Beear\Controllers\content;
 use Beear\Controllers\Controller;
 
 Class Beers extends Controller {
-
 	public function beerPage($data): void {
     $id = $data['id'];
     $beers = new \Beear\Models\content\Beers($id);
@@ -45,17 +44,10 @@ Class Beers extends Controller {
   }
 
   public function updateBeer($id): void {
-    $idBeer = \Beear\Models\content\Beers::findBy('id', $id);
-
-    $idBeer->updateBeer($id);
-
     require_once $this->viewAdmin('/beers/update-beer');
   }
 
   public function deleteBeer($id): void {
-    $beers = \Beear\Models\content\Beers::findBy('id', $id);
-    $beers->deleteBeer($id);
-
-    require_once $this->viewAdmin('/beers/manage-beers');
+    header('Location:/dashboard.php?action=manage-beers');
   }
 }

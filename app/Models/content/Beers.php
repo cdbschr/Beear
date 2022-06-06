@@ -5,34 +5,44 @@ namespace Beear\Models\content;
 use Beear\Models\Manager;
 
 class Beers extends Manager {
-  protected int $id;
-  protected string $idname;
-  protected string $name;
-  protected string $hook;
-  protected int $alcdegree;
-  protected string $desc;
-  protected int $ibu;
-  protected string $temp;
-  protected string $voyez;
-  protected string $sentez;
-  protected string $goutez;
-  protected string $img;
+  // protected int $id;
+  // protected string $idname;
+  // protected string $name;
+  // protected string $hook;
+  // protected int $alcdegree;
+  // protected string $desc;
+  // protected int $ibu;
+  // protected string $temp;
+  // protected string $voyez;
+  // protected string $sentez;
+  // protected string $goutez;
+  // protected string $img;
+  
+  // public function __construct(array $data) {
+  //   $this->id = $data['id'];
+  //   $this->idname = $data['idname'];
+  //   $this->name = $data['name'];
+  //   $this->hook = $data['hook'];
+  //   $this->alcdegree = $data['alcdegree'];
+  //   $this->desc = $data['desc'];
+  //   $this->ibu = $data['ibu'];
+  //   $this->temp = $data['temp'];
+  //   $this->voyez = $data['voyez'];
+  //   $this->sentez = $data['sentez'];
+  //   $this->goutez = $data['goutez'];
+  //   $this->img = $data['img'];
+  // }
 
-  public function __construct(array $data) {
-    $this->id = $data['id'];
-    $this->idname = $data['idname'];
-    $this->name = $data['name'];
-    $this->hook = $data['hook'];
-    $this->alcdegree = $data['alcdegree'];
-    $this->desc = $data['desc'];
-    $this->ibu = $data['ibu'];
-    $this->temp = $data['temp'];
-    $this->voyez = $data['voyez'];
-    $this->sentez = $data['sentez'];
-    $this->goutez = $data['goutez'];
-    $this->img = $data['img'];
+  // --------------- Requête pour afficher toutes les bières ---------------
+  public function getAllBeers(): mixed {
+    $db = self::dbAccess();
+
+    $req = $db->prepare("SELECT * FROM beers");
+    $req->execute();
+    return $req->fetchAll();
   }
-
+  
+  
   // --------------- Requête pour afficher une bière par son id ---------------
   public function getBeerById(int $id): array {
     $db = self::dbAccess();
@@ -44,7 +54,7 @@ class Beers extends Manager {
   }
 
   // --------------- Requête pour afficher les 3 dernières bières ---------------
-  public static function getThreeLastBeers(): mixed {
+  public function getThreeLastBeers(): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare("SELECT * FROM beers ORDER BY id DESC LIMIT 3");
@@ -54,13 +64,6 @@ class Beers extends Manager {
 
   // --------------- Requête pour créer une bière ---------------
   
-  public static function getAllBeers(): mixed {
-    $db = self::dbAccess();
-
-    $req = $db->prepare("SELECT * FROM beers");
-    $req->execute();
-    return $req->fetchAll();
-  }
 
   // --------------- Requête pour créer une bière ---------------
     public static function createBeer(array $createBeer): void {
@@ -83,7 +86,7 @@ class Beers extends Manager {
   }
 
   // --------------- Requête pour mettre à jour une bière par son id ---------------
-  public static function updateBeer(array $data): void {
+  public function updateBeer(array $data): void {
     $db = self::dbAccess();
 
     $req = $db->prepare("UPDATE beers SET idname = :idname, name = :name, hook = :hook, alcdegree = :alcdegree, desc = :desc, ibu = :ibu, temp = :temp, voyez = :voyez, sentez = :sentez, goutez = :goutez, img = :img WHERE id = :id");
@@ -104,7 +107,7 @@ class Beers extends Manager {
   }
 
   // --------------- Requête pour supprimer une bière par son id ---------------
-  public static function deleteBeer(int $id): void {
+  public function deleteBeer(int $id): void {
     $db = self::dbAccess();
 
     $req = $db->prepare("DELETE FROM beers WHERE id = :id");

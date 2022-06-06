@@ -16,24 +16,25 @@ require_once 'app/Views/admin/layouts/head.php';
         <table>
           <thead>
             <tr>
-              <th>idName</th>
               <th>Nom de la Bière</th>
+              <th>idName</th>
               <th>Date de Création</th>
+              <th>Dernière modification</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-          <?php foreach($beers as $user): ?>
+          <?php foreach($beers as $beer): ?>
               <tr>
-                <td><?= $user['pseudo']; ?></td>
-                <td><?= $user['mail']; ?></td>
-                <td><?= $user['name']; ?></td>
-                <td><?= $user['created_at']; ?></td>
+                <td><?= $beer['name']; ?></td>
+                <td><?= $beer['idname']; ?></td>
+                <td><?= $beer['created_at']; ?></td>
+                <td><?= $beer['modified_at']; ?></td>
                 <td>
-                  <a href="/dashboard.php?action=editUser-page&id=<?= $user['id']; ?>" title="modifier l'utilisateur">
+                  <a href="/dashboard.php?action=updateBeer-page&id=<?= $beer['id']; ?>" title="modifier l'utilisateur">
                     UPDATE
                   </a>
-                  <a href="/dashboard.php?action=deleteUser-post&id=<?= $user['id']; ?>" title="supprimer l'utilisateur">
+                  <a href="/dashboard.php?action=deleteBeer-post&id=<?= $beer['id']; ?>" title="supprimer l'utilisateur">
                     DELETE
                   </a>
                 </td>
