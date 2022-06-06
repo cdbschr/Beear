@@ -73,11 +73,19 @@ try {
     }
 
     elseif ($_GET['action'] == 'updateUser-page') {
+      $dashboardController->updateUser($_GET['id']);
+    }
+
+    elseif ($_GET['action'] == 'updateUser-post') {
+      $pseudo = htmlspecialchars($_POST['pseudo']);
+      $mail = htmlspecialchars($_POST['mail']);
+      $password = htmlspecialchars($_POST['password']);
+
+      $usersController->updateUserPost($_GET['id'], $pseudo, $mail, $password);
     }
     
     elseif ($_GET['action'] == 'deleteUser') {
       $usersController->deleteUser($_GET['id']);
-      
     }
     elseif($_GET['action'] == 'deconnect') {
       $usersController->deconnexion();

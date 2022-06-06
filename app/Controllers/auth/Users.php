@@ -32,9 +32,11 @@ class Users extends Controller {
   }
 
   // -------- mise à jour d'un utilisateur par rapport à son id --------
-  function updateUser($id, $mail = null, $password = null): void {
+  private $manager;
+  function updateUserPost($id, $pseudo = null, $mail = null, $password = null): void {
+    $updateUser = $this->manager->getUserById($id);
     $user = new \Beear\Models\auth\Users();
-    $user->updateMailUser($mail, $id) || $user->updatePasswordUser($password, $id);
+    $user->updateUser($pseudo, $mail, $password, $id);
 
     require_once $this->viewAdmin('users/update-user');
   }
@@ -53,21 +55,4 @@ class Users extends Controller {
     header('Location:/');
   }
 
-  public function checkUser(): bool {
-    if (isset($_SESSION['mail'])) {
-      return true;
-
-    } else {
-      return false;
-    }
-  }
-
-  public function checkAdmin(): bool {
-    if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] == 1) {
-      return true;
-
-    } else {
-      return false;
-    }
-  }
 }

@@ -12,33 +12,25 @@ require_once 'app/Views/admin/layouts/head.php';
   </section>
   <section>
   <section>
-    <form id="update-user" action="dashboard.php?action=addUser-post" >
+    <form id="update-user" action="dashboard.php?action=updateUser-post">
     <div class="form-group">
-      <label for="input-lastname">Nom</label>
-      <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Saisissez le nom..." required>
-    </div>
     <div class="form-group">
-      <label for="input-firstname">Prénom</label>
-      <input type="text" class="form-control" name="firstname" aria-describedby="firstnameHelp" placeholder="Saisissez le prénom..." required>
+      <label for="input-pseudo">Pseudo</label>
+      <input type="text" class="form-control" name="pseudo" value="<?= $user['pseudo'] ?>" placeholder="Saisissez le pseudo...">
     </div>
     <div class="form-group">
       <label for="input-email">Adresse mail</label>
-      <input type="email" class="form-control" name="mail" aria-describedby="emailHelp" placeholder="Saisissez l'adresse mail..." required>
+      <input type="email" class="form-control" name="mail" value="<?= $user['mail'] ?>" placeholder="Saisissez l'adresse mail...">
     </div>
     <div class="form-group">
       <label for="input-password">Mot de passe</label>
-      <input type="password" class="form-control" name="password" placeholder="Saisissez un mot de passe..." required>
+      <input type="password" class="form-control" name="password" placeholder="Saisissez un mot de passe...">
     </div>
-    <!-- <select name="role" id="role-select"> -->
-      <!-- <option value=""> -- Veuillez choisir un rôle -- </option> -->
-      <?php //foreach ($roles as $role) : ?>
-        <!-- <option value="<?php //echo //$role->id ?>"><?php //echo //$role->name ?></option> -->
-      <?php //endforeach; ?>
-      <!-- <option value="admin">Admin</option>
-      <option value="editor">Editeur</option>
-      <option value="members">Membre</option>
-    </select> -->
-      <button type="submit" class="button">Créer le compte</button>
+    <div class="form-group">
+      <label for="input-password">Confirmation de votre mot de passe</label>
+      <input type="password" class="form-control" name="password_confirmation" placeholder="Veuillez re-saisir le mot de passe...">
+    </div>
+      <button type="submit" class="button">Mettre à jour le compte</button>
     </form>
   </section>
   </section>

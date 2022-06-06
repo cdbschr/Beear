@@ -38,27 +38,22 @@ class Users extends Manager {
     return $req->fetch();
   }
 
-  // --------------- Requête pour mettre à jour un mail d'un user ---------------
-  public function updateMailUser($mail, $id): mixed {
-    $db = self::dbAccess();
-
-    $req = $db->prepare("UPDATE users SET mail = :mail WHERE id = :id");
-
-    return $req->execute([
-      ':mail' => $mail,
-      ':id' => $id
-    ]);
-  }
-
-  // --------------- Requête pour mettre à jour un password d'un user ---------------
-  public function updatePasswordUser($password, $id): mixed {
+  
+  // --------------- Requête pour mettre à jour un user ---------------
+  public function updateUser(string $pseudo, string $mail, string $password, int $id) {
     $db = self::dbAccess();
 
     $req = $db->prepare(
-      "UPDATE users SET `password` = :password WHERE id = :id"
+      "UPDATE users SET 
+        pseudo = :pseudo,
+        mail = :mail,
+        `password` = :password
+      WHERE id = :id"
     );
 
     return $req->execute([
+      ':pseudo' => $pseudo,
+      ':mail' => $mail,
       ':password' => password_hash($password, PASSWORD_DEFAULT),
       ':id' => $id
     ]);
@@ -80,5 +75,15 @@ class Users extends Manager {
     $req->execute();
 
     return $req->fetchAll();
+  }
+
+  // --------------- Requête pour récupérer un user par rapport à son id ---------------
+  public static function getUserById($id) {
+    $db = self::dbAccess();
+
+    $req = $db->prepare("SELECT * FROM users WHERE id = :id");
+    $req->execute([':id' => $id]);
+
+    return $req->fetch();
   }
 }

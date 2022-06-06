@@ -12,11 +12,6 @@ require_once 'app/Views/admin/layouts/head.php';
   </section>
   <section>
     <form method="POST" id="register-user" action="dashboard.php?action=addUser-post">
-      <?php if(isset($e)):
-        if ($e) :
-         foreach($e as $error): ?>
-          <p class="error"><?= $error ?></p>
-      <?php endforeach; endif; endif; ?>
     <div class="form-group">
       <label for="input-pseudo">Pseudo</label>
       <input type="text" class="form-control" name="pseudo" value="<?php if(isset($_POST['pseudo'])) echo htmlspecialchars($_POST['pseudo'])?>" placeholder="Saisissez le pseudo..." required>

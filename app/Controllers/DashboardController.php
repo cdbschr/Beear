@@ -25,8 +25,9 @@ class DashboardController extends Controller {
   }
 
   public function updateUser($id): void {
-    $id = \Beear\Models\auth\Users::findBy('id', $id);
-
+    $object = new \Beear\Models\auth\Users();
+    $user = $object->getUserById($id);
+    
     require_once $this->viewAdmin('users/update-user');
   }
 
@@ -43,8 +44,6 @@ class DashboardController extends Controller {
   }
 
   public function updateBeer($id): void {
-    $id = \Beear\Models\content\Beers::findBy('id', $id);
-
     require_once $this->viewAdmin('beers/update-beer');
   }
 }

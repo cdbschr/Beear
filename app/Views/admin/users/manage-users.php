@@ -32,7 +32,7 @@ require_once 'app/Views/admin/layouts/head.php';
                 <td><?= $user['name']; ?></td>
                 <td><?= $user['created_at']; ?></td>
                 <td>
-                  <a href="/dashboard.php?action=editUser-page&id=<?= $user['id']; ?>" title="modifier l'utilisateur">
+                  <a href="/dashboard.php?action=updateUser-page&id=<?= $user['id']; ?>" title="modifier l'utilisateur">
                     UPDATE
                   </a>
                   <a href="/dashboard.php?action=deleteUser&id=<?= $user['id']; ?>" title="supprimer l'utilisateur">
