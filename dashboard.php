@@ -82,7 +82,11 @@ try {
     }
 
   } else {
-    $dashboardController->admin();
+    if(isset($_SESSION['id']) && isset($_SESSION['mail']) && isset($_SESSION['pseudo']) && isset($_SESSION['id_roles'])) {
+      $dashboardController->admin();
+    } else {
+      require 'app/Views/errors/oops.php';
+    }
   }
 } catch (Exception $e) {
   require 'app/Views/errors/404.php';

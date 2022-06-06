@@ -32,7 +32,7 @@ class Users extends Manager {
   public static function login(string $mail): mixed {
     $db = self::dbAccess();
     
-    $req = $db->prepare("SELECT id, pseudo, mail, `password`, id_roles, created_at FROM users WHERE mail = :mail");
+    $req = $db->prepare("SELECT id, pseudo, mail, `password`, id_roles FROM users WHERE mail = :mail");
     $req->execute([':mail' => $mail]);
 
     return $req->fetch();
