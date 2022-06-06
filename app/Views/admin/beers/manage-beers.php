@@ -23,17 +23,22 @@ require_once 'app/Views/admin/layouts/head.php';
             </tr>
           </thead>
           <tbody>
-            <!-- <?php //foreach ($data['beers'] as $beer): ?>
+          <?php foreach($beers as $user): ?>
               <tr>
-                <td><?php // $beer->idname; ?></td>
-                <td><?php // $beer->name; ?></td>
-                <td><?php // $beer->created_at; ?></td>
+                <td><?= $user['pseudo']; ?></td>
+                <td><?= $user['mail']; ?></td>
+                <td><?= $user['name']; ?></td>
+                <td><?= $user['created_at']; ?></td>
                 <td>
-                  <a href="<?php //$router->generate('admin_user_edit', ['id' => $user->id]); ?>" class="button">Modifier</a>
-                  <a href="<?php //$router->generate('admin_user_delete', ['id' => $user->id]); ?>" class="button">Supprimer</a> -->
-                <!-- </td>
-              </tr> -->
-            <?php // endforeach; ?>
+                  <a href="/dashboard.php?action=editUser-page&id=<?= $user['id']; ?>" title="modifier l'utilisateur">
+                    UPDATE
+                  </a>
+                  <a href="/dashboard.php?action=deleteUser-post&id=<?= $user['id']; ?>" title="supprimer l'utilisateur">
+                    DELETE
+                  </a>
+                </td>
+              </tr>
+              <?php endforeach; ?>
           </tbody>
         </table>
     </div>

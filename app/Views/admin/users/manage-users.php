@@ -35,7 +35,7 @@ require_once 'app/Views/admin/layouts/head.php';
                   <a href="/dashboard.php?action=editUser-page&id=<?= $user['id']; ?>" title="modifier l'utilisateur">
                     UPDATE
                   </a>
-                  <a href="/dashboard.php?action=deleteUser-post&id=<?= $user['id']; ?>" title="supprimer l'utilisateur">
+                  <a href="/dashboard.php?action=deleteUser&id=<?= $user['id']; ?>" title="supprimer l'utilisateur">
                     DELETE
                   </a>
                 </td>

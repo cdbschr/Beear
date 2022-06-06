@@ -1,5 +1,5 @@
-<?php // if(!isset($_SESSION['id']))
- // throw new Exception("Vous n'êtes pas connecté");
+<?php if(!isset($_SESSION['id']))
+throw new Exception("Vous n'êtes pas connecté");
 ?>
 
 <!DOCTYPE html>

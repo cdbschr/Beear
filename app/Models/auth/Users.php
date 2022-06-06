@@ -39,19 +39,19 @@ class Users extends Manager {
   }
 
   // --------------- Requête pour mettre à jour un mail d'un user ---------------
-  public function updateMailUser(array $data): mixed {
+  public function updateMailUser($mail, $id): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare("UPDATE users SET mail = :mail WHERE id = :id");
 
     return $req->execute([
-      ':mail' => $data['mail'],
-      ':id' => $data['id']
+      ':mail' => $mail,
+      ':id' => $id
     ]);
   }
 
   // --------------- Requête pour mettre à jour un password d'un user ---------------
-  public function updatePasswordUser(array $data): mixed {
+  public function updatePasswordUser($password, $id): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -59,13 +59,12 @@ class Users extends Manager {
     );
 
     return $req->execute([
-      ':password' => password_hash($data['password'], PASSWORD_DEFAULT),
-      ':id' => $data['id']
+      ':password' => password_hash($password, PASSWORD_DEFAULT),
+      ':id' => $id
     ]);
   }
 
-  // --------------- Requête pour supprimer un user ---------------
-  public function deleteUser(int $id): mixed {
+  public function deleteUser($id): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare("DELETE FROM users WHERE id = :id");
@@ -73,10 +72,11 @@ class Users extends Manager {
     return $req->execute([':id' => $id]);
   }
 
-  public static function getAllUsers() {
+  // --------------- Requête pour récupérer tous les users ---------------
+  public function getAllUsers() {
     $db = self::dbAccess();
 
-    $req = $db->prepare("SELECT pseudo, mail, `name`, created_at FROM users INNER JOIN `user-roles` ON `users`.id_roles = `user-roles`.id;");
+    $req = $db->prepare("SELECT * FROM users INNER JOIN `user-roles` ON `users`.id_roles = `user-roles`.id_role;");
     $req->execute();
 
     return $req->fetchAll();

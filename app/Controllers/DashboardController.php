@@ -9,10 +9,11 @@ class DashboardController extends Controller {
   }
 
   // -------- Pages liées à l'authentification  --------
-  public function manageUsers(): mixed {
-    require_once $this->viewAdmin('users/manage-users');
+  public function manageUsers(): void {
+    $object = new \Beear\Models\auth\Users();
+    $users = $object->getAllUsers();
 
-    $users = \Beear\Models\auth\Users::getAllUsers();
+    require_once $this->viewAdmin('users/manage-users');
   }
 
   public function confirmPageUsers(): void {
@@ -31,6 +32,9 @@ class DashboardController extends Controller {
 
   // -------- Pages liées aux Bières  --------
   public function manageBeers(): void {
+    // $object = new \Beear\Models\content\Beers($data);
+    // $beers = $object->getAllUsers();
+
     require_once $this->viewAdmin('beers/manage-beers');
   }
   

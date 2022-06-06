@@ -57,5 +57,13 @@ class Mails extends Manager {
     return $req->fetch();
   }
 
-  
+  // --------------- Requête pour supprimer un mail ---------------
+  public static function deleteMail(int $id): mixed {
+    $db = self::dbAccess();
+
+    $req = $db->prepare("DELETE FROM contact WHERE id = :id");
+    $req->execute(array(':id' => $id));
+
+    return $req;
+  }
 }

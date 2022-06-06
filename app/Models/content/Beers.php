@@ -33,8 +33,8 @@ class Beers extends Manager {
     $this->img = $data['img'];
   }
 
-  //get beer by id
-  public function getBeerById(int $id): mixed {
+  // --------------- Requête pour afficher une bière par son id ---------------
+  public function getBeerById(int $id): array {
     $db = self::dbAccess();
     
     $req = $db->prepare("SELECT * FROM beers WHERE id = :id");
@@ -43,7 +43,7 @@ class Beers extends Manager {
     return $beer;
   }
 
-  //get three last beers added
+  // --------------- Requête pour afficher les 3 dernières bières ---------------
   public static function getThreeLastBeers(): mixed {
     $db = self::dbAccess();
 
@@ -52,8 +52,18 @@ class Beers extends Manager {
     return $req->fetch();
   }
 
-  //create a beer
-  public static function createBeer(array $createBeer): void {
+  // --------------- Requête pour créer une bière ---------------
+  
+  public static function getAllBeers(): mixed {
+    $db = self::dbAccess();
+
+    $req = $db->prepare("SELECT * FROM beers");
+    $req->execute();
+    return $req->fetchAll();
+  }
+
+  // --------------- Requête pour créer une bière ---------------
+    public static function createBeer(array $createBeer): void {
     $db = self::dbAccess();
 
     $req = $db->prepare("INSERT INTO beers (idname, name, hook, alcdegree, desc, ibu, temp, voyez, sentez, goutez, img) VALUES (:idname, :name, :hook, :alcdegree, :desc, :ibu, :temp, :voyez, :sentez, :goutez, :img)");
@@ -72,7 +82,7 @@ class Beers extends Manager {
     ]);
   }
 
-  //update a beer
+  // --------------- Requête pour mettre à jour une bière par son id ---------------
   public static function updateBeer(array $data): void {
     $db = self::dbAccess();
 
@@ -93,7 +103,7 @@ class Beers extends Manager {
     ]);
   }
 
-  //delete a beer
+  // --------------- Requête pour supprimer une bière par son id ---------------
   public static function deleteBeer(int $id): void {
     $db = self::dbAccess();
 

@@ -15,7 +15,7 @@ require_once 'app/Views/admin/layouts/head.php';
       <?php if(isset($e)):
         if ($e) :
          foreach($e as $error): ?>
-          <p class="error"><?= $e ?></p>
+          <p class="error"><?= $error ?></p>
       <?php endforeach; endif; endif; ?>
     <div class="form-group">
       <label for="input-pseudo">Pseudo</label>

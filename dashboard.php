@@ -76,6 +76,8 @@ try {
     }
     
     elseif ($_GET['action'] == 'deleteUser') {
+      $usersController->deleteUser($_GET['id']);
+      
     }
     elseif($_GET['action'] == 'deconnect') {
       $usersController->deconnexion();

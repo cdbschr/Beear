@@ -32,20 +32,19 @@ class Users extends Controller {
   }
 
   // -------- mise à jour d'un utilisateur par rapport à son id --------
-  function updateUser($data): void {
-    $user = new \Beear\Models\auth\Users($data);
-    $user->updateMailUser($data) || $user->updatePasswordUser($data);
+  function updateUser($id, $mail = null, $password = null): void {
+    $user = new \Beear\Models\auth\Users();
+    $user->updateMailUser($mail, $id) || $user->updatePasswordUser($password, $id);
 
-    require_once $this->viewAdmin('Users/manage-Users');
+    require_once $this->viewAdmin('users/update-user');
   }
 
   // -------- suppression d'un utilisateur par rapport à son id --------
-  function deleteUser($data): void {
-    $id = htmlspecialchars($data['id']);
-    $user = new \Beear\Models\auth\Users($data);
-    $user->deleteBy('id', $id);
+  function deleteUser($id): void {
+    $user = new \Beear\Models\auth\Users();
+    $user->deleteUser($id);
 
-    require_once $this->viewAdmin('Users/manage-Users');
+    header('Location:dashboard.php/?action=users');
   }
 
   // -------- gestion et verification de la connexion --------
