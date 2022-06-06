@@ -6,7 +6,7 @@ use Beear\Models\Manager;
 
 class Users extends Manager { 
   // --------------- Requête pour enregister un user ---------------
-  public function createUser($pseudo, $mail, $password, $id_roles = null): bool {
+  public function createUser(string $pseudo, string $mail, string $password, $id_roles = null): bool {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -29,10 +29,10 @@ class Users extends Manager {
   }
 
   // --------------- Requête pour se connecter ---------------
-  public static function login(string $mail): array {
+  public static function login(string $mail): mixed {
     $db = self::dbAccess();
     
-    $req = $db->prepare("SELECT mail, `password` FROM users WHERE mail = :mail");
+    $req = $db->prepare("SELECT id, pseudo, mail, `password`, id_roles, created_at FROM users WHERE mail = :mail");
     $req->execute([':mail' => $mail]);
 
     return $req->fetch();
