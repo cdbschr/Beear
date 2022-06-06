@@ -33,8 +33,8 @@ CREATE TABLE IF NOT EXISTS `beers` (
   `sentez` mediumtext NOT NULL,
   `goutez` mediumtext NOT NULL,
   `img` varchar(500) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `mail` varchar(255) NOT NULL,
   `phone` varchar(12) DEFAULT NULL,
   `content` text NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -68,14 +68,14 @@ INSERT INTO `contact` (`id`, `lastname`, `firstname`, `mail`, `phone`, `content`
 -- Listage de la structure de la table beear. user-roles
 DROP TABLE IF EXISTS `user-roles`;
 CREATE TABLE IF NOT EXISTS `user-roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_role` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id_role`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table beear.user-roles : ~4 rows (environ)
+-- Listage des données de la table beear.user-roles : ~3 rows (environ)
 /*!40000 ALTER TABLE `user-roles` DISABLE KEYS */;
-INSERT INTO `user-roles` (`id`, `name`) VALUES
+INSERT INTO `user-roles` (`id_role`, `name`) VALUES
 	(1, 'admin'),
 	(2, 'editor'),
 	(3, 'members');
@@ -84,20 +84,23 @@ INSERT INTO `user-roles` (`id`, `name`) VALUES
 -- Listage de la structure de la table beear. users
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `lastname` varchar(255) NOT NULL,
-  `firstname` varchar(255) NOT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `pseudo` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `password` varchar(500) NOT NULL,
-  `id_roles` int(1) NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_roles` int(1) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `id_roles` (`id_roles`),
-  CONSTRAINT `id_roles` FOREIGN KEY (`id_roles`) REFERENCES `user-roles` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `FK_users_user-roles` (`id_roles`),
+  CONSTRAINT `FK_users_user-roles` FOREIGN KEY (`id_roles`) REFERENCES `user-roles` (`id_role`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table beear.users : ~0 rows (environ)
+-- Listage des données de la table beear.users : ~4 rows (environ)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `pseudo`, `mail`, `password`, `id_roles`, `created_at`) VALUES
+	(1, 'admin', 'admin@admin.fr', '$2y$10$zcyWePnlVfQ7mRCCrYwFq.hNfMNmReVdtRLTzSI.ctCbW0QMX5Y7i', 1, '2022-06-05 12:34:50'),
+	(2, 'editor', 'editor@editor.fr', '$2y$10$W3/9y/IqKz6LkwzdwF7Zhuv/srvPUYACx9RWMCVmtZVrIYd6cNxHq', 2, '2022-06-05 15:54:53'),
+	(3, 'user', 'user@user.fr', '$2y$10$cqArYiiD6xvVJ6vJUkvjWO2hrt6vuYOiE8KgCf.E22oTggh5et1Be', 3, '2022-06-06 14:14:04');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
