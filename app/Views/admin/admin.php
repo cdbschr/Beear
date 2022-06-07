@@ -1,6 +1,5 @@
 <?php
 require_once 'app/Views/admin/layouts/head.php';
-var_dump($_SESSION);
 ?>
 <main>
   <section class="pres-dashboard">
