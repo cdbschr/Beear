@@ -99,6 +99,8 @@ try {
     }
   }
 } catch (Exception $e) {
+  eCatcher($e);
+
   require 'app/Views/errors/404.php';
 
 } catch(Error $e) {

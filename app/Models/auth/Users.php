@@ -71,7 +71,7 @@ class Users extends Manager {
   public function getAllUsers() {
     $db = self::dbAccess();
 
-    $req = $db->prepare("SELECT * FROM users INNER JOIN `user-roles` ON `users`.id_roles = `user-roles`.id_role;");
+    $req = $db->prepare("SELECT id, pseudo, mail, DATE_FORMAT(created_at,'%d/%m/%Y') AS `date`, `name` FROM users INNER JOIN `user-roles` ON `users`.id_roles = `user-roles`.id_role;");
     $req->execute();
 
     return $req->fetchAll();
