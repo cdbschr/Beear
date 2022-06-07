@@ -37,7 +37,7 @@ class Beers extends Manager {
   public function getAllBeers(): mixed {
     $db = self::dbAccess();
 
-    $req = $db->prepare("SELECT * FROM beers");
+    $req = $db->prepare("SELECT id, `name`, idname, DATE_FORMAT(created_at, '%d/%m/%Y') as created_date, DATE_FORMAT(modified_at, '%d/%m/%Y') AS modified_date FROM beers");
     $req->execute();
     return $req->fetchAll();
   }

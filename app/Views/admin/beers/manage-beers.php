@@ -32,8 +32,8 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
               <tr>
                 <td><?= $beer['name']; ?></td>
                 <td><?= $beer['idname']; ?></td>
-                <td><?= $beer['created_at']; ?></td>
-                <td><?= $beer['modified_at']; ?></td>
+                <td><?= $beer['created_date']; ?></td>
+                <td><?= $beer['modified_date']; ?></td>
                 <td>
                   <a href="/dashboard.php?action=updateBeer-page&id=<?= $beer['id']; ?>" title="modifier l'utilisateur">
                     UPDATE
