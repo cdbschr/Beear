@@ -1,6 +1,5 @@
 <?php
 require_once './app/Views/frontend/layouts/head.php';
-var_dump($_SESSION);
 ?>
 
 <main>
