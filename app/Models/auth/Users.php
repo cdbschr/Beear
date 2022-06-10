@@ -40,21 +40,19 @@ class Users extends Manager {
 
   
   // --------------- Requête pour mettre à jour un user ---------------
-  public function updateUser(string $pseudo, string $mail, string $password, int $id) {
+  public function updateUser($pseudo, $mail, $id) {
     $db = self::dbAccess();
 
     $req = $db->prepare(
       "UPDATE users SET 
         pseudo = :pseudo,
         mail = :mail,
-        `password` = :password
       WHERE id = :id"
     );
 
     return $req->execute([
       ':pseudo' => $pseudo,
       ':mail' => $mail,
-      ':password' => password_hash($password, PASSWORD_DEFAULT),
       ':id' => $id
     ]);
   }

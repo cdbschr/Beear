@@ -14,7 +14,7 @@
     </a>
     <?php if (isset($_SESSION['mail'])) : ?>
       <a href="/dashboard.php" class="linkfooter" rel="nofollow" title="Accéder au Dashboard">
-        <p>Accéder au dashboard</p>
+        <p>Dashboard</p>
       </a>
     <?php else : ?>
       <a href="/?action=login-page" id="buttonlogmenu" class="linkfooter" rel="nofollow" title="Se connecter">

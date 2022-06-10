@@ -79,9 +79,8 @@ try {
     elseif ($_GET['action'] == 'updateUser-post') {
       $pseudo = htmlspecialchars($_POST['pseudo']);
       $mail = htmlspecialchars($_POST['mail']);
-      $password = htmlspecialchars($_POST['password']);
 
-      $usersController->updateUserPost($_GET['id'], $pseudo, $mail, $password);
+      $usersController->updateUserPost($_GET['id']);
     }
     
     elseif ($_GET['action'] == 'deleteUser') {

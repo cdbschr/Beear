@@ -24,21 +24,22 @@ class Users extends Controller {
   }
   
   // -------- enregistrement dans la db des informations pour création d'un compte --------
-  function addUser($pseudo, $mail, $password, $id_roles): mixed {
+  function addUser($pseudo, $mail, $password, $id_roles): void {
     $user = new \Beear\Models\auth\Users();
 
     $user->createUser($pseudo, $mail, $password, $id_roles);
-    header('Location:'.$this->viewAdmin('users/register-confirm'));
+    require_once $this->viewAdmin('users/register-confirm');
   }
 
   // -------- mise à jour d'un utilisateur par rapport à son id --------
-  private $manager;
-  function updateUserPost($id, $pseudo = null, $mail = null, $password = null): void {
-    $updateUser = $this->manager->getUserById($id);
+  function updateUserPost($id): void {
     $user = new \Beear\Models\auth\Users();
-    $user->updateUser($pseudo, $mail, $password, $id);
+    $pseudo = $_POST['pseudo'];
+    $mail = $_POST['mail'];
 
-    require_once $this->viewAdmin('users/update-user');
+    $user->updateUser($pseudo, $mail, $id);
+
+    header('Location:dashboard.php?action=users');
   }
 
   // -------- suppression d'un utilisateur par rapport à son id --------
@@ -46,7 +47,7 @@ class Users extends Controller {
     $user = new \Beear\Models\auth\Users();
     $user->deleteUser($id);
 
-    header('Location:dashboard.php/?action=users');
+    header('Location:dashboard.php?action=users');
   }
 
   // -------- gestion et verification de la connexion --------
