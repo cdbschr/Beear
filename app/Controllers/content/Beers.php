@@ -13,22 +13,19 @@ Class Beers extends Controller {
     require_once $this->viewFrontend('beer');
 	}
 
-  public function threeLastBeers($data): void {
+  public function threeFirstBeers($data): void {
     $id = $data['id'];
     $beers = new \Beear\Models\content\Beers($id);
-    $threeLastBeers = $beers->getThreeLastBeers();
+    $threeFirstBeers = $beers->getThreeFirstBeers();
 
     require_once $this->viewFrontend('home');
   }
 
-  public function createBeer($createBeer): mixed {
-    $req = \Beear\Models\content\Beers::createBeer($createBeer);
+  public function createBeer($dataBeer) {
+    $req = new \Beear\Models\content\Beers();
+    $req->createBeer($dataBeer);
 
-    if($req) {
-      header('Location:'.$this->viewadmin('/beers/manage-beers'));
-    } else {
-      throw new \Exception($e = 'Impossible de créer la bière');
-    }
+    header('Location:dashboard.php?action=beers');
   }
 
   public function verifyExtension($fileName) {
@@ -48,6 +45,9 @@ Class Beers extends Controller {
   }
 
   public function deleteBeer($id): void {
-    header('Location:/dashboard.php?action=manage-beers');
+    $beer = new \Beear\Models\content\Beers();
+    $beer->deleteBeer($id);
+    
+    header('Location:/dashboard.php?action=beers');
   }
 }
