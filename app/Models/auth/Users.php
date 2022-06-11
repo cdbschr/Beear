@@ -46,7 +46,7 @@ class Users extends Manager {
     $req = $db->prepare(
       "UPDATE users SET 
         pseudo = :pseudo,
-        mail = :mail,
+        mail = :mail
       WHERE id = :id"
     );
 

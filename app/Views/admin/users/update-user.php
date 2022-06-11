@@ -15,7 +15,7 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 1) {
     </div>
   </section>
   <section>
-    <form method="post" id="update-user" action="dashboard.php?action=updateUser-post">
+    <form method="post" id="update-user" action="dashboard.php?action=updateUser-post&id=<?= $id ?>">
     <div class="form-group">
     <div class="form-group">
       <label for="input-pseudo">Pseudo</label>

@@ -32,10 +32,8 @@ class Users extends Controller {
   }
 
   // -------- mise à jour d'un utilisateur par rapport à son id --------
-  function updateUserPost($id): void {
+  function updateUserPost($pseudo, $mail, $id): void {
     $user = new \Beear\Models\auth\Users();
-    $pseudo = $_POST['pseudo'];
-    $mail = $_POST['mail'];
 
     $user->updateUser($pseudo, $mail, $id);
 
