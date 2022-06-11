@@ -15,8 +15,8 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
     </div>
   </section>
   <section class="admin-manage container">
-    <div><a class="button db" href="/dashboard.php?action=addBeer-page" title="ajouter un utilisateur">Ajouter une bière</a></div>
-    <div class="admin-manage-users">
+    <div><a class="button db" href="/dashboard.php?action=addBeer-page" title="ajouter une bière">Ajouter une bière</a></div>
+    <div class="admin-manage-beers">
         <table>
           <thead>
             <tr>
@@ -35,10 +35,10 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
                 <td><?= $beer['created_date'];?></td>
                 <td><?= $beer['modified_date'];?></td>
                 <td>
-                  <a href="/dashboard.php?action=updateBeer-page&id=<?= $beer['id'];?>" title="modifier l'utilisateur">
+                  <a href="/dashboard.php?action=updateBeer-page&id=<?= $beer['id'];?>" title="modifier la bière">
                     UPDATE
                   </a>
-                  <a href="/dashboard.php?action=deleteBeer-post&id=<?= $beer['id'];?>" title="supprimer l'utilisateur">
+                  <a href="/dashboard.php?action=deleteBeer-post&id=<?= $beer['id'];?>" title="supprimer la bière">
                     DELETE
                   </a>
                 </td>
