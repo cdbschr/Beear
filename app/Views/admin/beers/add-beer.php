@@ -8,7 +8,7 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
 <main>
   <section class="pres-dashboard">
     <div class="container">
-    <a href="" class="button" title="deconnexion">Déconnexion</a>
+    <a href="/?action=deconnexion" class="button" title="deconnexion">Déconnexion</a>
     <div class="container pres-txt-dashboard">
       <h1>Bienvenue sur la partie ajout d'une bière</h1>
     </div>

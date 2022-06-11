@@ -17,4 +17,6 @@ Class Mails extends Controller {
       header('Location:'.$this->viewFrontend('/contact/contact-error'));
     }
   }
+
+  // -------- Affichage dans le dashboard --------
 }

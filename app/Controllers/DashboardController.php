@@ -16,10 +16,6 @@ class DashboardController extends Controller {
     require_once $this->viewAdmin('users/manage-users');
   }
 
-  public function confirmPageUsers(): void {
-    require_once $this->viewAdmin('users/register-confirm');
-  }
-
   public function addUser(): void {
     require_once $this->viewAdmin('users/add-user');
   }
@@ -44,6 +40,12 @@ class DashboardController extends Controller {
   }
 
   public function updateBeer($id): void {
+    $object = new \Beear\Models\content\Beers();
+    $beer = $object->getBeerById($id);
+
     require_once $this->viewAdmin('beers/update-beer');
   }
+
+  // -------- Pages liées aux Mails(dashboard)  --------
+  
 }

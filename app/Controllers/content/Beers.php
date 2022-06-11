@@ -21,27 +21,18 @@ Class Beers extends Controller {
     require_once $this->viewFrontend('home');
   }
 
-  public function createBeer($dataBeer) {
+  public function createBeer($dataBeer): void {
     $req = new \Beear\Models\content\Beers();
     $req->createBeer($dataBeer);
 
+    require_once $this->viewAdmin('beers/create-confirm');
+  }
+
+  public function updateBeer($data, $id): void {
+    $req = new \Beear\Models\content\Beers();
+    $req->updateBeer($data, $id);
+
     header('Location:dashboard.php?action=beers');
-  }
-
-  public function verifyExtension($fileName) {
-    $name = $fileName;
-    $extension = strtolower(pathinfo($name, PATHINFO_EXTENSION));
-    $extensionAllowed = array('jpg', 'jpeg', 'png', 'gif');
-
-    if (in_array($extension, $extensionAllowed)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  public function updateBeer($id): void {
-    require_once $this->viewAdmin('/beers/update-beer');
   }
 
   public function deleteBeer($id): void {

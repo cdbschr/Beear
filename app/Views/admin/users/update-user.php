@@ -8,7 +8,7 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 1) {
 <main>
   <section class="pres-dashboard">
     <div class="container">
-    <a href="/dashboard.php?action=deconnexion" class="button" title="deconnexion">Déconnexion</a>
+    <a href="/?action=deconnexion" class="button" title="deconnexion">Déconnexion</a>
     <div class="container pres-txt-dashboard">
       <h1>Bienvenue sur la partie mise à jour d'un utilisateur</h1>
     </div>

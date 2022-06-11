@@ -30,15 +30,15 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
           <tbody>
           <?php foreach($beers as $beer): ?>
               <tr>
-                <td><?= $beer['name']; ?></td>
-                <td><?= $beer['idname']; ?></td>
-                <td><?= $beer['created_date']; ?></td>
-                <td><?= $beer['modified_date']; ?></td>
+                <td><?= $beer['name'];?></td>
+                <td><?= $beer['idname'];?></td>
+                <td><?= $beer['created_date'];?></td>
+                <td><?= $beer['modified_date'];?></td>
                 <td>
-                  <a href="/dashboard.php?action=updateBeer-page&id=<?= $beer['id']; ?>" title="modifier l'utilisateur">
+                  <a href="/dashboard.php?action=updateBeer-page&id=<?= $beer['id'];?>" title="modifier l'utilisateur">
                     UPDATE
                   </a>
-                  <a href="/dashboard.php?action=deleteBeer-post&id=<?= $beer['id']; ?>" title="supprimer l'utilisateur">
+                  <a href="/dashboard.php?action=deleteBeer-post&id=<?= $beer['id'];?>" title="supprimer l'utilisateur">
                     DELETE
                   </a>
                 </td>

@@ -21,10 +21,10 @@ try {
   $dashboardController = new \Beear\Controllers\DashboardController();
   $usersController = new \Beear\Controllers\auth\Users();
   $beersController = new \Beear\Controllers\content\Beers();
+  $mailsController = new \Beear\Controllers\content\Mails();
   
 
   if (isset($_GET['action'])) {
-
     /* ----------------------------------------------------------------
     ------------------------------ Bières -----------------------------
     ---------------------------------------------------------------- */
@@ -58,10 +58,34 @@ try {
       $beersController->createBeer($dataBeer);
     }
     
-    elseif ($_GET['action'] == 'updateBeer') {
-      // $beersController->updateBeer($data);
+    elseif ($_GET['action'] == 'updateBeer-page') {
+      $dashboardController->updateBeer($_GET['id']);
     }
 
+    elseif ($_GET['action'] == 'updateBeer-post') {
+      $id = $_GET['id'];
+      $idname = explode('eear ', $_POST['name']);
+      $idname = strtolower(implode($idname));
+      $img = $_POST['img'] ?? null;
+
+      $data = [
+        'idname' => htmlspecialchars($idname),
+        'name' => htmlspecialchars($_POST['name']),
+        'hook' => htmlspecialchars($_POST['hook']),
+        'alcdegree' => htmlspecialchars($_POST['alcdegree']),
+        'desc' => htmlspecialchars($_POST['desc']),
+        'ibu' => htmlspecialchars($_POST['ibu']),
+        'temp' => htmlspecialchars($_POST['temp']),
+        'voyez' => htmlspecialchars($_POST['voyez']),
+        'sentez' => htmlspecialchars($_POST['sentez']),
+        'goutez' => htmlspecialchars($_POST['goutez']),
+        'img' => $img,
+        'id' => $id
+      ];
+
+      $beersController->updateBeer($data, $id);
+    } 
+    
     elseif ($_GET['action'] == 'deleteBeer-post') {
       $beersController->deleteBeer($_GET['id']);
     }
@@ -109,8 +133,16 @@ try {
     elseif ($_GET['action'] == 'deleteUser') {
       $usersController->deleteUser($_GET['id']);
     }
+
     elseif($_GET['action'] == 'deconnect') {
       $usersController->deconnexion();
+    }
+
+    /* ----------------------------------------------------------------
+    ----------------------------- Mails -------------------------------
+    ---------------------------------------------------------------- */
+    elseif ($_GET['action'] == 'mails') {
+      $dashboardController->manageMails();
     }
 
   } else {
