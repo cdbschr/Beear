@@ -57,6 +57,16 @@ class Mails extends Manager {
     return $req->fetchAll();
   }
 
+  // --------------- Voir un mail lié à l'id ---------------
+  public static function getMailById(int $id): array {
+    $db = self::dbAccess();
+
+    $req = $db->prepare("SELECT * FROM contact WHERE id = :id");
+    $req->execute(array(':id' => $id));
+
+    return $req->fetch();
+  }
+
   // --------------- Requête pour supprimer un mail ---------------
   public static function deleteMail($id): void {
     $db = self::dbAccess();

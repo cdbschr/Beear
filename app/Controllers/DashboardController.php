@@ -49,8 +49,11 @@ class DashboardController extends Controller {
   // -------- Pages liées aux Mails(dashboard)  --------
   public function manageMails(): void {
     $mails = \Beear\Models\content\Mails::getAllMails();
-    // var_dump($mails);die;
 
     require_once $this->viewAdmin('mails/manage-mails');
+  }
+
+  public function readMail(int $id): void {
+    $mail = \Beear\Models\content\Mails::getMailById($id);
   }
 }
