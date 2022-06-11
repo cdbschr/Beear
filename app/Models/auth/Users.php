@@ -6,7 +6,7 @@ use Beear\Models\Manager;
 
 class Users extends Manager { 
   // --------------- Requête pour enregister un user ---------------
-  public function createUser(string $pseudo, string $mail, string $password, $id_roles = null): bool {
+  public function createUser(string $pseudo, string $mail, string $password, $id_roles = null): void {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -20,7 +20,7 @@ class Users extends Manager {
       VALUES (:pseudo, :mail, :password, :id_roles)"
     );
 
-    return $req->execute([
+    $req->execute([
       ':pseudo' => $pseudo,
       ':mail' => $mail,
       ':password' => password_hash($password, PASSWORD_DEFAULT),
@@ -40,7 +40,7 @@ class Users extends Manager {
 
   
   // --------------- Requête pour mettre à jour un user ---------------
-  public function updateUser($pseudo, $mail, $id) {
+  public function updateUser($pseudo, $mail, $id): void {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -50,33 +50,33 @@ class Users extends Manager {
       WHERE id = :id"
     );
 
-    return $req->execute([
+    $req->execute([
       ':pseudo' => $pseudo,
       ':mail' => $mail,
       ':id' => $id
     ]);
   }
 
-  public function deleteUser($id): mixed {
+  // --------------- Requête pour supprimer un user ---------------
+  public function deleteUser($id): void {
     $db = self::dbAccess();
 
     $req = $db->prepare("DELETE FROM users WHERE id = :id");
-
-    return $req->execute([':id' => $id]);
+    $req->execute([':id' => $id]);
   }
 
   // --------------- Requête pour récupérer tous les users ---------------
-  public function getAllUsers() {
+  public function getAllUsers(): array {
     $db = self::dbAccess();
 
-    $req = $db->prepare("SELECT id, pseudo, mail, DATE_FORMAT(created_at,'%d/%m/%Y') AS `date`, `name` FROM users INNER JOIN `user-roles` ON `users`.id_roles = `user-roles`.id_role;");
+    $req = $db->prepare("SELECT id, pseudo, mail, DATE_FORMAT(created_at,'%d/%m/%Y %H:%i') AS `date`, `name` FROM users INNER JOIN `user-roles` ON `users`.id_roles = `user-roles`.id_role;");
     $req->execute();
 
     return $req->fetchAll();
   }
 
   // --------------- Requête pour récupérer un user par rapport à son id ---------------
-  public static function getUserById($id) {
+  public static function getUserById($id): array {
     $db = self::dbAccess();
 
     $req = $db->prepare("SELECT * FROM users WHERE id = :id");
