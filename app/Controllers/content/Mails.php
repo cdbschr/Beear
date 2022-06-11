@@ -18,5 +18,9 @@ Class Mails extends Controller {
     }
   }
 
-  // -------- Affichage dans le dashboard --------
+  function deleteMail($id): void {
+    $mail = \Beear\Models\content\Mails::deleteMail($id);
+
+    header('Location:dashboard.php?action=mails');
+  }
 }

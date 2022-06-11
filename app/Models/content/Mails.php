@@ -13,15 +13,15 @@ class Mails extends Manager {
   protected string $content;
 
   public function __construct(array $data) {
-    $this->lastname = $data['lastname'];
-    $this->firstname = $data['firstname'];
-    $this->mail = $data['mail'];
-    $this->phone = $data['phone'];
-    $this->content = $data['content'];
+    $this->lastname = $data['lastname'] ?? "";
+    $this->firstname = $data['firstname'] ?? "";
+    $this->mail = $data['mail'] ?? "";
+    $this->phone = $data['phone'] ?? "";
+    $this->content = $data['content'] ?? "";
   }
 
   // --------------- Requête pour enregistrer le formulaire de contact dans la base de données ---------------
-  public static function postMail($formContactData): mixed {
+  public static function postMail(array $formContactData): array {
     $db = self::dbAccess();
 
     $req = $db->prepare(
@@ -48,22 +48,20 @@ class Mails extends Manager {
   }
 
   // --------------- Voir les mails avec toutes les informations ---------------
-  public static function getAllMails(): mixed {
+  public static function getAllMails(): array {
     $db = self::dbAccess();
 
     $req = $db->prepare("SELECT * FROM contact ORDER BY id DESC");
     $req->execute();
 
-    return $req->fetch();
+    return $req->fetchAll();
   }
 
   // --------------- Requête pour supprimer un mail ---------------
-  public static function deleteMail(int $id): mixed {
+  public static function deleteMail($id): void {
     $db = self::dbAccess();
 
     $req = $db->prepare("DELETE FROM contact WHERE id = :id");
-    $req->execute(array(':id' => $id));
-
-    return $req;
+    $req->execute([':id' => $id]);
   }
 }

@@ -20,7 +20,7 @@ class DashboardController extends Controller {
     require_once $this->viewAdmin('users/add-user');
   }
 
-  public function updateUser($id): void {
+  public function updateUser(int $id): void {
     $object = new \Beear\Models\auth\Users();
     $user = $object->getUserById($id);
     
@@ -39,7 +39,7 @@ class DashboardController extends Controller {
     require_once $this->viewAdmin('beers/add-beer');
   }
 
-  public function updateBeer($id): void {
+  public function updateBeer(int $id): void {
     $object = new \Beear\Models\content\Beers();
     $beer = $object->getBeerById($id);
 
@@ -47,5 +47,10 @@ class DashboardController extends Controller {
   }
 
   // -------- Pages liées aux Mails(dashboard)  --------
-  
+  public function manageMails(): void {
+    $mails = \Beear\Models\content\Mails::getAllMails();
+    // var_dump($mails);die;
+
+    require_once $this->viewAdmin('mails/manage-mails');
+  }
 }
