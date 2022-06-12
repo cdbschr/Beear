@@ -12,7 +12,7 @@
     <img src="./public/frontend/img/valeurs/responsable.png" alt="responsable">
     <div class="txtvaleurs">
       <h2>Eco-Responsable</h2>
-      <p>Parce qu’un monde durable est de la responsabilité de chacun, la Brasserie Lion s’engage à y contribuer :
+      <p>Parce qu’un monde durable est de la responsabilité de chacun, la Brasserie Beear s’engage à y contribuer :
       <ul>
         <li>Panneaux photovoltaïques placés sur le toit de la brasserie.</li>
         <li>Utilisation d'eau de pluie pour refroidir les cuves et nettoyer les sols.</li>
