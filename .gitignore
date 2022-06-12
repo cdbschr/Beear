@@ -2,7 +2,3 @@
 /.vscode
 /node_modules
 /vendor
-/.cpanel.yml
-
-# À enlever avant production
-snippet
