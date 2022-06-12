@@ -58,12 +58,12 @@ class Mails extends Manager {
   }
 
   // --------------- Voir un mail lié à l'id ---------------
-  public static function getMailById(int $id): array {
+  public static function getMailById($id): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare("SELECT * FROM contact WHERE id = :id");
     $req->execute(array(':id' => $id));
-
+    
     return $req->fetch();
   }
 

@@ -145,6 +145,14 @@ try {
       $dashboardController->manageMails();
     }
 
+    elseif ($_GET['action'] == 'readMail-page') {
+      $dashboardController->readMail($_GET['id']);
+    }
+
+    elseif ($_GET['action'] == 'deleteMail') {
+      $mailsController->deleteMail($_GET['id']);
+    }
+
   } else {
     if(isset($_SESSION['id']) && isset($_SESSION['mail']) && isset($_SESSION['pseudo']) && isset($_SESSION['id_roles'])) {
       $dashboardController->admin();

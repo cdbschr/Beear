@@ -29,7 +29,6 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
             </tr>
           </thead>
           <tbody>
-          <?php foreach($mails as $mail): ?>
               <tr>
                 <td><?= $mail['firstname'];?></td>
                 <td><?= $mail['lastname'];?></td>
@@ -43,7 +42,6 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
                   </a>
                 </td>
               </tr>
-              <?php endforeach; ?>
           </tbody>
         </table>
     </div>

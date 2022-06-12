@@ -6,7 +6,7 @@ use Beear\Controllers\Controller;
 
 Class Mails extends Controller {
   // -------- Envoi dans la db les informations du formulaire de Contact --------
-  function contactPost($data): void {
+  function contactPost(array $data): void {
 
     $contact = new \Beear\Models\content\Mails($data);
 
@@ -18,7 +18,7 @@ Class Mails extends Controller {
     }
   }
 
-  function deleteMail($id): void {
+  function deleteMail(int $id): void {
     $mail = \Beear\Models\content\Mails::deleteMail($id);
 
     header('Location:dashboard.php?action=mails');

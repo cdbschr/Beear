@@ -53,7 +53,9 @@ class DashboardController extends Controller {
     require_once $this->viewAdmin('mails/manage-mails');
   }
 
-  public function readMail(int $id): void {
+  public function readMail($id): void {
     $mail = \Beear\Models\content\Mails::getMailById($id);
+
+    require_once $this->viewAdmin('mails/read-mail');
   }
 }
