@@ -33,6 +33,9 @@ try {
   if ($_GET['action'] == 'valeurs') {
       $frontController->valeursPage();
 
+  } elseif ($_GET['action'] == 'beer-page') {
+      $beersController->beerPage($_GET['id']);
+
     } elseif ($_GET['action'] == 'contact') {
       $frontController->contactPage();
 

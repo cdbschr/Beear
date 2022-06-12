@@ -91,10 +91,6 @@ li {
   display: block;
 }
 
-.hiddenmobile {
-  display: none;
-}
-
 .hidden {
   display: none;
 }
@@ -317,19 +313,19 @@ li {
 /* présentation bière */
 #bblonde {
   background: #1c1c1c;
-  background: radial-gradient(circle at center center, #645b08 0%, #1c1c1c 63%);
+  background: radial-gradient(circle at center center, #645b08 0%, #1c1c1c 60%);
   height: 100vh;
 }
 
 #bbrune {
   background: #1c1c1c;
-  background: radial-gradient(circle at center center, #533d1b 0%, #1c1c1c 63%);
+  background: radial-gradient(circle at center center, #533d1b 0%, #1c1c1c 60%);
   height: 100vh;
 }
 
 #bblanche {
   background: #1c1c1c;
-  background: radial-gradient(circle at center center, #666950 0%, #1c1c1c 63%);
+  background: radial-gradient(circle at center center, #666950 0%, #1c1c1c 60%);
   height: 100vh;
 }
 
@@ -347,11 +343,6 @@ li {
   margin-bottom: 2%;
 }
 
-.verrebiere {
-  width: 220px;
-  margin: 0 25%;
-}
-
 .buttonbiere {
   width: 60%;
   margin: 3% auto;
@@ -361,29 +352,64 @@ li {
   margin: 5px auto;
 }
 
-/*=============TEST===============*/
 .bieres {
   display: grid; 
-  grid-template-columns: 1.5fr 1fr; 
-  grid-template-rows: 1fr 1fr; 
-  gap: 0px 0px; 
+  grid-auto-flow: row dense; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
   grid-template-areas: 
-    "Beear-Blonde Beear-Brune"
-    "Beear-Blonde Beear-Blanche"; 
+    "bblonde" 
+    "bbrune"
+    "bblanche"; 
   justify-content: center; 
   align-content: center; 
-  justify-items: stretch; 
-  align-items: stretch; 
+  justify-items: center; 
+  align-items: center; 
+} 
+
+.bblonde {
+  grid-area: bblonde;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  align-content: center;
 }
 
-.bblonde { 
-	grid-area: Beear-Blonde; 
+.bbrune {
+  grid-area: bbrune;
 }
-.bbrune { 
-	grid-area: Beear-Brune; 
+
+.bblanche {
+  grid-area: bblanche;
 }
-.bblanche { 
-	grid-area: Beear-Blanche; 
+
+.bbrune, .bblanche {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  align-content: center;
+}
+
+.titrebiere {
+width: 100%;
+margin-top: 3%;
+}
+
+.verrebiere {
+  width: 150px;
+  height: auto;
+  margin: 0px auto;
+}
+
+.verrebiere img {
+  width: 100%;
+  height: auto;
 }
 
 /* Réseaux Sociaux */
@@ -427,6 +453,10 @@ li {
 .articlers img {
   width: 80%;
   border-radius: 15px;
+}
+
+.hiddenmobile {
+  display: none;
 }
 
 /* Maps */
@@ -661,10 +691,6 @@ li {
   width: 80vw;
 }
 
-#rgpd {
-  margin-right: 10px;
-}
-
 #contact textarea {
   padding: 15px 15px;
 }
@@ -894,6 +920,24 @@ li {
 .txtvaleurs li {
   list-style-type: disc;
   margin: 3px 0;
+}
+
+/* ------------------ Page RGPD, Mentions Légales ---------------------- */
+
+#rgpd h1, #mentionslegales h1 {
+  width: 100%;
+  text-align: center;
+  margin: 30px auto;
+}
+
+#rgpd h3, #mentionslegales h3 {
+  width: 100%;
+  text-align: initial;
+  margin: 25px auto 20px;
+}
+
+#rgpd p:last-child, #mentionslegales p:last-child {
+  margin-bottom : 70px;
 }
 
 /* ------------------ Page 404 ---------------------- */
@@ -1326,6 +1370,90 @@ li {
     width: 50%;
   }
 
+  /* Bières */
+  
+
+  #bbrune {
+    height: 50vh;
+    background: radial-gradient(circle at center center, #533d1b 0%, #1c1c1c 45%);
+  }
+
+  #bblanche {
+    height: 50vh;
+    background: radial-gradient(circle at center center, #666950 0%, #1c1c1c 45%);
+  }
+
+  #bblonde > img:nth-child(2) {
+    width: 175px;
+  }
+
+  #bbrune > a, #bblanche > a {
+    width: 12rem;
+    font-size: 0.9rem;
+  }
+
+  .bieres {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    grid-template-areas: 
+      "bblonde bbrune"
+      "bblonde bblanche"; 
+    height: 100vh;
+  } 
+  
+  .bblonde {
+    grid-area: bblonde;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+  }
+  
+  .bbrune {
+    grid-area: bbrune;
+  }
+  
+  .bblanche {
+    grid-area: bblanche;
+  }
+  
+  .bbrune, .bblanche {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    align-content: center;
+  }
+  
+  .titrebiere {
+  width: 100%;
+  margin-top: 3%;
+  }
+  
+  .verrebiere img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .verrebiere {
+    width: 110px;
+    height: auto;
+    margin: 0px auto;
+  }
+  
+  .verrebiere:first-child {
+    width: 300px;
+    height: auto;
+    margin: 0px auto;
+  }
+
+  /*  */
   #articles img {
     width: 50vw;
   }

@@ -1,33 +1,32 @@
 <?php
 require_once './layouts/head.php';
 ?>
-
 <main id="biereblonde" class="bieres container">
   <section class="presbiere">
-    <img src="./img/verres/Verre-de-bière-<?= $beears->beears[0]->getId(); ?>.png" alt="biere <?= $beears->beears[0]->getName(); ?>">
+    <img src="./img/verres/Verre-de-bière-<?= $beer['idname'] ?>.png" alt="biere <?= strtolower($beer['name']); ?>">
     <div class="grouppresbiere">
       <div class="detailbiere">
         <div class="titrebiere">
-          <h1><?= $beears->beears[0]->getName(); ?></h1>
-          <h4><?= $beears->beears[0]->getSecName(); ?></h4>
+          <h1><?= $beer['name']; ?></h1>
+          <h4><?= $beer['hook']; ?></h4>
         </div>
-        <p><?= $beears->beears[0]->getDesc(); ?></p>
+        <p><?= $beer['desc']; ?></p>
       </div>
       <div class="explicationbiere">
         <div id="type">
-          <h6>Blonde</h6>
+          <h6><?= $beer['name'] ?></h6>
           <p>Type</p>
         </div>
         <div id="niveau-alcool">
-          <h6><?= $beears->beears[0]->getAlcDegree(); ?>%</h6>
+          <h6><?= $beer['alcdegree']; ?>%</h6>
           <p>alc./vol</p>
         </div>
         <div id="ibu">
-          <h6><?= $beears->beears[0]->getIbu(); ?></h6>
+          <h6><?= $beer['ibu']; ?></h6>
           <p>IBU</p>
         </div>
         <div id="degre">
-          <h6><?= $beears->beears[0]->getTemp(); ?></h6>
+          <h6><?= $beer['temp']; ?></h6>
           <p>Dégustation</p>
         </div>
       </div>
@@ -35,37 +34,37 @@ require_once './layouts/head.php';
   </section>
   <section id="vsg">
     <div class="vsg">
-      <div class="pictotitre"><img src="./img/pictos/voyez.png" alt="picto voyez beear">
+      <div class="pictotitre"><img src="/public/frontend/img/pictos/voyez.png" alt="picto voyez beear">
         <h3>Voyez</h3>
       </div>
-      <p><?= $beears->beears[0]->getVoyez(); ?></p>
+      <p><?= $beer['voyez']; ?></p>
     </div>
     <div class="vsg">
-      <div class="pictotitre"><img src="./img/pictos/sentez.png" alt="picto sentez beear">
+      <div class="pictotitre"><img src="/public/frontend/img/pictos/sentez.png" alt="picto sentez beear">
         <h3>Sentez</h3>
       </div>
-      <p><?= $beears->beears[0]->getSentez(); ?></p>
+      <p><?= $beer['sentez']; ?></p>
     </div>
     <div class="vsg">
-      <div class="pictotitre"><img src="./img/pictos/goutez.png" alt="picto goutez beear">
+      <div class="pictotitre"><img src="/public/frontend/img/pictos/goutez.png" alt="picto goutez beear">
         <h3>Goutez</h3>
       </div>
-      <p><?= $beears->beears[0]->getGoutez(); ?></p>
+      <p><?= $beer['goutez']; ?></p>
     </div>
   </section>
-  <section id="biereplus">
-    <a href="<?= $beears->beears[1]->getId(); ?>.php">
+  <!-- <section id="biereplus">
+    <a href="<?php //$beer['id']; ?>.php">
       <div class="biereplus">
         <h2>Beear Brune</h2>
-        <img src="./img/verres/Verre-de-bière-<?= $beears->beears[1]->getId(); ?>.png" alt="biere <?= $beears->beears[1]->getName(); ?>">
+        <img src="./img/verres/Verre-de-bière-<?php //$beer['id']+1 ?>.png" alt="biere <?php //$beer['name'][+1] ?>">
       </div>
     </a>
-    <a href="<?= $beears->beears[2]->getId(); ?>.php">
+    <a href="<?php //$beears->beears[2]->getId(); ?>.php">
       <div class="biereplus">
         <h2>Beear Blanche</h2>
-        <img src="./img/verres/Verre-de-bière-<?= $beears->beears[2]->getId(); ?>.png" alt="biere <?= $beears->beears[2]->getName(); ?>">
+        <img src="./img/verres/Verre-de-bière-<?php //$beears->beears[2]->getId(); ?>.png" alt="biere <?php //$beears->beears[2]->getName(); ?>">
       </div>
     </a>
-  </section>
+  </section> -->
 </main>
 <?php require_once './layouts/footer.php'; ?>

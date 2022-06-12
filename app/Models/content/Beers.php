@@ -81,6 +81,6 @@ class Beers extends Manager {
 
     $req = $db->prepare("SELECT * FROM beers ORDER BY id ASC LIMIT 3");
     $req->execute();
-    return $req->fetch();
+    return $req->fetchAll();
   }
 }

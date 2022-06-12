@@ -5,18 +5,9 @@ namespace Beear\Controllers\content;
 use Beear\Controllers\Controller;
 
 Class Beers extends Controller {
-	public function beerPage($data): void {
-    $id = $data['id'];
-    $beers = new \Beear\Models\content\Beers($id);
-    $beer = $beers->getBeerById($id);
-
-    require_once $this->viewFrontend('beer');
-	}
-
-  public function threeFirstBeers($data): void {
-    $id = $data['id'];
-    $beers = new \Beear\Models\content\Beers($id);
-    $threeFirstBeers = $beers->getThreeFirstBeers();
+  public function beerPage($id): void {
+    $object = new \Beear\Models\content\Beers();
+    $beer = $object->getBeerById($id);
 
     require_once $this->viewFrontend('home');
   }

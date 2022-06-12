@@ -2,29 +2,34 @@
 
 namespace Beear\Controllers;
 
+use Beear\Controllers\content\Beers;
+
 class FrontController extends Controller {
   // -------- Page principale --------
-  function home(): void {
+  public function home(): void {
+    $object = new \Beear\Models\content\Beers();
+    $beers = $object->getThreeFirstBeers();
+
     require_once $this->viewFrontend('home');
   }
 
   // -------- Page valeur --------
-  function valeursPage(): void {
+  public function valeursPage(): void {
     require_once $this->viewFrontend('valeurs');
   }
 
   // -------- Page contact --------
-  function contactPage(): void {
+  public function contactPage(): void {
     require_once $this->viewFrontend('/contact/contact');
   }
 
   // -------- Page rgpd --------
-  function rgpdPage(): void {
+  public function rgpdPage(): void {
     require_once $this->viewFrontend('rgpd');
   }
 
   // -------- Page mentions légales --------
-  function mentionsPage(): void {
+  public function mentionsPage(): void {
     require_once $this->viewFrontend('mentionslegales');
   }
 }
