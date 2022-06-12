@@ -21,7 +21,7 @@ class Mails extends Manager {
   }
 
   // --------------- Requête pour enregistrer le formulaire de contact dans la base de données ---------------
-  public static function postMail(array $formContactData): array {
+  public static function postMail(array $formContactData): mixed {
     $db = self::dbAccess();
 
     $req = $db->prepare(
