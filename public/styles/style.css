@@ -1,17 +1,17 @@
-/* Charte graphique */
+/* ------------------Charte graphique--------------------- */
 :root {
   --bg: rgb(28, 28, 28);
   --primary: rgba(52, 153, 55, 1);
   --secondary: rgb(117, 76, 36);
 }
 
-/* Fonts */
+/* ------------------Fonts--------------------- */
 @font-face {
   font-family: "AlfaSlabOne-Regular";
   src: url("../fonts/AlfaSlabOne-Regular.woff2") format("woff2");
 }
 
-/* Contenu */
+/* ------------------Fonts--------------------- */
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto-Regular.woff2") format("woff2");
@@ -22,7 +22,7 @@
   src: url("../fonts/KonstruktorRegular.woff2") format("woff2");
 }
 
-/* Reset */
+/* ------------------Reset--------------------- */
 * {
   padding: 0;
   margin: 0;
@@ -30,7 +30,7 @@
   scroll-behavior: smooth;
 }
 
-/* Définition du site */
+/* ------------------Définition du site--------------------- */
 body {
   background-color: var(--bg);
   font-family: "Roboto", sans-serif;
@@ -95,7 +95,7 @@ li {
   display: none;
 }
 
-/* header */
+/* ------------------Header--------------------- */
 #generalheader {
   height: 100vh;
   position: relative;
@@ -110,7 +110,7 @@ li {
   display: none;
 }
 
-/* menu burger */
+/* ------------------Menu Burger--------------------- */
 #menuToggle {
   display: block;
   position: relative;
@@ -226,7 +226,7 @@ li {
   display: none;
 }
 
-/* logo */
+/* ------------------Logo--------------------- */
 #logo a {
   display: flex;
   justify-content: flex-end;
@@ -280,7 +280,7 @@ li {
   padding: 70px 0;
 }
 
-/* présentation bière */
+/* ------------------Présentation Bières--------------------- */
 #bblonde {
   background: #1c1c1c;
   background: radial-gradient(circle at center center, #1c1c1c 3%, #9e900f 80%);
@@ -382,7 +382,7 @@ margin-top: 3%;
   height: auto;
 }
 
-/* Réseaux Sociaux */
+/* ------------------Réseaux Sociaux--------------------- */
 #socials {
   display: flex;
   flex-wrap: wrap;
@@ -429,7 +429,7 @@ margin-top: 3%;
   display: none;
 }
 
-/* Maps */
+/* ------------------Maps--------------------- */
 #homemap iframe {
   max-width: 100%;
   max-height: 350px;
@@ -463,7 +463,7 @@ margin-top: 3%;
   border-bottom-right-radius: 15px;
 }
 
-/* footer */
+/* ------------------Footer--------------------- */
 #generalfooter {
   display: flex;
   flex-wrap: wrap;
@@ -543,7 +543,7 @@ margin-top: 3%;
   width: 100%;
 }
 
-/* ------------------ Page Contact --------------------- */
+/* ------------------Page Contact--------------------- */
 #contact {
   display: flex;
   flex-wrap: wrap;
@@ -631,7 +631,7 @@ margin-top: 3%;
   font-size: 0.7rem;
 }
 
-/* ------------------ Pages Bières ---------------------- */
+/* ------------------Pages Bières---------------------- */
 #pagesbiereheader {
   max-width: 1200px;
   margin: 0 auto;
@@ -773,7 +773,7 @@ margin-top: 3%;
   text-align: center;
 }
 
-/* ------------------ Page Nos Valeurs ---------------------- */
+/* ------------------Page Nos Valeurs---------------------- */
 #valeurs {
   display: flex;
   flex-wrap: wrap;
@@ -823,7 +823,7 @@ margin-top: 3%;
   margin: 3px 0;
 }
 
-/* ------------------ Page RGPD, Mentions Légales ---------------------- */
+/* ------------------Page RGPD, Mentions Légales---------------------- */
 
 #rgpd h1, #mentionslegales h1 {
   width: 100%;
@@ -841,7 +841,7 @@ margin-top: 3%;
   margin-bottom : 70px;
 }
 
-/* ------------------ Page 404 ---------------------- */
+/* ------------------Pages Errors---------------------- */
 .body-error {
   background: url("/public/frontend/img/beear-404page.jpg") bottom fixed no-repeat;
   background-size: cover;
@@ -887,7 +887,7 @@ margin-top: 3%;
   background-color: var(--primary);
 }
 
-/* ------------------ Page Dashboard ---------------------- */
+/* ------------------Page Dashboard---------------------- */
 
 .pres-dashboard {
   background: linear-gradient(to bottom, rgba(101, 101, 95, 0.107), rgba(0, 0, 0, 0.545)),url('/public/admin/img/bg-dashboard.jpg') no-repeat center;
@@ -992,12 +992,12 @@ margin-top: 3%;
     margin: 5px 18px 0;
   }
 
-  /*------------ Page Valeurs -----------*/
+  /*------------Page Valeurs-----------*/
   .valeurssection {
     width: 70%;
   }
 
-  /*------------Page Bières -----------*/
+  /*------------Page Bières-----------*/
   .presbiere {
     justify-content: space-around;
   }
@@ -1023,7 +1023,7 @@ margin-top: 3%;
     width: 33%;
   }
 
-  /*------------Page Contact -----------*/
+  /*------------Page Contact-----------*/
   #envoyer {
     width: 50%;
   }
@@ -1086,7 +1086,7 @@ margin-top: 3%;
     width: 60%;
   }
 
-  /*--------- Page bières ------------*/
+  /*---------Page Bières------------*/
   #biereplus a {
     width: 45%;
   }
@@ -1165,7 +1165,7 @@ margin-top: 3%;
     width: 15rem;
   }
 
-  /* Home */
+  /*------------Home-----------*/
   #generalheader {
     background-image: url("../frontend/img/bg-desktop.jpg");
     background-position: left;
@@ -1262,7 +1262,7 @@ margin-top: 3%;
     width: 50%;
   }
 
-  /* Bières - Home */
+  /*------------Home-Bières-----------*/
   #bbrune {
     height: 50vh;
     background: radial-gradient(circle at center center, #1c1c1c 3%, #3f2d11 65%);
@@ -1351,7 +1351,7 @@ margin-top: 3%;
     margin-bottom: 80px;
   }
 
-  /* Footer */
+  /*------------Footer-----------*/
   #linklogofooter,
   #lieu,
   #socialsnetwork {
@@ -1434,7 +1434,7 @@ margin-top: 3%;
 
   /*------------Page Dashboard-----------*/
   .dashboardmenu li { 
-    width: 20%;
+    width: 30%;
   }
 
   .dashboardmenu a {
