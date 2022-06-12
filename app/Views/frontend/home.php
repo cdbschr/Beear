@@ -10,7 +10,7 @@ require_once './app/Views/frontend/layouts/head.php';
         <h3><?= $beer['name'] ?></h3>
         <p><?= $beer['hook'] ?> | Alc. <?= $beer['alcdegree'] ?>%</p>
       </header>
-      <img src="/public/frontend/img/verres/Verre-de-bière-<?= $beer['idname'] ?>.png" alt="bière <?= strtolower($beer['name']) ?>" class="verrebiere">
+      <img src="<?= $beer['img'] ?>" alt="bière <?= strtolower($beer['name']) ?>" class="verrebiere">
       <a href="/?action=beer-page&id=<?= $beer['id'] ?>" class="button buttonbiere">
         <p>En savoir plus</p>
       </a>
