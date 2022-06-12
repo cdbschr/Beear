@@ -37,9 +37,11 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
                 <td><?= $mail['content'];?></td>
                 <td><?= $mail['created_at'];?></td>
                 <td>
-                  <a href="/dashboard.php?action=deleteMail-post&id=<?= $mail['id'];?>" title="supprimer le mail">
-                    DELETE
-                  </a>
+                  <div class="action">
+                    <a href="/dashboard.php?action=deleteMail-post&id=<?= $mail['id'];?>" title="supprimer le mail">
+                      <img class="picto" src="/public/admin/img/pictos/trash.png" alt="supprimer">
+                    </a>
+                  </div>
                 </td>
               </tr>
           </tbody>

@@ -1005,6 +1005,21 @@ li {
   display: block;
 }
 
+.action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action a {
+  display: flex;
+  justify-content: end;
+}
+
+.picto {
+  width: 15px;
+  height: 15px;
+}
+
 /* Tablette min */
 @media screen and (min-width: 576px) {
   #generalheader {

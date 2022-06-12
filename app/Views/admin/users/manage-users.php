@@ -36,12 +36,14 @@ if ($_SESSION['id_roles'] === 1) {
                 <td><?= $user['name']; ?></td>
                 <td><?= $user['date']; ?></td>
                 <td>
-                  <a href="/dashboard.php?action=updateUser-page&id=<?= $user['id']; ?>" title="modifier l'utilisateur">
-                    UPDATE
-                  </a>
-                  <a href="/dashboard.php?action=deleteUser&id=<?= $user['id']; ?>" title="supprimer l'utilisateur">
-                    DELETE
-                  </a>
+                  <div class="action">
+                    <a href="/dashboard.php?action=updateUser-page&id=<?= $user['id']; ?>" title="modifier l'utilisateur">
+                    <img class="picto" src="/public/admin/img/pictos/pen.png" alt="modifier">
+                    </a>
+                    <a href="/dashboard.php?action=deleteUser&id=<?= $user['id']; ?>" title="supprimer l'utilisateur">
+                      <img class="picto" src="/public/admin/img/pictos/trash.png" alt="supprimer">
+                    </a>
+                  </div>
                 </td>
               </tr>
               <?php endforeach; ?>

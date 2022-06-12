@@ -38,12 +38,14 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
               <td><?= substr($mail['content'], 0, 25) . "..."; ?></td>
               <td><?= $mail['created_at']; ?></td>
               <td>
-                <a href="/dashboard.php?action=readMail-page&id=<?= $mail['id']; ?>" title="lire le mail">
-                  READ
-                </a>
-                <a href="/dashboard.php?action=deleteMail&id=<?= $mail['id']; ?>" title="supprimer le mail">
-                  DELETE
-                </a>
+                <div class="action">
+                  <a href="/dashboard.php?action=readMail-page&id=<?= $mail['id']; ?>" title="lire le mail">
+                  <img class="picto" src="/public/admin/img/pictos/eye.png" alt="lire">
+                  </a>
+                  <a href="/dashboard.php?action=deleteMail&id=<?= $mail['id']; ?>" title="supprimer le mail">
+                    <img class="picto" src="/public/admin/img/pictos/trash.png" alt="supprimer">
+                  </a>
+                </div>
               </td>
             </tr>
           <?php endforeach; ?>
