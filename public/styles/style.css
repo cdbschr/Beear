@@ -280,52 +280,22 @@ li {
   padding: 70px 0;
 }
 
-/* Home */
-/* articles */
-#articles {
-  text-align: justify;
-}
-
-#articles p.button {
-  margin-bottom: 40px;
-}
-
-#articles h2 {
-  margin: 60px 0 40px;
-  width: 100%;
-}
-
-#articles h4 {
-  margin-bottom: 18px;
-  width: 100%;
-}
-
-#articles img {
-  margin: 20px 0;
-  width: 100%;
-  border-radius: 15px;
-}
-
-#articles .flex-button {
-  margin-top: 25px;
-}
-
 /* présentation bière */
 #bblonde {
   background: #1c1c1c;
-  background: radial-gradient(circle at center center, #645b08 0%, #1c1c1c 60%);
+  background: radial-gradient(circle at center center, #1c1c1c 3%, #9e900f 80%);
   height: 100vh;
 }
 
 #bbrune {
   background: #1c1c1c;
-  background: radial-gradient(circle at center center, #533d1b 0%, #1c1c1c 60%);
+  background: radial-gradient(circle at center center, #1c1c1c 3%, #3f2d11 80%);
   height: 100vh;
 }
 
 #bblanche {
   background: #1c1c1c;
-  background: radial-gradient(circle at center center, #666950 0%, #1c1c1c 60%);
+  background: radial-gradient(circle at center center, #1c1c1c 3%, #adaf9e 80%);
   height: 100vh;
 }
 
@@ -573,69 +543,6 @@ margin-top: 3%;
   width: 100%;
 }
 
-/* ---------------- Page Actualités ------------------- */
-#articles h1 {
-  width: 100%;
-  font-size: 3rem;
-  margin: 15px auto;
-  text-align: center;
-}
-
-#article {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-#article h2,
-#article h4,
-#article h5 {
-  width: 100%;
-}
-
-#article h2 {
-  font-size: 1.3rem;
-}
-
-#article h4 {
-  font-size: 1.5rem;
-  margin-bottom: 2vh;
-}
-
-#article h5 {
-  font-size: 1.3rem;
-  margin-bottom: 1.5vh;
-  color: var(--primary);
-}
-
-#article {
-  margin: 15px auto;
-}
-
-#article p {
-  margin-top: 5px;
-}
-
-#article p:last-child {
-  margin-bottom: 10%;
-}
-
-.linkactus {
-  color: var(--secondary);
-  cursor: pointer;
-}
-
-.linkactus:hover {
-  color: var(--primary);
-}
-
-#socialsh2 {
-  font-size: 1.3rem;
-}
-
 /* ------------------ Page Contact --------------------- */
 #contact {
   display: flex;
@@ -764,10 +671,6 @@ margin-top: 3%;
   align-self: center;
 }
 
-.detailbiere p {
-  text-align: justify;
-}
-
 .explicationbiere {
   width: 80%;
   display: flex;
@@ -817,7 +720,6 @@ margin-top: 3%;
 }
 
 .vsg p {
-  text-align: justify;
   margin-top: 5px;
   width: 80%;
 }
@@ -897,7 +799,6 @@ margin-top: 3%;
   display: flex;
   flex-wrap: wrap;
   align-self: center;
-  text-align: justify;
   margin-bottom: 50px;
 }
 
@@ -1180,13 +1081,6 @@ margin-top: 3%;
     padding: 15px 15px;
   }
 
-  /*------------Page Actualités-----------*/
-  #formjeuconcours
-    input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd),
-  #biere-selection {
-    width: 60vw;
-  }
-
   /*------------Page Valeurs-----------*/
   .valeurssection {
     width: 60%;
@@ -1208,8 +1102,7 @@ margin-top: 3%;
     width: 31%;
   }
 
-  #socials h2,
-  #articles h2 {
+  #socials h2 {
     font-size: 2rem;
   }
 
@@ -1217,8 +1110,7 @@ margin-top: 3%;
     width: 1200px;
   }
 
-  .button,
-  #articles p.button {
+  .button {
     width: 25%;
   }
 
@@ -1269,11 +1161,11 @@ margin-top: 3%;
     margin: 0 auto;
   }
 
-  .button,
-  #articles p.button {
+  .button {
     width: 15rem;
   }
 
+  /* Home */
   #generalheader {
     background-image: url("../frontend/img/bg-desktop.jpg");
     background-position: left;
@@ -1370,17 +1262,15 @@ margin-top: 3%;
     width: 50%;
   }
 
-  /* Bières */
-  
-
+  /* Bières - Home */
   #bbrune {
     height: 50vh;
-    background: radial-gradient(circle at center center, #533d1b 0%, #1c1c1c 45%);
+    background: radial-gradient(circle at center center, #1c1c1c 3%, #3f2d11 65%);
   }
 
   #bblanche {
     height: 50vh;
-    background: radial-gradient(circle at center center, #666950 0%, #1c1c1c 45%);
+    background: radial-gradient(circle at center center, #1c1c1c 3%, #adaf9e 65%);
   }
 
   #bblonde > img:nth-child(2) {
@@ -1451,26 +1341,6 @@ margin-top: 3%;
     width: 300px;
     height: auto;
     margin: 0px auto;
-  }
-
-  /*  */
-  #articles img {
-    width: 50vw;
-  }
-
-  #articles {
-    width: 70%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  #articles h2,
-  #articles h4,
-  #articles p {
-    width: 70%;
   }
 
   #socials h2 {
@@ -1555,22 +1425,6 @@ margin-top: 3%;
   #contact textarea {
     width: 100%;
     padding: 15px 15px;
-  }
-
-  /*------------Page Actualités -----------*/
-  #articles h1,
-  #articles h5 {
-    width: 70%;
-  }
-
-  #formjeuconcours
-    input:not(#formjeuconcours input[type="radio"], #envoyer, #rgpd),
-  #biere-selection {
-    width: 50vw;
-  }
-
-  #formjeuconcours h4 {
-    text-align: center;
   }
 
   /*------------Page Bières-----------*/
