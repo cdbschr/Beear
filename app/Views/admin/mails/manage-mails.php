@@ -7,11 +7,9 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
 ?>
 <main>
   <section class="pres-dashboard">
-    <div class="container">
-      <a href="/?action=deconnexion" class="button" title="deconnexion">Déconnexion</a>
-      <div class="container pres-txt-dashboard">
-        <h1>Bienvenue sur la partie gestion des mails</h1>
-      </div>
+    <a href="/?action=deconnexion" class="button" title="deconnexion">Déconnexion</a>
+    <div class="container pres-txt-dashboard">
+      <h1>Bienvenue sur la partie gestion des mails</h1>
     </div>
   </section>
   <section class="admin-manage container">
@@ -40,7 +38,7 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
               <td>
                 <div class="action">
                   <a href="/dashboard.php?action=readMail-page&id=<?= $mail['id']; ?>" title="lire le mail">
-                  <img class="picto" src="/public/admin/img/pictos/eye.png" alt="lire">
+                    <img class="picto" src="/public/admin/img/pictos/eye.png" alt="lire">
                   </a>
                   <a href="/dashboard.php?action=deleteMail&id=<?= $mail['id']; ?>" title="supprimer le mail">
                     <img class="picto" src="/public/admin/img/pictos/trash.png" alt="supprimer">
