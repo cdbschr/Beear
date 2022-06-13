@@ -7,4 +7,9 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 1) {
 
 header('Refresh: 10; URL=/dashboard.php?action=users'); ?>
 
-OK
+<div class="confirm">
+  <h1>L'utilisateur a été crée avec succès !</h1>
+  <p>Vous allez être rediriger automatiquement sur le site.</p>
+
+  <a href="/dashboard.php?action=users">Retourner immédiatement sur le site</a>
+</div>

@@ -6,10 +6,9 @@ use Beear\Controllers\Controller;
 
 Class Beers extends Controller {
   public function beerPage($id): void {
-    $object = new \Beear\Models\content\Beers();
-    $beer = $object->getBeerById($id);
+    $beer = \Beear\Models\content\Beers::getBeerById($id);
 
-    require_once $this->viewFrontend('home');
+    require_once $this->viewFrontend('beer-page');
   }
 
   public function updateBeer($data, $id): void {

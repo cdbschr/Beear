@@ -1,9 +1,8 @@
-<?php
-require_once './layouts/head.php';
-?>
-<main id="biereblonde" class="bieres container">
+<?php require_once './app/Views/frontend/layouts/head.php'; ?>
+
+<main class="container">
   <section class="presbiere">
-    <img src="./img/verres/Verre-de-bière-<?= $beer['idname'] ?>.png" alt="biere <?= strtolower($beer['name']); ?>">
+    <img src="<?= $beer['img'] ?>" alt="biere <?= strtolower($beer['name']); ?>">
     <div class="grouppresbiere">
       <div class="detailbiere">
         <div class="titrebiere">
@@ -52,19 +51,6 @@ require_once './layouts/head.php';
       <p><?= $beer['goutez']; ?></p>
     </div>
   </section>
-  <!-- <section id="biereplus">
-    <a href="<?php //$beer['id']; ?>.php">
-      <div class="biereplus">
-        <h2>Beear Brune</h2>
-        <img src="./img/verres/Verre-de-bière-<?php //$beer['id']+1 ?>.png" alt="biere <?php //$beer['name'][+1] ?>">
-      </div>
-    </a>
-    <a href="<?php //$beears->beears[2]->getId(); ?>.php">
-      <div class="biereplus">
-        <h2>Beear Blanche</h2>
-        <img src="./img/verres/Verre-de-bière-<?php //$beears->beears[2]->getId(); ?>.png" alt="biere <?php //$beears->beears[2]->getName(); ?>">
-      </div>
-    </a>
-  </section> -->
 </main>
-<?php require_once './layouts/footer.php'; ?>
+
+<?php require_once './app/Views/frontend/layouts/footer.php'; ?>

@@ -46,7 +46,7 @@ class Beers extends Manager {
   
   
   // --------------- Requête pour afficher une bière par son id ---------------
-  public function getBeerById(int $id): array {
+  public static function getBeerById(int $id): array {
     $db = self::dbAccess();
     
     $req = $db->prepare("SELECT * FROM beers WHERE id = :id");

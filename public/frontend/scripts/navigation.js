@@ -18,5 +18,3 @@ if (url !== DOMAIN) {
     header.setAttribute("id", "otherpagesheader");
   }
 }
-
-const PATHFOOTER = "/app/Views/frontend/layouts/footer.php";
