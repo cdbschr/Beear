@@ -34,10 +34,6 @@ class DashboardController extends Controller {
 
     require_once $this->viewAdmin('beers/manage-beers');
   }
-  
-  public function addBeer(): void {
-    require_once $this->viewAdmin('beers/add-beer');
-  }
 
   public function updateBeer(int $id): void {
     $object = new \Beear\Models\content\Beers();

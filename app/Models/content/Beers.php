@@ -5,31 +5,11 @@ namespace Beear\Models\content;
 use Beear\Models\Manager;
 
 class Beers extends Manager {
-  // --------------- Requête pour créer une bière ---------------
-  public static function createBeer(array $dataBeer): void {
-    $db = self::dbAccess();
-
-    $req = $db->prepare("INSERT INTO beers (idname, `name`, hook, alcdegree, `desc`, ibu, temp, voyez, sentez, goutez, img) VALUES (:idname, :name, :hook, :alcdegree, :desc, :ibu, :temp, :voyez, :sentez, :goutez, :img)");
-    $req->execute([
-      ':idname' => $dataBeer['idname'],
-      ':name' => $dataBeer['name'],
-      ':hook' => $dataBeer['hook'],
-      ':alcdegree' => $dataBeer['alcdegree'],
-      ':desc' => $dataBeer['desc'],
-      ':ibu' => $dataBeer['ibu'],
-      ':temp' => $dataBeer['temp'],
-      ':voyez' => $dataBeer['voyez'],
-      ':sentez' => $dataBeer['sentez'],
-      ':goutez' => $dataBeer['goutez'],
-      ':img' => $dataBeer['img']
-    ]);
-  }
-
   // --------------- Requête pour mettre à jour une bière par son id ---------------
   public function updateBeer(array $data, int $id): void {
     $db = self::dbAccess();
 
-    $req = $db->prepare("UPDATE beers SET idname = :idname, `name` = :name, hook = :hook, alcdegree = :alcdegree, `desc` = :desc, ibu = :ibu, temp = :temp, voyez = :voyez, sentez = :sentez, goutez = :goutez, img = :img WHERE id = :id");
+    $req = $db->prepare("UPDATE beers SET idname = :idname, `name` = :name, hook = :hook, alcdegree = :alcdegree, `desc` = :desc, ibu = :ibu, temp = :temp, voyez = :voyez, sentez = :sentez, goutez = :goutez WHERE id = :id");
     $req->execute([
       ':idname' => $data['idname'],
       ':name' => $data['name'],
@@ -41,7 +21,6 @@ class Beers extends Manager {
       ':voyez' => $data['voyez'],
       ':sentez' => $data['sentez'],
       ':goutez' => $data['goutez'],
-      ':img' => $data['img'],
       ':id' => $id
     ]);
   }

@@ -32,32 +32,6 @@ try {
       $dashboardController->managebeers();
     }
     
-    elseif ($_GET['action'] == 'addBeer-page') {
-      $dashboardController->addBeer();
-    }
-
-    elseif ($_GET['action'] == 'addBeer-post') {
-      $idname = explode('eear ', $_POST['name']);
-      $idname = strtolower(implode($idname));
-      $img = $_POST['img'] ?? null;
-      
-      $dataBeer = [
-        'idname' => htmlspecialchars($idname),
-        'name' => htmlspecialchars($_POST['name']),
-        'hook' => htmlspecialchars($_POST['hook']),
-        'alcdegree' => htmlspecialchars($_POST['alcdegree']),
-        'desc' => htmlspecialchars($_POST['desc']),
-        'ibu' => htmlspecialchars($_POST['ibu']),
-        'temp' => htmlspecialchars($_POST['temp']),
-        'voyez' => htmlspecialchars($_POST['voyez']),
-        'sentez' => htmlspecialchars($_POST['sentez']),
-        'goutez' => htmlspecialchars($_POST['goutez']),
-        'img' => $img
-      ];
-
-      $beersController->createBeer($dataBeer);
-    }
-    
     elseif ($_GET['action'] == 'updateBeer-page') {
       $dashboardController->updateBeer($_GET['id']);
     }
@@ -79,7 +53,6 @@ try {
         'voyez' => htmlspecialchars($_POST['voyez']),
         'sentez' => htmlspecialchars($_POST['sentez']),
         'goutez' => htmlspecialchars($_POST['goutez']),
-        'img' => $img,
         'id' => $id
       ];
 

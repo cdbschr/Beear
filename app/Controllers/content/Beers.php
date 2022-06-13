@@ -12,13 +12,6 @@ Class Beers extends Controller {
     require_once $this->viewFrontend('home');
   }
 
-  public function createBeer($dataBeer): void {
-    $req = new \Beear\Models\content\Beers();
-    $req->createBeer($dataBeer);
-
-    require_once $this->viewAdmin('beers/create-confirm');
-  }
-
   public function updateBeer($data, $id): void {
     $req = new \Beear\Models\content\Beers();
     $req->updateBeer($data, $id);
