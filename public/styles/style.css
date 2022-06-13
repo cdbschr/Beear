@@ -965,6 +965,23 @@ margin-top: 3%;
   height: 15px;
 }
 
+.admin-manage table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.admin-manage th {
+  color: #fff;
+  border-bottom: 3px solid var(--primary);
+  padding: 10px;
+}
+
+.admin-manage td {
+  border-bottom: 1px solid #fff;
+  padding: 15px;
+}
+
 /* Tablette min */
 @media screen and (min-width: 576px) {
   #generalheader {
