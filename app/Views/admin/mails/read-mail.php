@@ -7,45 +7,43 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
 ?>
 <main>
   <section class="pres-dashboard">
-    <a href="/?action=deconnexion" class="button" title="deconnexion">Déconnexion</a>
+    <a href="/dashboard.php?action=mails" class="button return" title="retourner à la page précédente">Retour aux Mails</a>
+    <a href="/?action=deconnexion" class="button deco" title="deconnexion">Déconnexion</a>
     <div class="container pres-txt-dashboard">
-      <h1>Bienvenue sur la partie lecture d'un mail</h1>
+      <h1>Bienvenue sur la partie lecture du mail</h1>
     </div>
   </section>
   <section class="admin-manage container">
     <div class="admin-manage-mails">
-        <table>
-          <thead>
-            <tr>
-              <th>Prénom</th>
-              <th>Nom</th>
-              <th>Mail</th>
-              <th>Téléphone</th>
-              <th>Contenu</th>
-              <th>Reçu le</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <td><?= $mail['firstname'];?></td>
-                <td><?= $mail['lastname'];?></td>
-                <td><?= $mail['mail'];?></td>
-                <td><?= $mail['phone'];?></td>
-                <td><?= $mail['content'];?></td>
-                <td><?= $mail['created_at'];?></td>
-                <td>
-                  <div class="action">
-                    <a href="/dashboard.php?action=deleteMail-post&id=<?= $mail['id'];?>" title="supprimer le mail">
-                      <img class="picto" src="/public/admin/img/pictos/trash.png" alt="supprimer">
-                    </a>
-                  </div>
-                </td>
-              </tr>
-          </tbody>
-        </table>
-    </div>
+      <div class="deleteMail">
+        <a href="/dashboard.php?action=deleteMail-post&id=<?= $mail['id']; ?>" class="button" title="supprimer le mail">
+          Supprimer
+        </a>
+      </div>
+      <div class="receive">
+        <p>Reçu le : <?= $mail['created_at']; ?></p>
+      </div>
+      <div class="infomail">
+        <p>Prénom : <?= $mail['firstname']; ?></p>
+      </div>
+      <div class="infomail">
+        <p>Nom : <?= $mail['lastname']; ?></p>
+      </div>
+      <div class="infomail">
+        <p>Mail : <?= $mail['mail']; ?></p>
+      </div>
+      <?php if ($mail['phone'] !== "") : ?>
+        <div class="infomail">
+          <p>Téléphone : <?= $mail['phone']; ?></p>
+        </div>
+        <?php else : ?>
+      <?php endif; ?>
+      <div class="infomail-content">
+        <p>Contenu : <?= $mail['content']; ?></p>
+      </div>
+      <table>
   </section>
 </main>
 </body>
+
 </html>

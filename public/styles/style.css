@@ -841,6 +841,34 @@ margin-top: 3%;
   margin-bottom : 70px;
 }
 
+/* ------------------Page Login---------------------- */
+#login {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 70px;
+}
+
+#login h1 {
+  width: 100%;
+  text-align: center;
+  margin: 30px auto;
+}
+
+#login form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#login form button {
+  margin: 30px 0 100px;
+}
+
+
 /* ------------------Pages Errors---------------------- */
 .body-error {
   background: url("/public/frontend/img/beear-404page.jpg") bottom fixed no-repeat;
@@ -905,13 +933,22 @@ margin-top: 3%;
   width: 170px;
   height: 50px;
   font-size: 0.8em;
-  position: absolute;
-  top: 10px;
-  right: 10px;
   align-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.return {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.deco {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .pres-txt-dashboard {
@@ -950,6 +987,39 @@ margin-top: 3%;
   display: block;
 }
 
+#create-beer, #register-user, #update-user {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#create-beer button, #register-user button, #update-user button {
+  margin: 40px auto 100px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-group label, .form-group input, .form-group textarea, .form-group select {
+  width: 100%;
+  margin: 5px auto 10px;
+  text-align: initial;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+}
+
+.form-group input, .form-group select {
+  font-size: medium;
+}
+
 .action {
   display: flex;
   justify-content: space-between;
@@ -957,12 +1027,18 @@ margin-top: 3%;
 
 .action a {
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 
 .picto {
   width: 15px;
   height: 15px;
+}
+
+.admin-manage .button {
+  width: 10rem;
+  font-size: 1rem;
+  margin-bottom: 25px;
 }
 
 .admin-manage table {
@@ -980,6 +1056,39 @@ margin-top: 3%;
 .admin-manage td {
   border-bottom: 1px solid #fff;
   padding: 15px;
+}
+
+.admin-manage-mails {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  margin: 0 auto;
+}
+
+.admin-manage-mails a {
+  width: 60px;
+  padding: 20px;
+}
+
+.receive, .infomail, .infomail-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto;
+}
+
+.infomail, .infomail-content {
+  justify-content: initial;
+}
+
+.infomail {
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.receive {
+  justify-content: end;
 }
 
 /* Tablette min */
@@ -1456,5 +1565,9 @@ margin-top: 3%;
 
   .dashboardmenu a {
     padding: 26px;
+  }
+
+  .action {
+    justify-content: space-evenly;
   }
 }

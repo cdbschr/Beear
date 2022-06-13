@@ -8,7 +8,8 @@ if ($_SESSION['id_roles'] === 1) {
 
 <main>
   <section class="pres-dashboard">
-    <a href="/?action=deconnexion" class="button" title="deconnexion">Déconnexion</a>
+    <a href="/dashboard.php" class="button return" title="retourner à la page précédente">Retour au Dashboard</a>
+    <a href="/?action=deconnexion" class="button deco" title="deconnexion">Déconnexion</a>
     <div class="container pres-txt-dashboard">
       <h1>Bienvenue sur la partie GESTION DES UTILISATEURS</h1>
     </div>

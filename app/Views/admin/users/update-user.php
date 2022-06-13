@@ -7,7 +7,8 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 1) {
 ?>
 <main>
   <section class="pres-dashboard">
-    <a href="/?action=deconnexion" class="button" title="deconnexion">Déconnexion</a>
+    <a href="/dashboard.php?action=users" class="button return" title="retourner à la page précédente">Retour aux Utilisateurs</a>
+    <a href="/?action=deconnexion" class="button deco" title="deconnexion">Déconnexion</a>
     <div class="container pres-txt-dashboard">
       <h1>Bienvenue sur la partie mise à jour d'un utilisateur</h1>
     </div>
