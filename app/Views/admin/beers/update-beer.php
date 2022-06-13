@@ -55,10 +55,7 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
       <label for="input-goutez">Goutez</label>
       <textarea name="goutez" cols="25" rows="8" placeholder="Décrivez le goût de la bière fraichement versée" required><?=$beer['goutez']?></textarea>
     </div>
-    <div class="form-group">
-      <label for="input-image">Image</label>
-      <input type="file" class="form-control" name="image">
-      <button type="submit" class="button">Modifier la bière</button>
+    <button type="submit" class="button">Modifier la bière</button>
     </form>
   </section>
 </main>

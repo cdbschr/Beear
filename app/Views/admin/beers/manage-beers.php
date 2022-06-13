@@ -13,7 +13,6 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
     </div>
   </section>
   <section class="admin-manage container">
-    <div><a class="button db" href="/dashboard.php?action=addBeer-page" title="ajouter une bière">Ajouter une bière</a></div>
     <div class="admin-manage-beers">
         <table>
           <thead>
