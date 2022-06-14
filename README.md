@@ -28,10 +28,10 @@
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="resultat">Resultat</a></li>
+    <li><a href="#resultat">Resultat</a></li>
       <ul>
-        <li><a href="version-desktop">Version Desktop</a></li>
-        <li><a href="version-mobile">Version Mobile</a></li>
+        <li><a href="#version-desktop">Version Desktop</a></li>
+        <li><a href="#version-mobile">Version Mobile</a></li>
       </ul>
   </ol>
 </details>
