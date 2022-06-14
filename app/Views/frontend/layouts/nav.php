@@ -1,4 +1,4 @@
-<header> active
+<header>
   <div id="generalheader">
     <nav id="menuburger">
       <div id="menuToggle">
@@ -13,7 +13,7 @@
           <li><a href="/?action=contact" title="Contact">Contact</a></li>
           <div id="corporation">
             <a href="/"><img src="./public/frontend/img/Logotxt-Beear.png" alt="logo texte beear"></a>
-            <address>Lanvaux<br><strong>56220 SAINT-GRAVÉ</strong></address>
+            <address>Lanvaux<strong>56220 SAINT-GRAVÉ</strong></address>
           </div>
         </ul>
       </div>

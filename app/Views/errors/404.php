@@ -11,7 +11,8 @@
   <div class="div-error">
     <div class="h-bg-error">
       <h1>Page 404</h1>
-      <h2 class="h2-error">Vous avez perdu votre chemin ? <br><br> Ne vous inquiétez pas cliquez sur ce bouton pour retrouver la table</h2>
+      <h2 class="h2-error">Vous avez perdu votre chemin ?</h2>
+      <h2>Ne vous inquiétez pas cliquez sur ce bouton pour retrouver la table</h2>
     </div>
     <a href="/">
       <button class="button" a="/">Retourner à l'accueil</button>
