@@ -16,7 +16,7 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
   <section class="admin-manage container">
     <div class="admin-manage-mails">
       <div class="deleteMail">
-        <a href="/dashboard.php?action=deleteMail-post&id=<?= $mail['id']; ?>" class="button" title="supprimer le mail">
+        <a href="/dashboard.php?action=deleteMail&id=<?= $mail['id']; ?>" class="button" title="supprimer le mail">
           Supprimer
         </a>
       </div>
