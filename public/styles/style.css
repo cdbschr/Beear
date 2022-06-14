@@ -1087,14 +1087,25 @@ margin-top: 3%;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin: 30px auto;
+}
+
+.receive {
+  margin: 40px auto;
+}
+
+.infomail {
+  margin: 10px auto;
+}
+
+.infomail-content {
+  margin: 15px auto 60px;
 }
 
 .infomail, .infomail-content {
   justify-content: initial;
 }
 
-.infomail {
+.maillast {
   padding-bottom: 10px;
   border-bottom: 2px solid var(--primary);
 }

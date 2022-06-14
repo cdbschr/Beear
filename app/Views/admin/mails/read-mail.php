@@ -24,12 +24,9 @@ if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 2 || $_SESSION['id
         <p>Reçu le : <?= $mail['created_at']; ?></p>
       </div>
       <div class="infomail">
-        <p>Prénom : <?= $mail['firstname']; ?></p>
+        <p>Nom : <?= strtoupper($mail['lastname']) . " " . $mail['firstname']; ?></p>
       </div>
-      <div class="infomail">
-        <p>Nom : <?= $mail['lastname']; ?></p>
-      </div>
-      <div class="infomail">
+      <div class="infomail maillast">
         <p>Mail : <?= $mail['mail']; ?></p>
       </div>
       <?php if ($mail['phone'] !== "") : ?>
