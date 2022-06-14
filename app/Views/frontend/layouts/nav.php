@@ -1,24 +1,16 @@
-<header>
+<header> active
   <div id="generalheader">
-    <nav id="menuburger" role="navigation">
+    <nav id="menuburger">
       <div id="menuToggle">
         <input type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
         <ul id="menu">
-          <a href="/" title="Accueil">
-            <li>Accueil</li>
-          </a>
-          <a href="/#bblonde" title="Produits">
-            <li>Produits</li>
-          </a>
-          <a href="/?action=valeurs" title="Valeurs">
-            <li>Valeurs</li>
-          </a>
-          <a href="/?action=contact" title="Contact">
-            <li>Contact</li>
-          </a>
+          <li><a href="/" title="Accueil">Accueil</a></li>
+          <li><a href="/#bblonde" title="Produits">Produits</a></li>
+          <li><a href="/?action=valeurs" title="Valeurs">Valeurs</a></li>
+          <li><a href="/?action=contact" title="Contact">Contact</a></li>
           <div id="corporation">
             <a href="/"><img src="./public/frontend/img/Logotxt-Beear.png" alt="logo texte beear"></a>
             <address>Lanvaux<br><strong>56220 SAINT-GRAVÉ</strong></address>
@@ -32,18 +24,10 @@
       </figure>
       <nav id="menudesktop">
         <ul id="menunav">
-          <a href="/" title="Accueil">
-            <li>Accueil</li>
-          </a>
-          <a href="/#bblonde" title="Produits">
-            <li>Produits</li>
-          </a>
-          <a href="/?action=valeurs" title="Valeurs">
-            <li>Valeurs</li>
-          </a>
-          <a href="/?action=contact" title="Contact">
-            <li>Contact</li>
-          </a>
+          <li><a href="/" title="Accueil">Accueil</li></a>
+          <li><a href="/#bblonde" title="Produits">Produits</a></li>
+          <li><a href="http://beear.test/?action=valeurs" title="Valeurs">Valeurs</a></li>
+          <li><a href="/?action=contact" title="Contact">Contact</a></li>
         </ul>
       </nav>
     </div>

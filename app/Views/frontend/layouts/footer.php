@@ -2,10 +2,10 @@
   <a href="/" id="linklogofooter" title="Accueil"><img src="./public/frontend/img/Logo-Beear.png" id="logofooter" alt="logo Beear"></a>
   <div id="lieu">
     <h4>SIÈGE</h4>
-    <adress>
+    <address>
       <p>Lanvaux</p>
       <p>56220 Saint-Gravé</p>
-    </adress>
+    </address>
   </div>
   <?php require_once 'socialssvg.php'; ?>
   <div id="linksfooter">

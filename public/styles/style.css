@@ -2,7 +2,7 @@
 :root {
   --bg: rgb(28, 28, 28);
   --primary: rgba(52, 153, 55, 1);
-  --secondary: rgb(117, 76, 36);
+  --secondary: rgba(117, 76, 36, 1);
 }
 
 /* ------------------Fonts--------------------- */
@@ -124,7 +124,6 @@ li {
 
 #menuToggle a {
   text-decoration: none;
-  color: #fff;
   transition: color 0.3s ease;
 }
 
@@ -193,14 +192,18 @@ li {
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-#menu li {
+#menu li a {
   padding: 20px 0;
-  font-size: 50px;
+  font-size: 3rem;
   font-family: "Konstructor";
   font-weight: 600;
 }
 
-#menu a:hover {
+#menu li {
+  margin: 20px;
+}
+
+#menu li a:hover {
   color: var(--primary);
 }
 
@@ -1317,9 +1320,9 @@ margin-top: 3%;
   }
   
   #logmenu>a {
+    margin-top: 10px;
     font-family: "Roboto", sans-serif;
     font-weight: 800;
-    margin-top: 10px;
   }
   
   #logmenu>a:nth-child(1):hover {
@@ -1365,7 +1368,7 @@ margin-top: 3%;
     justify-content: flex-end;
   }
 
-  #menunav li {
+  #menunav li a {
     margin: 0 15px;
     text-transform: uppercase;
     color: var(--primary);
@@ -1374,7 +1377,7 @@ margin-top: 3%;
     font-family: "Konstructor";
   }
 
-  #menunav li:hover {
+  #menunav li a:hover {
     color: var(--secondary);
   }
 

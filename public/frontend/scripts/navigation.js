@@ -1,8 +1,9 @@
+// Permet d'afficher un background différent de la page home, des autres pages.
 let url = document.location.href;
 url = url.replace(/\/$/, "");
 let endUrl = url.substring(url.lastIndexOf("/") + 1);
 
-const DOMAIN = "http://beear.test";
+const DOMAIN = "http://beear.test"; // A CHANGER LORS DU CHANGEMENT DE DOMAINE
 const REGEXWORD = /([a-z])\w/g;
 
 let header = document.getElementById("generalheader");
