@@ -18,6 +18,7 @@ Class Mails extends Controller {
     }
   }
 
+  // -------- Suppression du mail --------
   function deleteMail(int $id): void {
     $mail = \Beear\Models\content\Mails::deleteMail($id);
 

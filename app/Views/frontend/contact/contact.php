@@ -1,35 +1,39 @@
+<!-- Appel du header -->
 <?php require_once './app/Views/frontend/layouts/head.php'; ?>
+<!-- Page contact -->
 <main id="contactpage" class="container">
   <h1>Contact</h1>
   <h4>Vous pouvez nous contacter directement via ce formulaire.</h4>
   <section id="contactsection">
     <div id="contact" class="container">
+      <!-- Formulaire de contact dont on récupère les informations dans le dashboard -->
       <form action="/?action=post-contactform" method="post" id="contactform">
         <p>
-          <label for="lastname">Votre nom <span>*</span></label>
+          <label for="nom">Votre nom <span>*</span></label>
           <input type="text" placeholder="Nom *" name="lastname" id="nom" value="<?php if (isset($_POST["lastname"])) echo htmlspecialchars($_POST["lastname"]) ?>" required>
         </p>
         <p>
-          <label for="firstname">Votre prénom <span>*</span></label>
+          <label for="prenom">Votre prénom <span>*</span></label>
           <input type="text" placeholder="Prénom *" name="firstname" id="prenom" value="<?php if (isset($_POST["firstname"])) echo htmlspecialchars($_POST["firstname"]) ?>" required>
         </p>
         <p>
-          <label for="mail">Votre email <span>*</span></label>
+          <label for="email">Votre email <span>*</span></label>
           <input type="email" placeholder="Adresse email *" name="mail" id="email" value="<?php if (isset($_POST["mail"])) echo htmlspecialchars($_POST["mail"]) ?>" required>
         </p>
         <p>
-          <label for="phone">Votre téléphone</label>
+          <label for="tel">Votre téléphone</label>
           <input type="tel" placeholder="Téléphone" name="phone" id="tel" value="<?php if (isset($_POST["phone"])) echo htmlspecialchars($_POST["phone"]) ?>">
         </p>
         <p>
           <label for="content">Votre message <span>*</span></label>
-          <textarea name="content" placeholder="Rédigez votre message ici...*" id="message" rows="10" value="<?php if (isset($_POST["content"])) echo htmlspecialchars($_POST["content"]) ?>" required></textarea>
+          <textarea id="content" name="content" placeholder="Rédigez votre message ici...*" rows="10" required><?php if (isset($_POST["content"])) echo htmlspecialchars($_POST["content"]) ?></textarea>
         </p>
         <p class="contactflex"><input type="checkbox" name="rgpd" id="rgpd" required>autorisation de conservation et utilisation des données *</p>
         <p class="contactflex champoblig">* Champ obligatoire</p>
         <p class="pbutton"><button type="submit" id="envoyer" class="button">Envoyer</button></p>
       </form>
     </div>
+    <!-- Carte pour situer -->
     <aside id="map" class="container">
       <header id="cadretxtmap">
         <h3>Où nous retrouver ?</h3>
@@ -39,5 +43,5 @@
     </aside>
   </section>
 </main>
-<script src="/public/frontend/scripts/contact.js"></script>
+<!-- Appel du footer -->
 <?php require_once './app/Views/frontend/layouts/footer.php'; ?>

@@ -928,7 +928,6 @@ margin-top: 3%;
 }
 
 /* ------------------Page Dashboard---------------------- */
-
 .pres-dashboard {
   background: linear-gradient(to bottom, rgba(101, 101, 95, 0.107), rgba(0, 0, 0, 0.545)),url('/public/admin/img/bg-dashboard.jpg') no-repeat center;
   background-size: cover;
@@ -1112,6 +1111,31 @@ margin-top: 3%;
 
 .receive {
   justify-content: end;
+}
+
+/* ------------------Pages Confirm-reject---------------------- */
+.confirm, .rejected{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 25vh auto; 
+}
+
+.confirm h1, .confirm p, .confirm a, .rejected h1, .rejected p, .rejected a {
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.confirm h1 {
+  color: var(--primary);
+}
+
+.rejected h1 {
+  color: rgba(236, 15, 15, 0.966);
 }
 
 /* Tablette min */

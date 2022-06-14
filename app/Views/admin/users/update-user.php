@@ -1,3 +1,4 @@
+<!-- Appel du head HTML -->
 <?php
 if (isset($_SESSION['id_roles']) && $_SESSION['id_roles'] === 1) {
 	require_once 'app/Views/admin/layouts/head.php';

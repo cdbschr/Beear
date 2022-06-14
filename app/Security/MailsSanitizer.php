@@ -11,7 +11,8 @@ class MailsSanitizer {
     $this->content = $data['content'];
   }
 
-  // --------------- Satinization des informations reçues pour éviter les failles ---------------
+  // --------------- Satinization des informations reçues pour éviter les failles  ---------------
+  // (utilisation différente qu'ajout dans le routeur)
   public function sanitizedDataContact(): array {
     return array(
       'lastname' => htmlspecialchars($this->lastname),

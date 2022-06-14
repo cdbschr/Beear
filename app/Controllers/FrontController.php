@@ -25,12 +25,12 @@ class FrontController extends Controller {
 
   // -------- Page rgpd --------
   public function rgpdPage(): void {
-    require_once $this->viewFrontend('rgpd');
+    require_once $this->viewFrontend('legals/rgpd');
   }
 
   // -------- Page mentions légales --------
   public function mentionsPage(): void {
-    require_once $this->viewFrontend('mentionslegales');
+    require_once $this->viewFrontend('legals/mentionslegales');
   }
 
   // -------- Page plan du site --------

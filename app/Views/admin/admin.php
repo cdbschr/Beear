@@ -1,6 +1,5 @@
-<?php
-require_once 'app/Views/admin/layouts/head.php';
-?>
+<!-- Appel du head HTML -->
+<?php require_once 'app/Views/admin/layouts/head.php'; ?>
 <main>
   <section class="pres-dashboard">
     <div class="container">
@@ -11,6 +10,7 @@ require_once 'app/Views/admin/layouts/head.php';
     </div>
     </div>
   </section>
+  <!-- Appel des boutons de navigation -->
   <?php require_once 'layouts/nav.php'; ?>
 </main>
 </body>

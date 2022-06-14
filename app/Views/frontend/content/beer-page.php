@@ -1,5 +1,6 @@
+<!-- Appel du header -->
 <?php require_once './app/Views/frontend/layouts/head.php'; ?>
-
+<!-- Présentation des bières -->
 <main class="container">
   <section class="presbiere">
     <img src="<?= $beer['img'] ?>" alt="biere <?= strtolower($beer['name']); ?>">
@@ -52,5 +53,5 @@
     </div>
   </section>
 </main>
-
+<!-- Appel du footer -->
 <?php require_once './app/Views/frontend/layouts/footer.php'; ?>

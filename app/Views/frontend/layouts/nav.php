@@ -37,7 +37,7 @@
     <div id="flexcenterendheader">
       <div id="endheader" class="container">
         <h1>Et si vous découvriez nos bières ?</h1>
-        <a href="/#articles" class="flex-button" title="Afficher les bières">
+        <a href="/#bblonde" class="flex-button" title="Afficher les bières">
           <p class="button">Je découvre</p>
         </a>
       </div>

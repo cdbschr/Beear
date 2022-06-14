@@ -63,12 +63,14 @@ J'espère que vous apprécierez ce projet et vous souhaite une bonne visite.
 
 ## Mise en place
 ### Pré-requis
-Personnellement j'ai utilisé Laragon avec la version de PHP 8.1.5 : 
+Personnellement j'ai utilisé **Laragon** avec la version de PHP 8.1.5: 
 
 * Laragon
 ```sh
 https://laragon.org/download/
 ```
+***J'ai utilisé l'url en : beear.test (possibilité dans laragon) afin d'être le plus proche d'un rendu serveur***
+Sans ça, avec localhost cela peut risquer de casser au niveau des liens et images.
 
 * PHP
 ```sh 

@@ -1,5 +1,6 @@
+<!-- Appel du header -->
 <?php require_once './app/Views/frontend/layouts/head.php'; ?> 
-
+<!-- Page de login -->
 <main id="login" class="container">
   <h1>Page de Connexion</h1>
 <form method="post" action="/?action=login-post">
@@ -14,5 +15,5 @@
   <button type="submit" class="button">Se connecter</button>
 </form>
 </main>
-
+<!-- Appel du footer -->
 <?php require_once './app/Views/frontend/layouts/footer.php'; ?>

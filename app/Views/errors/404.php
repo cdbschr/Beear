@@ -1,3 +1,4 @@
+<!-- header -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,6 +8,7 @@
   <title>Beear - 404 Page</title>
   <link rel="stylesheet" href="/public/styles/style.css">
 </head>
+<!-- Page 404 -->
 <body class="body-error">
   <div class="div-error">
     <div class="h-bg-error">

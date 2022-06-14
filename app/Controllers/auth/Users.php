@@ -5,6 +5,7 @@ namespace Beear\Controllers\auth;
 use Beear\Controllers\Controller;
 
 class Users extends Controller {
+  // ----------- Permet de se connecter -----------
   function connexionPage(): void {
     require_once $this->viewFrontend('auth/login');
   }

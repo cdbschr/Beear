@@ -1,3 +1,4 @@
+<!-- Exemple de réseaux sociaux qui pourraient être affiché sur un site -->
 <section id="socials" class="container">
   <h2>Réseaux Sociaux</h2>
   <article class="articlers">
@@ -24,5 +25,6 @@
     <img src="./public/frontend/img/reseaux-sociaux/malt2.jpg" alt="malt bio beear" loading="lazy">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quasi accusamus, soluta rem, amet saepe quae aperiam cumque, omnis veritatis laboriosam iusto facilis minus ad vel? Possimus amet totam harum!</p>
   </article>
+  <!-- Appel des liens vers les réseaux sociaux -->
   <?php require_once 'socialslinks.php' ?>
 </section>
