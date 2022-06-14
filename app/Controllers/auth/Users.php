@@ -20,6 +20,8 @@ class Users extends Controller {
       $_SESSION['id_roles'] = $login['id_roles'];
 
       header('Location:/dashboard.php');
+    } else {
+      require_once '/app/Views/errors/oops.php';
     }
   }
   
