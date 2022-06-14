@@ -1,8 +1,2 @@
-RewriteEngine On
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteRule ^(.*)$ ?action=$1
-
 ErrorDocument 404 /app/Views/errors/404.php
+
