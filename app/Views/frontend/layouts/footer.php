@@ -30,6 +30,7 @@
   </div>
   <p id="alcoolmoderation">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
 </footer>
+<!-- Scripts js -->
 <script src="./public/frontend/scripts/navigation.js"></script>
 </body>
 </html>
