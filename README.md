@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/cdbschr/Beear">
-    <img src="public/frontend/img/Logo-Beear.png" alt="Logo Beear" width="150" height="80">
+    <img src="public/frontend/img/Logo-Beear.png" alt="Logo Beear" width="270" height="100">
   </a>
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/dab975edd1c92f8ff310/maintainability)](https://codeclimate.com/github/cdbschr/Beear/maintainability)
@@ -22,9 +22,9 @@
   <summary>Sommaire</summary>
   <ol>
     <li>
-      <a href="#a-propos-du-projet">A propos du Projet</a>
+      <a href="#a-propos-du-projet-">A propos du Projet</a>
       <ul>
-        <li><a href="#technologies-utilisées">Technologies utilisées</a></li>
+        <li><a href="#technologies-utilisées-">Technologies utilisées</a></li>
       </ul>
     </li>
     <li>
@@ -103,7 +103,6 @@ app/Models/db
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
 ### Installation
 Pour l'installation, on va récupérer le repo en faisant dans votre terminal : 
 
@@ -120,9 +119,12 @@ composer install
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Identifiants
 
-Pour accèder au dashboard admin, cela se passe dans le footer, le lien : Connexion
+Pour accèder au dashboard admin, cela se passe dans le footer, le lien : Connexion.
+
+Identifiant : mail / password
 
 L'administrateur : 
 ```
@@ -140,6 +142,7 @@ user@user.fr/user
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 ## Contact
 
 Camille Debusscher - contact@camilledebusscher.tech
