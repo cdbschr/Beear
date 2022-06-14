@@ -160,7 +160,7 @@ Camille Debusscher - contact@camilledebusscher.tech
 
 ## Resultat
 ### Version Desktop
-<img src="https://drive.google.com/file/d/1ZFRioV6koUb-zcPOeVNejJtMPykxGW3M/view?usp=sharing">
+<img src="version-desktop.png">
 
 ### Version Mobile
-<img src="https://drive.google.com/file/d/1FxTXW3bV1Gmbph5OLqK2SwXqTIwWgbvH/view?usp=sharing">
+<img src="version-mobile.png">
