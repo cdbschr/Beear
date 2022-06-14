@@ -1,14 +1,16 @@
 <!-- header -->
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beear - 404 Page</title>
-  <link rel="stylesheet" href="/public/styles/style.css">
+  <link rel="stylesheet" href="/public/styles/style.min.css">
 </head>
 <!-- Page 404 -->
+
 <body class="body-error">
   <div class="div-error">
     <div class="h-bg-error">
@@ -21,4 +23,5 @@
     </a>
   </div>
 </body>
+
 </html>

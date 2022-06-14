@@ -28,6 +28,11 @@
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="resultat">Resultat</a></li>
+      <ul>
+        <li><a href="version-desktop">Version Desktop</a></li>
+        <li><a href="version-mobile">Version Mobile</a></li>
+      </ul>
   </ol>
 </details>
 
@@ -69,7 +74,8 @@ Personnellement j'ai utilisé **Laragon** avec la version de PHP 8.1.5:
 ```sh
 https://laragon.org/download/
 ```
-***J'ai utilisé l'url en : beear.test (possibilité dans laragon) afin d'être le plus proche d'un rendu serveur***
+***J'ai utilisé l'url en : beear.test (possibilité dans laragon) afin d'être le plus proche d'un rendu serveur.***
+<br>
 Sans ça, avec localhost cela peut risquer de casser au niveau des liens et images.
 
 * PHP
@@ -112,6 +118,16 @@ En allant dans le dossier, on va utiliser composer :
 composer install
 ```
 
+Dans le fichier situé dans public/frontend/scripts du nom de navigation.js, il faut modifier :
+
+* Navigation.js
+```js
+const DOMAIN = "http://beear.test"; // A CHANGER LORS DU CHANGEMENT DE DOMAINE
+```
+
+afin d'avoir le bon fond d'écran de première page.
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Identifiants
@@ -141,3 +157,10 @@ user@user.fr/user
 
 Camille Debusscher - contact@camilledebusscher.tech
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## Resultat
+### Version Desktop
+<img src="https://drive.google.com/file/d/1ZFRioV6koUb-zcPOeVNejJtMPykxGW3M/view?usp=sharing">
+
+### Version Mobile
+<img src="https://drive.google.com/file/d/1FxTXW3bV1Gmbph5OLqK2SwXqTIwWgbvH/view?usp=sharing">
