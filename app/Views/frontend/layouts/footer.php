@@ -24,7 +24,7 @@
     <a href="/?action=rgpd" class="linkfooter" rel="nofollow" title="RGPD">
       <p>RGPD</p>
     </a>
-    <a href="#" class="linkfooter" rel="nofollow" title="Plan du site">
+    <a href="/?action=plan-site" class="linkfooter" rel="nofollow" title="Plan du site">
       <p>Plan du site</p>
     </a>
   </div>

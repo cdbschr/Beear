@@ -48,6 +48,10 @@ try {
     elseif ($_GET['action'] == 'mentionslegales') {
       $frontController->mentionsPage();
     }
+
+    elseif ($_GET['action'] == 'plan-site') {
+      $frontController->planSitePage();
+    }
     /* ----------------------------------------------------------------
     ---------------- Gestion du formulaire de contact -----------------
     ---------------------------------------------------------------- */

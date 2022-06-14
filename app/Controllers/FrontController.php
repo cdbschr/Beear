@@ -32,4 +32,9 @@ class FrontController extends Controller {
   public function mentionsPage(): void {
     require_once $this->viewFrontend('mentionslegales');
   }
+
+  // -------- Page plan du site --------
+  public function planSitePage(): void {
+    require_once $this->viewFrontend('plandusite');
+  }
 }
