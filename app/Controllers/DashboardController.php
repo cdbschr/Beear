@@ -5,6 +5,8 @@ namespace Beear\Controllers;
 class DashboardController extends Controller {
   // -------- Page du dashboard  --------
   public function admin(): void {
+    $count = \Beear\Models\auth\Users::countUsers();
+
     require_once $this->viewAdmin('admin');
   }
 

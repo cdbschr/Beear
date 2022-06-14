@@ -84,4 +84,14 @@ class Users extends Manager {
 
     return $req->fetch();
   }
+
+  // --------------- Requête pour savoir le nombre d'utilisateurs ---------------
+  public static function countUsers(): array {
+    $db = self::dbAccess();
+
+    $req = $db->prepare("SELECT COUNT(id) AS nb FROM users");
+    $req->execute();
+
+    return $req->fetch();
+  }
 }
