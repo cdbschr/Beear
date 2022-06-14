@@ -7,15 +7,7 @@
   
   <h1 align="center">Beear</h1>
 
-  <p align="center">
-    Brasserie fictive - Projet Kercode
-    <br />
-    <a href="<!-- Mettre le lien -->">Voir le site</a>
-    ·
-    <a href="https://github.com/cdbschr/Beear/issues">Reporter un Bug </a>
-    ·
-    <a href="https://github.com/cdbschr/Beear/issues">Faire une demande de Feature</a>
-  </p>
+  <p align="center">Brasserie fictive - Projet Kercode</p>
 </div>
 
 <details>
@@ -63,9 +55,9 @@ J'espère que vous apprécierez ce projet et vous souhaite une bonne visite.
 ### Technologies utilisées :
 
 - HTML / CSS
-- PHP (en structure MVC)
-- SQL
 - JavaScript
+- PHP
+- SQL
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
