@@ -118,6 +118,16 @@ En allant dans le dossier, on va utiliser composer :
 composer install
 ```
 
+* .env - Copier le .env.example et le renommer .env et remplir les informations suivantes avec les informations de votre base de données :
+```
+ DB_NAME=Nom de la base de donnée
+ DB_HOST=Endroit de la base de donnée
+ DB_PORT=Port de la base de donnée
+ DB_USERNAME=Nom d`utilisateur de la base de donnée
+ DB_PASSWORD=Mot de passe de la base de donnée
+ APP_ENV=Environnement de l'application
+ ```
+
 Dans le fichier situé dans public/frontend/scripts du nom de navigation.js, il faut modifier :
 
 * Navigation.js
